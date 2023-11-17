@@ -2,8 +2,7 @@ import os
 import sys
 import subprocess
 import wget
-
-DATA_DIR = 'D:/data'
+from config import DATA_DIR
 
 validation_images = [f'{DATA_DIR}/tests/{filename}' for filename in os.listdir(f'{DATA_DIR}/tests')]
 validation_prompts = [os.path.basename(img_path).split('.')[0] for img_path in validation_images]
@@ -12,9 +11,9 @@ command = []
 
 command += ['accelerate', 'launch', f'diffusers/examples/controlnet/train_controlnet.py']
 command += [
-    f'--pretrained_model_name_or_path=runwayml/stable-diffusion-v1-5',
+    f'--pretrained_model_name_or_path=riffusion/riffusion-model-v1',
 
-    f'--train_data_dir={DATA_DIR}/dataset/fill50k',
+    f'--train_data_dir={DATA_DIR}/dataset/spectrograms',
 
     f'--output_dir={DATA_DIR}/models',
     f'--cache_dir={DATA_DIR}/cache',
