@@ -1,4 +1,5 @@
 wget
-spotify-dl
 librosa
 -r diffusers/examples/controlnet/requirements.txt
+-e diffusers
+-e ytmdl
