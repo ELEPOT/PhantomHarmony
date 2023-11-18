@@ -40,7 +40,7 @@ class Dataset:
             '-o',
             f'{self.output_dir}',
             '--filename',
-            f'{track_name}_{artists}'
+            f'{track_name}_{artists}', '--nolocal', '--dont-transcode'
         ]
 
 
