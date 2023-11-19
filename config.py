@@ -1,1 +1,1 @@
-DATA_DIR = 'D:/data'
+DATA_DIR = 'D:\data'
