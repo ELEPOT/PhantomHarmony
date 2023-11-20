@@ -14,7 +14,7 @@ class Dataset:
             self.output_dir = output_dir
 
         if not os.path.isdir(output_dir):
-            os.mkdir(output_dir)
+            os.makedirs(output_dir, exist_ok=True)
 
         self.dataset = load_dataset(link_src, split='train')
 
