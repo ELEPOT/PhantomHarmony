@@ -1,1 +1,3 @@
-DATA_DIR = 'D:\data'
+import os 
+
+DATA_DIR = os.path.expanduser('~') + '/data'
