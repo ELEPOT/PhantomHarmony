@@ -7,7 +7,7 @@ from config import *
 import ytmdl
 
 class Dataset:
-    def __init__(self, link_src, track_name_col, artists_col, output_dir=None, shuffle=False, start_index=0, end_index=-1):
+    def __init__(self, link_src, track_name_col, artists_col, track_id_col, output_dir=None, shuffle=False, start_index=0, end_index=-1):
         if output_dir is None:
             self.output_dir = link_src.split('/')[1]
         else:
@@ -30,12 +30,14 @@ class Dataset:
 
         self.track_name_col = track_name_col
         self.artist_col = artists_col
+        self.track_id_col = track_id_col
 
     def pop(self, log=False):
         row = self.dataset.pop(0)
 
         track_name = row[self.track_name_col]
         artists = row[self.artist_col]
+        track_id = row[self.track_id_col]
 
         command = [
             'ytmdl',
@@ -46,11 +48,11 @@ class Dataset:
             '--on-meta-error' ,
             'skip',
             '--artist',
-            f'{artists}',
+            artists,
             '-o',
             f'{self.output_dir}',
             '--filename',
-            f'{track_name}_{artists}', '--nolocal', '--dont-transcode'
+            track_id, '--nolocal', '--dont-transcode'
         ]
 
 
