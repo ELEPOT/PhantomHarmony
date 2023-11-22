@@ -5,9 +5,10 @@ import itertools
 import shutil
 from config import *
 import ytmdl
+import yaml
 
 class Dataset:
-    def __init__(self, link_src, track_name_col, artists_col, output_dir=None, shuffle=False, start_index=0, end_index=-1):
+    def __init__(self, link_src, track_name_col, artists_col, output_dir=None, shuffle=True, start_index=0, end_index=-1):
         if output_dir is None:
             self.output_dir = link_src.split('/')[1]
         else:
@@ -30,7 +31,7 @@ class Dataset:
 
         self.track_name_col = track_name_col
         self.artist_col = artists_col
-
+    
     def pop(self, log=False):
         row = self.dataset.pop(0)
 
@@ -70,7 +71,7 @@ if __name__ == '__main__':
         track_name_col='track_name',
         artists_col='artists',
         output_dir=f'{DATA_DIR}/dataset/spotify_114k',
-        start_index=0,
+        start_index=847,
         end_index=57000
     )
 
