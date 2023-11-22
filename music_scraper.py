@@ -72,6 +72,7 @@ if __name__ == '__main__':
         link_src='maharshipandya/spotify-tracks-dataset',
         track_name_col='track_name',
         artists_col='artists',
+        track_id_col='track_id',
         output_dir=f'{DATA_DIR}/dataset/spotify_114k',
         start_index=847,
         end_index=57000
