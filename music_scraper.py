@@ -32,8 +32,19 @@ class Dataset:
         self.track_name_col = track_name_col
         self.artist_col = artists_col
         self.track_id_col = track_id_col
-
-    def pop(self, log=False):
+    
+    def _track_already_downloaded(self, track_id):
+        return os.path.exists(os.path.join(self.output_dir, track_id + '.mp3'))
+        
+    def _run_command_with_timeout(self, command, timeout):
+        print(command)
+        
+        try:
+            subprocess.run(command, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            print("Command took too long. Probably false files that are too big")
+    
+    def pop(self):
         row = self.dataset.pop(0)
 
         track_name = row[self.track_name_col]
@@ -55,17 +66,41 @@ class Dataset:
             '--filename',
             track_id, '--nolocal', '--dont-transcode'
         ]
+        
+        artist_not_found_command = [
+            'ytmdl',
+            track_name,
+            '-q',
+            '--skip-meta',
+            '--ignore-errors',
+            '--on-meta-error' ,
+            'skip',
+            '-o',
+            f'{self.output_dir}',
+            '--filename',
+            track_id, '--nolocal', '--dont-transcode'
+        ]
+        
+        if self._track_already_downloaded(track_id):
+            print(f'Skipping {track_id}')
+            return
+        
+        self._run_command_with_timeout(command, timeout=15)
+        
+        if self._track_already_downloaded(track_id):
+            return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
 
-
-        if log:
-            subprocess.call(command)
-        else:
-            subprocess.run(command)
-
-        print(command)
-
-        return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
-
+        print("Failed. Trying not use artist info...")
+        
+        self._run_command_with_timeout(artist_not_found_command, timeout=15)
+         
+        if self._track_already_downloaded(track_id):
+            return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
+        
+        print("Cannot find song")
+        
+        return 404
+    
 
 if __name__ == '__main__':
     dataset = Dataset(
@@ -74,13 +109,13 @@ if __name__ == '__main__':
         artists_col='artists',
         track_id_col='track_id',
         output_dir=f'{DATA_DIR}/dataset/spotify_114k',
-        start_index=847,
+        start_index=0,
         end_index=57000
     )
 
     while True:
         try:
-            dataset.pop(log=True)
+            dataset.pop()
         except IndexError:
             print('End of dataset!')
             break
