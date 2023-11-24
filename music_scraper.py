@@ -84,7 +84,17 @@ class Dataset:
         if self._track_already_downloaded(track_id):
             print(f'Skipping {track_id}')
             return
-        
+
+        if os.path.isfile('bad_files.txt'):
+            with open('bad_files.txt', 'r') as f:
+                if track_id in [s.rstrip('\n') for s in f.readlines()]:
+                    print(f'Skipping {track_id} because it is known to be large or not findable')
+                    return
+
+        if artists is None or track_name is None:
+            print('Skipping files with no track_name or artist info')
+            return
+
         self._run_command_with_timeout(command, timeout=15)
         
         if self._track_already_downloaded(track_id):
@@ -97,7 +107,10 @@ class Dataset:
         if self._track_already_downloaded(track_id):
             return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
         
-        print("Cannot find song")
+        print('Cannot find song or both tries take too long')
+
+        with open('bad_files.txt', 'a') as f:
+            f.write(track_id + '\n')
         
         return 404
     
@@ -109,8 +122,7 @@ if __name__ == '__main__':
         artists_col='artists',
         track_id_col='track_id',
         output_dir=f'{DATA_DIR}/dataset/spotify_114k',
-        start_index=0,
-        end_index=57000
+        start_index=95000,
     )
 
     while True:
