@@ -1,133 +1,82 @@
 from datasets import load_dataset
 import subprocess
 import os
-import itertools
-import shutil
-from config import *
-import ytmdl
-import yaml
+from config import DATA_DIR
 
-class Dataset:
-    def __init__(self, link_src, track_name_col, artists_col, track_id_col, output_dir=None, shuffle=True, start_index=0, end_index=-1):
-        if output_dir is None:
-            self.output_dir = link_src.split('/')[1]
-        else:
-            self.output_dir = output_dir
+link_src: str = 'maharshipandya/spotify-tracks-dataset'
+track_name_col: str = 'track_name'
+artists_col: str = 'artists'
+track_id_col: str = 'track_id'
+output_dir: str = f'{DATA_DIR}/dataset/spotify_114k'
+shuffle: bool = True
+start_index: int = 0
+end_index: int = -1
+ban_genre: list[str] = ['classical', 'jazz', 'piano', 'sleep', 'study']
 
-        if not os.path.isdir(output_dir):
-            os.makedirs(output_dir, exist_ok=True)
 
-        self.dataset = load_dataset(link_src, split='train')
+if not os.path.isdir(output_dir):
+    os.makedirs(output_dir, exist_ok=True)
 
-        if shuffle:
-            self.dataset = self.dataset.shuffle(seed=4242)
+dataset = load_dataset(link_src, split="train")
 
-        self.dataset = self.dataset.to_list()
+if shuffle:
+    dataset = dataset.shuffle(seed=4242)
 
-        if end_index == -1:
-            self.dataset = self.dataset[start_index:]
-        else:
-            self.dataset = self.dataset[start_index:end_index]
+dataset = dataset.to_list()
 
-        self.track_name_col = track_name_col
-        self.artist_col = artists_col
-        self.track_id_col = track_id_col
-    
-    def _track_already_downloaded(self, track_id):
-        return os.path.exists(os.path.join(self.output_dir, track_id + '.mp3'))
-        
-    def _run_command_with_timeout(self, command, timeout):
-        print(command)
-        
-        try:
-            subprocess.run(command, timeout=timeout)
-        except subprocess.TimeoutExpired:
-            print("Command took too long. Probably false files that are too big")
-    
-    def pop(self):
-        row = self.dataset.pop(0)
+if end_index == -1:
+    dataset = dataset[start_index:]
+else:
+    dataset = dataset[start_index:end_index]
 
-        track_name = row[self.track_name_col]
-        artists = row[self.artist_col]
-        track_id = row[self.track_id_col]
 
-        command = [
-            'ytmdl',
-            track_name,
-            '-q',
-            '--skip-meta',
-            '--ignore-errors',
-            '--on-meta-error' ,
-            'skip',
-            '--artist',
-            artists,
-            '-o',
-            f'{self.output_dir}',
-            '--filename',
-            track_id, '--nolocal', '--dont-transcode'
-        ]
-        
-        artist_not_found_command = [
-            'ytmdl',
-            track_name,
-            '-q',
-            '--skip-meta',
-            '--ignore-errors',
-            '--on-meta-error' ,
-            'skip',
-            '-o',
-            f'{self.output_dir}',
-            '--filename',
-            track_id, '--nolocal', '--dont-transcode'
-        ]
-        
-        if self._track_already_downloaded(track_id):
-            print(f'Skipping {track_id}')
-            return
+def track_already_downloaded(track_id):
+    return os.path.exists(os.path.join(output_dir, track_id + ".mp3"))
 
-        if os.path.isfile('bad_files.txt'):
-            with open('bad_files.txt', 'r') as f:
-                if track_id in [s.rstrip('\n') for s in f.readlines()]:
-                    print(f'Skipping {track_id} because it is known to be large or not findable')
-                    return
 
-        if artists is None or track_name is None:
-            print('Skipping files with no track_name or artist info')
-            return
+for row in dataset:
+    track_name = row[track_name_col]
+    artists = row[artists_col]
+    track_id = row[track_id_col]
 
-        self._run_command_with_timeout(command, timeout=15)
-        
-        if self._track_already_downloaded(track_id):
-            return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
+    command = [
+        "ytmdl",
+        track_name,
+        "-q",
+        "--skip-meta",
+        "--ignore-errors",
+        "--on-meta-error",
+        "skip",
+        "--artist",
+        artists,
+        "-o",
+        f"{output_dir}",
+        "--filename",
+        track_id,
+        "--nolocal",
+        "--dont-transcode",
+    ]
 
-        print("Failed. Trying not use artist info...")
-        
-        self._run_command_with_timeout(artist_not_found_command, timeout=15)
-         
-        if self._track_already_downloaded(track_id):
-            return os.path.join(self.output_dir, f'{track_name}_{artists}.mp3')
-        
-        print('Cannot find song or both tries take too long')
+    if track_already_downloaded(track_id):
+        print(f"Skipping {track_id}")
+        continue
 
-        with open('bad_files.txt', 'a') as f:
-            f.write(track_id + '\n')
-        
-        return 404
-    
+    if artists is None or track_name is None:
+        print("Skipping files with no track_name or artist info")
+        continue
 
-if __name__ == '__main__':
-    dataset = Dataset(
-        link_src='maharshipandya/spotify-tracks-dataset',
-        track_name_col='track_name',
-        artists_col='artists',
-        track_id_col='track_id',
-        output_dir=f'{DATA_DIR}/dataset/spotify_114k',
-        start_index=95000,
-    )
+    subprocess.call(command)
 
-    while True:
-        try:
-            dataset.pop()
-        except IndexError:
-            print('End of dataset!')
-            break
+    if track_already_downloaded(track_id):
+        continue
+
+    print("Failed. Trying not use artist info...")
+
+    # Remove artists requirement
+    command.pop(7)
+    command.pop(8)
+
+    if track_already_downloaded(track_id):
+        continue
+
+    print("Cannot find song")
