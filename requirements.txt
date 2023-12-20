@@ -1,5 +1,7 @@
 wget
 librosa
+vamp
+gradio
 -r diffusers/examples/controlnet/requirements.txt
 -e diffusers
 -e ytmdl
