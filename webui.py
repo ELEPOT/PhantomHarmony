@@ -1,6 +1,6 @@
 import gradio as gr
 
-def zip_files(files):
+def zip_files(text,files):
     '''
     with ZipFile("tmp2222.zip", "w") as zipObj:
         for idx, file in enumerate(files):
@@ -15,8 +15,8 @@ def zip_files(files):
 
 demo = gr.Interface(
     zip_files,
-    gr.File(file_count="multiple", file_types=["text", ".json", ".csv"]),
-    "file",
+    inputs=[gr.Textbox(lines=2, placeholder="Name Here..."),gr.File(file_count="multiple", file_types=["text", ".json", ".csv"])],
+    outputs="text",
 )
 
 if __name__ == "__main__":
