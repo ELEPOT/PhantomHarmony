@@ -9,7 +9,9 @@ def zip_files(files):
     '''
 
     with open('writeSomething.txt', 'w') as f:
-        f.write('hello\n')
+        a=files[0]
+        a=str(a)
+        f.write(a)
     return "writeSomething.txt"
 
 demo = gr.Interface(
