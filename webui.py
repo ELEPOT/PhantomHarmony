@@ -10,8 +10,8 @@ def zip_files(text, files):
 
     with open("writeSomething.txt", "w") as f:
         a = files[0]
-        a = str(a)
-        f.write(a)
+        a = str(a + "   " + text)
+        f.write(a + "\n")
     return "writeSomething.txt"
 
 
@@ -21,7 +21,7 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="Name Here..."),
         gr.File(file_count="multiple", file_types=["text", ".json", ".csv"]),
     ],
-    outputs="text",
+    outputs="file",
 )
 
 if __name__ == "__main__":
