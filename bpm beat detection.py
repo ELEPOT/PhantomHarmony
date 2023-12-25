@@ -1,7 +1,7 @@
 import librosa
 import pydub
 import numpy as np
-filename = "moonlight_Track1.wav"
+filename = "fiction.mp3"
 
 y, sr = librosa.load(filename)
 
