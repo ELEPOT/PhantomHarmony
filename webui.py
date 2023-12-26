@@ -18,11 +18,11 @@ def zip_files(text, files):
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Textbox(lines=2, placeholder="Name Here..."),
+        gr.Textbox(lines=2, placeholder="please write command here.And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["text", ".json", ".csv"]),
     ],
     outputs="file",
 )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")
