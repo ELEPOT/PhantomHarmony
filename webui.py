@@ -21,7 +21,7 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="please write command here.And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["text", ".json", ".csv"]),
     ],
-    outputs="file",
+    outputs=["file","text"]
 )
 
 if __name__ == "__main__":
