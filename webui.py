@@ -7,7 +7,7 @@ def zip_files(text, files):
         for idx, file in enumerate(files):
             zipObj.write(file.name, file.name.split("/")[-1])
     """
-    if files == None or text == None:
+    if files == None or text == "":
         with open("writeSomething.txt", "w") as f:
             
             
