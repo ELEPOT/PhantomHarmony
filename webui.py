@@ -7,18 +7,18 @@ def zip_files(text, files):
         for idx, file in enumerate(files):
             zipObj.write(file.name, file.name.split("/")[-1])
     """
-    if files ==None:
+    if files == None or text == None:
         with open("writeSomething.txt", "w") as f:
             
             
             f.write( "please write command here.And upload music file to next block. \n")
-        return "writeSomething.txt","please write command here.And upload music file to next block. \n"
+        return "writeSomething.txt","please write command here.And upload music file to next block. \n"+text
     else:
         with open("writeSomething.txt", "w") as f:
             a = files[0]
             a = str(a + "   " + text)
             f.write(a + "\n")
-        return "writeSomething.txt","SUCCESSFUL!!!"
+        return "writeSomething.txt","SUCCESSFUL!!!"+text
 
 
 demo = gr.Interface(
