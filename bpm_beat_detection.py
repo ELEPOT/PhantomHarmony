@@ -1,6 +1,7 @@
 import librosa
-import pydub
 import numpy as np
+import pydub
+
 filename = "moonlight_Track1.wav"
 
 y, sr = librosa.load(filename)
@@ -22,10 +23,7 @@ if normalized:  # normalized array - each item should be a float in [-1, 1)
     cropped_y = np.int16(cropped_y * 2 ** 15)
 else:
     cropped_y = np.int16(cropped_y)
+
 song = pydub.AudioSegment(cropped_y.tobytes(), frame_rate=sr, sample_width=2, channels=channels)
 song.export("bpm_test.mp3", format="mp3", bitrate="320k")
 print('ok')
-
-
-
-
