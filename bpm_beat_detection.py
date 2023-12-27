@@ -2,7 +2,7 @@ import librosa
 import numpy as np
 import pydub
 
-filename = "moonlight_Track1.wav"
+filename = "fiction.mp3"
 
 y, sr = librosa.load(filename)
 
@@ -12,7 +12,7 @@ beat_times = librosa.frames_to_time(beat_frames, sr=sr)
 
 for j, sec in enumerate(beat_times):
     if j % 4 == 0:
-        print(sec)
+        print(sec,j)
 
 cropped_y = y[10 * sr:20 * sr]
 
