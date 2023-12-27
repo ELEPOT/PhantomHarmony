@@ -2,5 +2,6 @@ venv
 .idea
 .cache
 __pycache__
-bad_files.txt
 Femp
+writeSomething.txt
+pretrained_models
