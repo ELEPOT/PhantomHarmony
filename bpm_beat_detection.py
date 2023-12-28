@@ -1,28 +1,24 @@
 import os
-import librosa
 import time
-import soundfile as sf
-import numpy as np
 
+import librosa
+import soundfile as sf
 
 # parameters
 filename = "fiction.mp3"
-beat_per_section = 4
+beat_per_section = 8
 
 start_time = time.time()
 
 # create output direction
-output_dir = os.path.join(
-    ".",
-    "split_into_section",
-    os.path.splitext(filename)[0])
+output_dir = os.path.join(".", "split_into_section", os.path.splitext(filename)[0])
 os.makedirs(output_dir, exist_ok=True)
 
 # load file
 #   `sr`: sampling rate of the file
 #   `channel`: channel of the file
-y, sr = librosa.load(filename, sr=None)    # according to document of librosa,
-                                           # `sr` should assigned to None to preserve the native sampling rate of the file
+y, sr = librosa.load(filename, sr=None)  # according to document of librosa,
+# `sr` should assigned to None to preserve the native sampling rate of the file
 channels = 2 if (y.ndim == 2 and y.shape[1] == 2) else 1
 
 # detect frames of beat and change frames to samples
@@ -36,8 +32,9 @@ for idx in range(beat_per_section, len(beat_samples), beat_per_section):
     beat_sample_end = beat_samples[idx]
     sf.write(
         os.path.join(output_dir, "%05d.mp3" % int(idx / beat_per_section)),
-        y[beat_sample_start: beat_sample_end],
+        y[beat_sample_start:beat_sample_end],
         sr,
-        format="mp3")
+        format="mp3",
+    )
 
 print("Finsh parsing %s in %d seconds." % (filename, (time.time() - start_time)))
