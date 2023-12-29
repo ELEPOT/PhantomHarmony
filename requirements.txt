@@ -1,7 +1,9 @@
 wget
 librosa
-vamp
 gradio
+spleeter
+Cython
+madmom
 -r diffusers/examples/controlnet/requirements.txt
 -e diffusers
 -e ytmdl
