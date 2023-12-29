@@ -1,22 +1,21 @@
 import os
 import time
-
 import librosa
 import soundfile as sf
 
-# parameters
+# 參數初始化
 filename = "fiction.mp3"
 beat_per_section = 8
 
 start_time = time.time()
 
-# create output direction
+# 新增output位置
 output_dir = os.path.join(".", "split_into_section", os.path.splitext(filename)[0])
 os.makedirs(output_dir, exist_ok=True)
 
-# load file
-#   `sr`: sampling rate of the file
-#   `channel`: channel of the file
+# 載入黨案
+#   `sr`: 檔案的取樣率
+#   `channel`: 左右聲道
 y, sr = librosa.load(filename, sr=None)  # according to document of librosa,
 # `sr` should assigned to None to preserve the native sampling rate of the file
 channels = 2 if (y.ndim == 2 and y.shape[1] == 2) else 1
