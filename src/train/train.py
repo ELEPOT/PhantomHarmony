@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from config import DATA_DIR
+from config import DATA_DIR, DEPENDENCIES_DIR
 
 validation_images = [
     f"{DATA_DIR}/tests/{filename}" for filename in os.listdir(f"{DATA_DIR}/tests")
@@ -15,8 +15,9 @@ command = []
 command += [
     "accelerate",
     "launch",
-    f"diffusers/examples/controlnet/train_controlnet.py",
+    os.path.join(DEPENDENCIES_DIR, "diffusers/examples/controlnet/train_controlnet.py"),
 ]
+
 command += [
     f"--pretrained_model_name_or_path=riffusion/riffusion-model-v1",
     f"--train_data_dir={DATA_DIR}/dataset/spectrograms",
@@ -29,10 +30,10 @@ command += [
 ]
 
 command += (
-        [f"--validation_image"]
-        + validation_images
-        + [f"--validation_prompt"]
-        + validation_prompts
+    [f"--validation_image"]
+    + validation_images
+    + [f"--validation_prompt"]
+    + validation_prompts
 )
 
 subprocess.call(command)
