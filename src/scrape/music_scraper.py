@@ -4,7 +4,7 @@ import subprocess
 
 from datasets import load_dataset
 
-from config import DATA_DIR
+from config import DATA_DIR, VENV_BIN_DIR
 
 link_src: str = "maharshipandya/spotify-tracks-dataset"
 output_dir: str = os.path.join(DATA_DIR, "dataset", "spotify_114k")
@@ -75,7 +75,7 @@ for row in dataset:
         continue
 
     command = [
-        "ytmdl",
+        os.path.join(VENV_BIN_DIR, "ytmdl"),
         track_name,
         "-q",
         "--skip-meta",

@@ -4,6 +4,8 @@ gradio
 spleeter
 Cython
 madmom
--r diffusers/examples/controlnet/requirements.txt
--e diffusers
--e ytmdl
+torchaudio
+einops
+-r dependencies/diffusers/examples/controlnet/requirements.txt
+-e dependencies/diffusers
+-e dependencies/ytmdl
