@@ -2,7 +2,7 @@ import csv
 import os
 from pprint import pprint
 
-from config import DATA_DIR
+from paths import DATA_DIR
 
 genre_count = {}
 

@@ -4,7 +4,7 @@ import subprocess
 
 from datasets import load_dataset
 
-from config import DATA_DIR, VENV_BIN_DIR
+from paths import DATA_DIR, VENV_BIN_DIR
 
 link_src: str = "maharshipandya/spotify-tracks-dataset"
 output_dir: str = os.path.join(DATA_DIR, "dataset", "spotify_114k")

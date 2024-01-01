@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from config import DATA_DIR, DEPENDENCIES_DIR
+from paths import DATA_DIR, DEPENDENCIES_DIR
 
 validation_images = [
     f"{DATA_DIR}/tests/{filename}" for filename in os.listdir(f"{DATA_DIR}/tests")
