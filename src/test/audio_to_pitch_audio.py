@@ -5,7 +5,7 @@ import librosa
 import numpy as np
 import soundfile as sf
 
-from config import TEST_OUTPUT_DIR, DEPENDENCIES_DIR, VENV_PYTHON_DIR
+from paths import TEST_OUTPUT_DIR, DEPENDENCIES_DIR, VENV_PYTHON_DIR
 
 audio_path = os.path.join(
     TEST_OUTPUT_DIR, "spleeter", "fiction", "vocals.wav"

@@ -6,6 +6,7 @@ Cython
 madmom
 torchaudio
 einops
+pyyaml
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl
