@@ -1,0 +1,6 @@
+Unnamed: 0,track_id,artists,album_name,track_name,popularity,duration_ms,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,track_genre
+80803,4K7l6gzsSPKkB3mzokEDKQ,Arijit Singh;Tulsi Kumar,Tum Bin 2,Dekh Lena,56,281525,False,0.566,0.597,0,-7.889,1,0.0407,0.809,0.0117,0.297,0.654,151.872,4,pop-film
+49424,7HRI3UrfstXMwbmLm4ke06,Headhunterz,The Muzical Revolution / Megasound,Megasound - Original Mix,23,295220,False,0.569,0.788,7,-5.766,1,0.0685,0.000346,0.0392,0.0637,0.297,150.025,4,hardstyle
+41841,7uYfKdTwvNSx6uIM98FTS3,Anabantha,Resucitando el Olvido,El Ser Bajo la Luz de Luna,23,284630,False,0.603,0.793,2,-6.77,0,0.0427,0.0805,0.0,0.279,0.311,125.024,4,goth
+32456,0XlZne6NAr8gzM4P8wl7ND,Shanti People,Murugan,Murugan,30,226304,False,0.658,0.982,10,-2.908,1,0.0982,0.0049,0.0063,0.384,0.455,137.995,4,electronic
+65340,4t2lPMOLcSRgbI2fZ7iYve,Yuvan Shankar Raja;Priya Hemesh,Take 10: Yuvanshankar Raja,"Aathadi Manasudhan (From ""Kazhugoo"")",52,309666,False,0.639,0.476,3,-7.675,0,0.043,0.138,0.0523,0.0865,0.353,160.093,4,k-pop

@@ -41,7 +41,7 @@ subprocess.call(
 )
 
 # convert pitch back into audio
-y, sr = librosa.load(audio_path)
+y, sr = librosa.load(audio_path, sr=None)
 
 D = librosa.stft(y)
 pitch = np.zeros_like(D)
