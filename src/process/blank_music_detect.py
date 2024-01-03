@@ -5,11 +5,20 @@ import numpy as np
 
 from paths import EXAMPLE_DIR
 
-y, sr = librosa.load(os.path.join(EXAMPLE_DIR, "fiction.mp3"), sr=None)
+input_dir = os.path.join(EXAMPLE_DIR, "spleeter_example")
 
-print(len(y))
-blank = np.count_nonzero(y == 0)
 
-print(blank)
-avg = blank / len(y) * 100
-print(avg)
+def detect_blank_music(path):
+    print(path)
+    y, sr = librosa.load(path, sr=None)
+
+    # print(len(y))
+    blank = np.count_nonzero(np.abs(y) < 0.01)
+    # print(blank)
+    avg = blank / len(y) * 100
+
+    return avg
+
+
+print(detect_blank_music(os.path.join(EXAMPLE_DIR, "vocals_full.mp3")))
+print(detect_blank_music(os.path.join(EXAMPLE_DIR, "vocals_blank.mp3")))
