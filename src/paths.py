@@ -3,7 +3,7 @@ from pathlib import Path
 
 import yaml
 
-PROJECT_DIR = Path(__file__).parent.parent.parent
+PROJECT_DIR = Path(__file__).parent.parent
 
 CONFIG_YAML_PATH = PROJECT_DIR / "config.yaml"
 
