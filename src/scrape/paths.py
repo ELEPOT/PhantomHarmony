@@ -2,6 +2,7 @@ import platform
 from pathlib import Path
 
 import yaml
+import os
 
 PROJECT_DIR = Path(__file__).parent.parent.parent
 
@@ -22,3 +23,5 @@ EXAMPLE_DIR = PROJECT_DIR / "example"
 DEPENDENCIES_DIR = PROJECT_DIR / "dependencies"
 VENV_PYTHON_DIR = PROJECT_DIR / "venv/bin/python"
 VENV_BIN_DIR = PROJECT_DIR / "venv/bin"
+
+os.chdir(PROJECT_DIR)
