@@ -13,7 +13,7 @@ def detect_blank_music(path):
     y, sr = librosa.load(path, sr=None)
 
     # print(len(y))
-    blank = np.count_nonzero(np.any(np.abs(y) < 0.01 and np.abs(y) > -0.01) )
+    blank = np.count_nonzero(np.abs(y) < 0.01)
     # print(blank)
     avg = blank / len(y) * 100
 
