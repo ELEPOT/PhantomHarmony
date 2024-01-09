@@ -4,12 +4,14 @@ import librosa
 import numpy as np
 
 from paths import TEST_OUTPUT_DIR
-
+import pandas as pd
 input_dir = os.path.join(TEST_OUTPUT_DIR,"split_by_beat","fiction")
-
-
+df = pd.DataFrame()
+music_name = []
+files = [f for f in os.listdir(input_dir)]
+print(files)
 def detect_blank_music(path):
-    print(path)
+    #print(path)
     y, sr = librosa.load(path, sr=None)
 
     # print(len(y))
@@ -23,6 +25,6 @@ folder_file_counts = {r:len([r+'/'+files for files in f]) for r,d,f in os.walk(i
 #folder_file_counts=int(folder_file_counts)
 print(folder_file_counts)
 for i in range(folder_file_counts['/home/pi/PhantomHarmony/test_output/split_by_beat/fiction']):
-    print(detect_blank_music(os.path.join(input_dir, "%05d" % (i+1)+".mp3")))
+    print(detect_blank_music(os.path.join(input_dir, files[0])))
 #print(detect_blank_music(os.path.join(input_dir, "00001.mp3")))
 #print(detect_blank_music(os.path.join(input_dir, "00016.mp3")))
