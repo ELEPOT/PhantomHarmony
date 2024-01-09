@@ -18,8 +18,7 @@ def split_by_time(path, out_path, track_id, time_per_section=5.12):
     samples_per_section = int(sr * time_per_section)
     idx = 0
 
-    if not os.path.exists(out_path):
-        os.makedirs(out_path)
+    os.makedirs(out_path, exist_ok=True)
 
     for start in range(0, y.size()[0] - samples_per_section, samples_per_section):
         end = start + samples_per_section
