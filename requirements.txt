@@ -7,6 +7,7 @@ madmom
 torchaudio
 einops
 pyyaml
+numpy
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl
