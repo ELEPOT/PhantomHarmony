@@ -1,7 +1,7 @@
 import os
 import time
 
-import librosa
+import torchaudio
 import soundfile as sf
 
 from paths import EXAMPLE_DIR, TEST_OUTPUT_DIR
@@ -29,17 +29,17 @@ os.makedirs(vocals_output_dir, exist_ok=True)
 
 # according to document of librosa,
 # `sr` should assigned to None to preserve the native sampling rate of the file
-y, sr = librosa.load(original_path, sr=None)
-v_y, v_sr = librosa.load(vocals_path, sr=None)
-a_y, a_sr = librosa.load(accompaniment_path, sr=None)
+y, sr = torchaudio.load(original_path)
+v_y, v_sr = torchaudio.load(vocals_path)
+a_y, a_sr = torchaudio.load(accompaniment_path)
 
 channels = 2 if (y.ndim == 2 and y.shape[1] == 2) else 1
 
 # detect frames of beat and change frames to samples
-tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+tempo, beat_frames = torchaudio.beat.beat_track(y=y, sr=sr)
 
 # beat_frames  = np.insert(beat_frames, 0, 0)
-beat_samples = librosa.frames_to_samples(beat_frames)
+beat_samples = torchaudio.frames_to_samples(beat_frames)
 
 # split the vocals file, accompaniment file by section and save to output directory
 
