@@ -51,6 +51,18 @@ from diffusers.optimization import get_scheduler
 from diffusers.utils import check_min_version, is_wandb_available
 from diffusers.utils.import_utils import is_xformers_available
 
+# --- Added by ELEPOT ---
+
+from paths import DATA_DIR
+
+from riffusion.spectrogram_params import SpectrogramParams
+from riffusion.spectrogram_image_converter import SpectrogramImageConverter
+
+params = SpectrogramParams()
+converter = SpectrogramImageConverter(params)
+
+# -----------------------
+
 
 if is_wandb_available():
     import wandb
@@ -121,11 +133,27 @@ def log_validation(vae, text_encoder, tokenizer, unet, controlnet, args, acceler
 
         images = []
 
+        # --- Added by ELEPOT ---
+
+        validation_audio = converter.audio_from_spectrogram_image(validation_image)
+
+        # -----------------------
+
         for _ in range(args.num_validation_images):
             with torch.autocast("cuda"):
                 image = pipeline(
                     validation_prompt, validation_image, num_inference_steps=20, generator=generator
                 ).images[0]
+
+            # --- Added by ELEPOT ---
+
+            audio = converter.audio_from_spectrogram_image(image)
+
+            validation_audio.overlay(audio).export(
+                os.path.join(args.logging_dir, "validation_mixed_audio", f"{validation_prompt}_{step}.wav")
+            )
+
+            # -----------------------
 
             images.append(image)
 
@@ -597,6 +625,8 @@ def make_train_dataset(args, tokenizer, accelerator):
             dataset = load_dataset(
                 args.train_data_dir,
                 cache_dir=args.cache_dir,
+                data_files=os.path.join(args.train_data_dir, "train.jsonl"),
+                ignore_verifications=True,
             )
         # See more about loading custom images at
         # https://huggingface.co/docs/datasets/v2.0.0/en/dataset_script
@@ -673,10 +703,15 @@ def make_train_dataset(args, tokenizer, accelerator):
     )
 
     def preprocess_train(examples):
-        images = [Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[image_column]]
+        images = [
+            Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[image_column]
+        ]
         images = [image_transforms(image) for image in images]
 
-        conditioning_images = [Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[conditioning_image_column]]
+        conditioning_images = [
+            Image.open(os.path.join(args.train_data_dir, image)).convert("RGB")
+            for image in examples[conditioning_image_column]
+        ]
         conditioning_images = [conditioning_image_transforms(image) for image in conditioning_images]
 
         examples["pixel_values"] = images
@@ -749,6 +784,10 @@ def main(args):
             repo_id = create_repo(
                 repo_id=args.hub_model_id or Path(args.output_dir).name, exist_ok=True, token=args.hub_token
             ).repo_id
+
+    # --- Added by ELEPOT ---
+    os.makedirs(os.path.join(args.logging_dir, "validation_mixed_audio"), exist_ok=True)
+    # -----------------------
 
     # Load the tokenizer
     if args.tokenizer_name:
@@ -860,9 +899,7 @@ def main(args):
         try:
             import bitsandbytes as bnb
         except ImportError:
-            raise ImportError(
-                "To use 8-bit Adam, please install the bitsandbytes library: `pip install bitsandbytes`."
-            )
+            raise ImportError("To use 8-bit Adam, please install the bitsandbytes library: `pip install bitsandbytes`.")
 
         optimizer_class = bnb.optim.AdamW8bit
     else:
