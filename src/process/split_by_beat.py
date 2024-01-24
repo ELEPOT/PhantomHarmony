@@ -12,6 +12,8 @@ import librosa
 # parameters
 input_dir = os.path.join(TEST_OUTPUT_DIR,"split_by_beat","fiction")
 
+files = [f for f in os.listdir(input_dir)]
+
 beat_per_section = 8
 
 start_time = time.time()
@@ -23,7 +25,7 @@ accompaniment_output_dir = os.path.join(
 )
 
 os.makedirs(vocals_output_dir, exist_ok=True)
-def beat():
+def beat(path):
 
     y, sr = torchaudio.load(path)
 
@@ -55,4 +57,6 @@ def beat():
         )
 
 
-    print("Finsh parsing %s in %d seconds." % (original_path, (time.time() - start_time)))
+for f in files:
+    beat(f)
+print("Finsh parsing %s in %d seconds." % (input_dir, (time.time() - start_time)))
