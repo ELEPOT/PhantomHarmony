@@ -54,8 +54,6 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
                 v_y[:, beat_sample_start:beat_sample_end],
                 sr,
             )
-        else:
-            print("skip")
 
         if not os.path.exists(a_path):
             torchaudio.save(
@@ -63,8 +61,6 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
                 a_y[:, beat_sample_start:beat_sample_end],
                 sr,
             )
-        else:
-            print("skip")
 
 
 for f in dirs:
