@@ -23,13 +23,17 @@ start_time = time.time()
 
 
 def beat(beat_path, vocals_path, accompaniment_path, out_path):
+    track_id = Path(beat_path).stem
+
+    if os.path.exists(os.path.join(out_path, "vocals", "%s_%05d.mp3" % (track_id, 1))):
+        print("skip")
+        return
+
     y, sr = torchaudio.load(
         beat_path,
     )
     v_y, sr = torchaudio.load(vocals_path)
     a_y, sr = torchaudio.load(accompaniment_path)
-
-    track_id = Path(beat_path).stem
 
     # detect frames of beat and change frames to samples
     tempo, beat_frames = librosa.beat.beat_track(y=y.numpy()[0], sr=sr)
