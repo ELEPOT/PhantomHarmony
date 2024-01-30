@@ -18,20 +18,20 @@ import inspect
 import itertools
 import os
 import re
+from collections import OrderedDict
 from functools import partial
 from typing import Any, Callable, List, Optional, Tuple, Union
 
 import safetensors
 import torch
 from huggingface_hub import create_repo
-from torch import Tensor, device, nn
+from huggingface_hub.utils import validate_hf_hub_args
+from torch import Tensor, nn
 
 from .. import __version__
 from ..utils import (
     CONFIG_NAME,
-    DIFFUSERS_CACHE,
     FLAX_WEIGHTS_NAME,
-    HF_HUB_OFFLINE,
     MIN_PEFT_VERSION,
     SAFETENSORS_WEIGHTS_NAME,
     WEIGHTS_NAME,
@@ -61,7 +61,7 @@ if is_accelerate_available():
     from accelerate.utils.versions import is_torch_version
 
 
-def get_parameter_device(parameter: torch.nn.Module):
+def get_parameter_device(parameter: torch.nn.Module) -> torch.device:
     try:
         parameters_and_buffers = itertools.chain(parameter.parameters(), parameter.buffers())
         return next(parameters_and_buffers).device
@@ -77,7 +77,7 @@ def get_parameter_device(parameter: torch.nn.Module):
         return first_tuple[1].device
 
 
-def get_parameter_dtype(parameter: torch.nn.Module):
+def get_parameter_dtype(parameter: torch.nn.Module) -> torch.dtype:
     try:
         params = tuple(parameter.parameters())
         if len(params) > 0:
@@ -130,7 +130,13 @@ def load_state_dict(checkpoint_file: Union[str, os.PathLike], variant: Optional[
             )
 
 
-def load_model_dict_into_meta(model, state_dict, device=None, dtype=None, model_name_or_path=None):
+def load_model_dict_into_meta(
+    model,
+    state_dict: OrderedDict,
+    device: Optional[Union[str, torch.device]] = None,
+    dtype: Optional[Union[str, torch.dtype]] = None,
+    model_name_or_path: Optional[str] = None,
+) -> List[str]:
     device = device or torch.device("cpu")
     dtype = dtype or torch.float32
 
@@ -156,7 +162,7 @@ def load_model_dict_into_meta(model, state_dict, device=None, dtype=None, model_
     return unexpected_keys
 
 
-def _load_state_dict_into_model(model_to_load, state_dict):
+def _load_state_dict_into_model(model_to_load, state_dict: OrderedDict) -> List[str]:
     # Convert old format to new format if needed from a PyTorch state_dict
     # copy state_dict so _load_from_state_dict can modify it
     state_dict = state_dict.copy()
@@ -164,7 +170,7 @@ def _load_state_dict_into_model(model_to_load, state_dict):
 
     # PyTorch's `_load_from_state_dict` does not copy parameters in a module's descendants
     # so we need to apply the function recursively.
-    def load(module: torch.nn.Module, prefix=""):
+    def load(module: torch.nn.Module, prefix: str = ""):
         args = (state_dict, prefix, {}, True, [], [], error_msgs)
         module._load_from_state_dict(*args)
 
@@ -186,6 +192,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
 
         - **config_name** ([`str`]) -- Filename to save a model to when calling [`~models.ModelMixin.save_pretrained`].
     """
+
     config_name = CONFIG_NAME
     _automatically_saved_args = ["_diffusers_version", "_class_name", "_name_or_path"]
     _supports_gradient_checkpointing = False
@@ -220,7 +227,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         """
         return any(hasattr(m, "gradient_checkpointing") and m.gradient_checkpointing for m in self.modules())
 
-    def enable_gradient_checkpointing(self):
+    def enable_gradient_checkpointing(self) -> None:
         """
         Activates gradient checkpointing for the current model (may be referred to as *activation checkpointing* or
         *checkpoint activations* in other frameworks).
@@ -229,7 +236,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             raise ValueError(f"{self.__class__.__name__} does not support gradient checkpointing.")
         self.apply(partial(self._set_gradient_checkpointing, value=True))
 
-    def disable_gradient_checkpointing(self):
+    def disable_gradient_checkpointing(self) -> None:
         """
         Deactivates gradient checkpointing for the current model (may be referred to as *activation checkpointing* or
         *checkpoint activations* in other frameworks).
@@ -237,9 +244,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         if self._supports_gradient_checkpointing:
             self.apply(partial(self._set_gradient_checkpointing, value=False))
 
-    def set_use_memory_efficient_attention_xformers(
-        self, valid: bool, attention_op: Optional[Callable] = None
-    ) -> None:
+    def set_use_memory_efficient_attention_xformers(self, valid: bool, attention_op: Optional[Callable] = None) -> None:
         # Recursively walk through all the children.
         # Any children which exposes the set_use_memory_efficient_attention_xformers method
         # gets the message
@@ -254,7 +259,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             if isinstance(module, torch.nn.Module):
                 fn_recursive_set_mem_eff(module)
 
-    def enable_xformers_memory_efficient_attention(self, attention_op: Optional[Callable] = None):
+    def enable_xformers_memory_efficient_attention(self, attention_op: Optional[Callable] = None) -> None:
         r"""
         Enable memory efficient attention from [xFormers](https://facebookresearch.github.io/xformers/).
 
@@ -290,7 +295,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         """
         self.set_use_memory_efficient_attention_xformers(True, attention_op)
 
-    def disable_xformers_memory_efficient_attention(self):
+    def disable_xformers_memory_efficient_attention(self) -> None:
         r"""
         Disable memory efficient attention from [xFormers](https://facebookresearch.github.io/xformers/).
         """
@@ -321,9 +326,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             raise ValueError(f"Adapter with name {adapter_name} already exists. Please use a different name.")
 
         if not isinstance(adapter_config, PeftConfig):
-            raise ValueError(
-                f"adapter_config should be an instance of PeftConfig. Got {type(adapter_config)} instead."
-            )
+            raise ValueError(f"adapter_config should be an instance of PeftConfig. Got {type(adapter_config)} instead.")
 
         # Unlike transformers, here we don't need to retrieve the name_or_path of the unet as the loading logic is
         # handled by the `load_lora_layers` or `LoraLoaderMixin`. Therefore we set it to `None` here.
@@ -447,7 +450,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         self,
         save_directory: Union[str, os.PathLike],
         is_main_process: bool = True,
-        save_function: Callable = None,
+        save_function: Optional[Callable] = None,
         safe_serialization: bool = True,
         variant: Optional[str] = None,
         push_to_hub: bool = False,
@@ -527,6 +530,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             )
 
     @classmethod
+    @validate_hf_hub_args
     def from_pretrained(cls, pretrained_model_name_or_path: Optional[Union[str, os.PathLike]], **kwargs):
         r"""
         Instantiate a pretrained PyTorch model from a pretrained model configuration.
@@ -563,7 +567,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             local_files_only(`bool`, *optional*, defaults to `False`):
                 Whether to only load local model weights and configuration files or not. If set to `True`, the model
                 won't be downloaded from the Hub.
-            use_auth_token (`str` or *bool*, *optional*):
+            token (`str` or *bool*, *optional*):
                 The token to use as HTTP bearer authorization for remote files. If `True`, the token generated from
                 `diffusers-cli login` (stored in `~/.huggingface`) is used.
             revision (`str`, *optional*, defaults to `"main"`):
@@ -632,15 +636,15 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
         ```
         """
-        cache_dir = kwargs.pop("cache_dir", DIFFUSERS_CACHE)
+        cache_dir = kwargs.pop("cache_dir", None)
         ignore_mismatched_sizes = kwargs.pop("ignore_mismatched_sizes", False)
         force_download = kwargs.pop("force_download", False)
         from_flax = kwargs.pop("from_flax", False)
         resume_download = kwargs.pop("resume_download", False)
         proxies = kwargs.pop("proxies", None)
         output_loading_info = kwargs.pop("output_loading_info", False)
-        local_files_only = kwargs.pop("local_files_only", HF_HUB_OFFLINE)
-        use_auth_token = kwargs.pop("use_auth_token", None)
+        local_files_only = kwargs.pop("local_files_only", None)
+        token = kwargs.pop("token", None)
         revision = kwargs.pop("revision", None)
         torch_dtype = kwargs.pop("torch_dtype", None)
         subfolder = kwargs.pop("subfolder", None)
@@ -710,7 +714,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             resume_download=resume_download,
             proxies=proxies,
             local_files_only=local_files_only,
-            use_auth_token=use_auth_token,
+            token=token,
             revision=revision,
             subfolder=subfolder,
             device_map=device_map,
@@ -732,7 +736,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
                 resume_download=resume_download,
                 proxies=proxies,
                 local_files_only=local_files_only,
-                use_auth_token=use_auth_token,
+                token=token,
                 revision=revision,
                 subfolder=subfolder,
                 user_agent=user_agent,
@@ -755,7 +759,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
                         resume_download=resume_download,
                         proxies=proxies,
                         local_files_only=local_files_only,
-                        use_auth_token=use_auth_token,
+                        token=token,
                         revision=revision,
                         subfolder=subfolder,
                         user_agent=user_agent,
@@ -774,7 +778,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
                     resume_download=resume_download,
                     proxies=proxies,
                     local_files_only=local_files_only,
-                    use_auth_token=use_auth_token,
+                    token=token,
                     revision=revision,
                     subfolder=subfolder,
                     user_agent=user_agent,
@@ -910,10 +914,10 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
     def _load_pretrained_model(
         cls,
         model,
-        state_dict,
+        state_dict: OrderedDict,
         resolved_archive_file,
-        pretrained_model_name_or_path,
-        ignore_mismatched_sizes=False,
+        pretrained_model_name_or_path: Union[str, os.PathLike],
+        ignore_mismatched_sizes: bool = False,
     ):
         # Retrieve missing & unexpected_keys
         model_state_dict = model.state_dict()
@@ -1011,7 +1015,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         return model, missing_keys, unexpected_keys, mismatched_keys, error_msgs
 
     @property
-    def device(self) -> device:
+    def device(self) -> torch.device:
         """
         `torch.device`: The device on which the module is (assuming that all the module parameters are on the same
         device).
@@ -1063,7 +1067,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
         else:
             return sum(p.numel() for p in self.parameters() if p.requires_grad or not only_trainable)
 
-    def _convert_deprecated_attention_blocks(self, state_dict):
+    def _convert_deprecated_attention_blocks(self, state_dict: OrderedDict) -> None:
         deprecated_attention_block_paths = []
 
         def recursive_find_attn_block(name, module):
@@ -1107,7 +1111,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             if f"{path}.proj_attn.bias" in state_dict:
                 state_dict[f"{path}.to_out.0.bias"] = state_dict.pop(f"{path}.proj_attn.bias")
 
-    def _temp_convert_self_to_deprecated_attention_blocks(self):
+    def _temp_convert_self_to_deprecated_attention_blocks(self) -> None:
         deprecated_attention_block_modules = []
 
         def recursive_find_attn_block(module):
@@ -1134,10 +1138,10 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             del module.to_v
             del module.to_out
 
-    def _undo_temp_convert_self_to_deprecated_attention_blocks(self):
+    def _undo_temp_convert_self_to_deprecated_attention_blocks(self) -> None:
         deprecated_attention_block_modules = []
 
-        def recursive_find_attn_block(module):
+        def recursive_find_attn_block(module) -> None:
             if hasattr(module, "_from_deprecated_attn_block") and module._from_deprecated_attn_block:
                 deprecated_attention_block_modules.append(module)
 
