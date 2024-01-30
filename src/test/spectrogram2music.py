@@ -6,4 +6,4 @@ params = SpectrogramParams()
 converter = SpectrogramImageConverter(params)
 
 img = Image.open("input path")
-converter.audio_from_spectrogram_image(img).save("output path")
+converter.audio_from_spectrogram_image(img).export("output path")
