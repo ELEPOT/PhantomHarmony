@@ -2,18 +2,13 @@ import os
 import time
 from pathlib import Path
 
-import soundfile as sf
-
-from paths import DATA_DIR
-
+from paths import DATASET_DIR
 import torchaudio
-import torch
-
 import librosa
 
 # parameters
-input_dir = os.path.join(DATA_DIR, "dataset", "spleeter")
-out_dir = os.path.join(DATA_DIR, "dataset", "split_by_beat")
+input_dir = DATASET_DIR / "spleeter"
+out_dir = DATASET_DIR / "split_by_beat"
 
 dirs = [f for f in os.listdir(input_dir)]
 
@@ -69,9 +64,9 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
 
 for f in dirs:
     beat(
-        os.path.join(DATA_DIR, "dataset", "spotify_114k", f + ".mp3"),
-        os.path.join(input_dir, f, "vocals.mp3"),
-        os.path.join(input_dir, f, "accompaniment.mp3"),
+        DATASET_DIR / "spotify_114k" / f + ".mp3",
+        input_dir / f / "vocals.mp3",
+        input_dir / f / "accompaniment.mp3",
         out_dir,
     )
 

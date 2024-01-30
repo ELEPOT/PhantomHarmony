@@ -2,11 +2,11 @@ import csv
 import os
 from pprint import pprint
 
-from paths import DATA_DIR
+from paths import DATASET_DIR
 
 genre_count = {}
 
-with open(os.path.join(DATA_DIR, "dataset", "spotify_114k.csv"), "r") as f:
+with open(DATASET_DIR / "spotify_114k.csv", "r") as f:
     reader = csv.DictReader(f)
 
     for row in reader:

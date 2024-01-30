@@ -4,10 +4,10 @@ import subprocess
 
 from datasets import load_dataset
 
-from paths import DATA_DIR, VENV_BIN_DIR
+from paths import DATASET_DIR, VENV_BIN_DIR
 
 link_src: str = "maharshipandya/spotify-tracks-dataset"
-output_dir: str = os.path.join(DATA_DIR, "dataset", "spotify_114k")
+output_dir: str = DATASET_DIR / "spotify_114k"
 shuffle: bool = True
 start_index: int = 0
 end_index: int = -1
@@ -112,7 +112,7 @@ for row in dataset:
 
     print("Cannot find song, skipping...")
 
-with open(os.path.join(DATA_DIR, "dataset", "spotify_114k.csv"), "w") as f:
+with open(DATASET_DIR / "spotify_114k.csv", "w") as f:
     writer = csv.DictWriter(f, fieldnames=dataset[0].keys())
     writer.writeheader()
     writer.writerows(final_dataset.values())

@@ -1,9 +1,9 @@
 import pandas as pd
 import os
-from paths import DATA_DIR
+from paths import DATASET_DIR
 
-samples = pd.read_csv(os.path.join(DATA_DIR, "dataset", "split_by_time_sample.csv"))
-spotify_114k = pd.read_csv(os.path.join(DATA_DIR, "dataset", "spotify_114k.csv"))
+samples = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
+spotify_114k = pd.read_csv(DATASET_DIR / "spotify_114k.csv")
 
 vocals_paths = []
 accompaniment_paths = []
@@ -25,4 +25,4 @@ df["text"] = prompt
 df["image"] = accompaniment_paths
 df["conditioning_image"] = vocals_paths
 
-df.to_json(os.path.join(DATA_DIR, "dataset", "spectrogram", "train.jsonl"), orient="records", lines=True)
+df.to_json(DATASET_DIR / "spectrogram" / "train.jsonl", orient="records", lines=True)

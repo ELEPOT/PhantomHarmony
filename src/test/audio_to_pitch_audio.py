@@ -7,23 +7,15 @@ import soundfile as sf
 
 from paths import TEST_OUTPUT_DIR, DEPENDENCIES_DIR, VENV_PYTHON_DIR
 
-audio_path = os.path.join(
-    TEST_OUTPUT_DIR, "spleeter", "fiction", "vocals.wav"
-)  # Change this to your input audio path
+audio_path = TEST_OUTPUT_DIR / "spleeter" / "fiction" / "vocals.wav"  # Change this to your input audio path
 
-pitch_output_path = os.path.join(TEST_OUTPUT_DIR, "melody")
+pitch_output_path = TEST_OUTPUT_DIR / "melody"
 
-pitch_audio_output_path = os.path.join(
-    TEST_OUTPUT_DIR, "melody", "fiction_pitch.wav"
-)  # Change this to desired output path
+pitch_audio_output_path = TEST_OUTPUT_DIR / "melody" / "fiction_pitch.wav"  # Change this to desired output path
 
-pitch_file_path = os.path.join(
-    TEST_OUTPUT_DIR, "melody", f"pitch_{os.path.split(audio_path)[-1]}.txt"
-)
+pitch_file_path = TEST_OUTPUT_DIR / "melody" / f"pitch_{os.path.split(audio_path)[-1]}.txt"
 
-py_file_path = os.path.join(
-    DEPENDENCIES_DIR, "melodyExtraction_JDC/melodyExtraction_JDC.py"
-)
+py_file_path = DEPENDENCIES_DIR / "melodyExtraction_JDC/melodyExtraction_JDC.py"
 
 # convert audio to pitch
 subprocess.call(
@@ -37,7 +29,7 @@ subprocess.call(
         "-o",
         pitch_output_path,
     ),
-    cwd=os.path.join(DEPENDENCIES_DIR, "melodyExtraction_JDC"),
+    cwd=DEPENDENCIES_DIR / "melodyExtraction_JDC",
 )
 
 # convert pitch back into audio

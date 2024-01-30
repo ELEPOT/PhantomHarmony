@@ -1,17 +1,15 @@
-from paths import DATA_DIR
+from paths import DATASET_DIR
 import os
 
 import pandas as pd
 
 from sklearn.utils import shuffle
 
-input_dir = os.path.join(DATA_DIR, "dataset", "split_by_time", "vocals")
-
 N = 4
 
 n_of_segments_sampled_for_each_song = dict()
 
-blank_detect = pd.read_csv(os.path.join(DATA_DIR, "dataset", "blank_detect.csv"))
+blank_detect = pd.read_csv(DATASET_DIR / "blank_detect.csv")
 blank_detect = shuffle(blank_detect)
 
 sampled_music = []
@@ -33,4 +31,4 @@ for index, row in blank_detect.iterrows():
 
 df = pd.DataFrame()
 df["music_name"] = sampled_music
-df.to_csv(os.path.join(DATA_DIR, "dataset", "split_by_time_sample.csv"))
+df.to_csv(DATASET_DIR / "split_by_time_sample.csv")
