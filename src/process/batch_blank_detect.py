@@ -4,11 +4,13 @@ import time
 import torchaudio
 import torch
 
-from paths import DATA_DIR
+from paths import DATASET_DIR
 import pandas as pd
 
-v_input_dir = os.path.join(DATA_DIR, "dataset", "split_by_time", "vocals")
-a_input_dir = os.path.join(DATA_DIR, "dataset", "split_by_time", "accompaniment")
+v_input_dir = DATASET_DIR / "split_by_time" / "vocals"
+a_input_dir = DATASET_DIR / "split_by_time" / "accompaniment"
+
+csv_output_dir = DATASET_DIR / "blank_detect.csv"
 
 v_files = [f for f in os.listdir(v_input_dir)]
 
@@ -41,4 +43,4 @@ end_time = time.time()
 print("It costs " + str(end_time - start_time) + " s")
 
 df = pd.DataFrame(data)
-df.to_csv(os.path.join(DATA_DIR, "dataset", "blank_detect.csv"))
+df.to_csv(csv_output_dir)

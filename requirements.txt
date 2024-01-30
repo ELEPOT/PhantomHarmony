@@ -10,6 +10,7 @@ pyyaml
 numpy
 pandas
 sklearn
+pydub
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl

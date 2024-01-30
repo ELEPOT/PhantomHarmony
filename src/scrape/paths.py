@@ -1,8 +1,7 @@
-import platform
 from pathlib import Path
 
 import yaml
-import os
+import sys
 
 PROJECT_DIR = Path(__file__).parent.parent.parent
 
@@ -11,17 +10,17 @@ CONFIG_YAML_PATH = PROJECT_DIR / "config.yaml"
 with open(CONFIG_YAML_PATH, "r") as f:
     config = yaml.safe_load(f)
 
-if platform.system() == "Windows":
-    DATA_DIR = config["windows_data_dir"]
-elif platform.system() == "Linux":
-    DATA_DIR = config["linux_data_dir"]
-else:
-    raise f"OS Not Supported: {platform.system()}"
+DATASET_DIR = Path(config["dataset_dir"])
+CACHE_DIR = Path(config["cache_dir"])
+VALIDATION_DIR = Path(config["validation_dir"])
+OUTPUT_DIR = Path(config["output_dir"])
 
 TEST_OUTPUT_DIR = PROJECT_DIR / "test_output"
 EXAMPLE_DIR = PROJECT_DIR / "example"
 DEPENDENCIES_DIR = PROJECT_DIR / "dependencies"
 VENV_PYTHON_DIR = PROJECT_DIR / "venv/bin/python"
 VENV_BIN_DIR = PROJECT_DIR / "venv/bin"
+SRC_DIR = PROJECT_DIR / "src"
 
-os.chdir(PROJECT_DIR)
+
+sys.path.append(str(SRC_DIR))
