@@ -7,5 +7,5 @@ params = SpectrogramParams()
 converter = SpectrogramImageConverter(params)
 
 seg = AudioSegment.from_mp3("/home/leo/v.wav")
+seg = seg.set_frame_rate(44100)
 converter.spectrogram_image_from_audio(seg).save("/home/leo/v.png")
-
