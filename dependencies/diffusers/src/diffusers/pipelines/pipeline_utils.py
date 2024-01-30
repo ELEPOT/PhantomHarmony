@@ -28,7 +28,14 @@ from typing import Any, Callable, Dict, List, Optional, Union
 import numpy as np
 import PIL.Image
 import torch
-from huggingface_hub import ModelCard, create_repo, hf_hub_download, model_info, snapshot_download
+from huggingface_hub import (
+    ModelCard,
+    create_repo,
+    hf_hub_download,
+    model_info,
+    snapshot_download,
+)
+from huggingface_hub.utils import validate_hf_hub_args
 from packaging import version
 from requests.exceptions import HTTPError
 from tqdm.auto import tqdm
@@ -40,8 +47,6 @@ from ..schedulers.scheduling_utils import SCHEDULER_CONFIG_NAME
 from ..utils import (
     CONFIG_NAME,
     DEPRECATED_REVISION_ARGS,
-    DIFFUSERS_CACHE,
-    HF_HUB_OFFLINE,
     SAFETENSORS_WEIGHTS_NAME,
     WEIGHTS_NAME,
     BaseOutput,
@@ -49,6 +54,7 @@ from ..utils import (
     get_class_from_dynamic_module,
     is_accelerate_available,
     is_accelerate_version,
+    is_peft_available,
     is_torch_version,
     is_transformers_available,
     logging,
@@ -158,9 +164,9 @@ def is_safetensors_compatible(filenames, variant=None, passed_components=None) -
             continue
 
         if extension == ".bin":
-            pt_filenames.append(filename)
+            pt_filenames.append(os.path.normpath(filename))
         elif extension == ".safetensors":
-            sf_filenames.add(filename)
+            sf_filenames.add(os.path.normpath(filename))
 
     for filename in pt_filenames:
         #  filename = 'foo/bar/baz.bam' -> path = 'foo/bar', filename = 'baz', extention = '.bam'
@@ -172,9 +178,8 @@ def is_safetensors_compatible(filenames, variant=None, passed_components=None) -
         else:
             filename = filename
 
-        expected_sf_filename = os.path.join(path, filename)
+        expected_sf_filename = os.path.normpath(os.path.join(path, filename))
         expected_sf_filename = f"{expected_sf_filename}.safetensors"
-
         if expected_sf_filename not in sf_filenames:
             logger.warning(f"{expected_sf_filename} not found")
             return False
@@ -249,17 +254,18 @@ def variant_compatible_siblings(filenames, variant=None) -> Union[List[os.PathLi
     return usable_filenames, variant_filenames
 
 
-def warn_deprecated_model_variant(pretrained_model_name_or_path, use_auth_token, variant, revision, model_filenames):
+@validate_hf_hub_args
+def warn_deprecated_model_variant(pretrained_model_name_or_path, token, variant, revision, model_filenames):
     info = model_info(
         pretrained_model_name_or_path,
-        use_auth_token=use_auth_token,
+        token=token,
         revision=None,
     )
     filenames = {sibling.rfilename for sibling in info.siblings}
     comp_model_filenames, _ = variant_compatible_siblings(filenames, variant=revision)
     comp_model_filenames = [".".join(f.split(".")[:1] + f.split(".")[2:]) for f in comp_model_filenames]
 
-    if set(comp_model_filenames) == set(model_filenames):
+    if set(model_filenames).issubset(set(comp_model_filenames)):
         warnings.warn(
             f"You are loading the variant {revision} from {pretrained_model_name_or_path} via `revision='{revision}'` even though you can load it via `variant=`{revision}`. Loading model variants via `revision='{revision}'` is deprecated and will be removed in diffusers v1. Please use `variant='{revision}'` instead.",
             FutureWarning,
@@ -269,6 +275,20 @@ def warn_deprecated_model_variant(pretrained_model_name_or_path, use_auth_token,
             f"You are loading the variant {revision} from {pretrained_model_name_or_path} via `revision='{revision}'`. This behavior is deprecated and will be removed in diffusers v1. One should use `variant='{revision}'` instead. However, it appears that {pretrained_model_name_or_path} currently does not have the required variant filenames in the 'main' branch. \n The Diffusers team and community would be very grateful if you could open an issue: https://github.com/huggingface/diffusers/issues/new with the title '{pretrained_model_name_or_path} is missing {revision} files' so that the correct variant file can be added.",
             FutureWarning,
         )
+
+
+def _unwrap_model(model):
+    """Unwraps a model."""
+    if is_compiled_module(model):
+        model = model._orig_mod
+
+    if is_peft_available():
+        from peft import PeftModel
+
+        if isinstance(model, PeftModel):
+            model = model.base_model.model
+
+    return model
 
 
 def maybe_raise_or_warn(
@@ -288,9 +308,8 @@ def maybe_raise_or_warn(
         # Dynamo wraps the original model in a private class.
         # I didn't find a public API to get the original class.
         sub_model = passed_class_obj[name]
-        model_cls = sub_model.__class__
-        if is_compiled_module(sub_model):
-            model_cls = sub_model._orig_mod.__class__
+        unwrapped_sub_model = _unwrap_model(sub_model)
+        model_cls = unwrapped_sub_model.__class__
 
         if not issubclass(model_cls, expected_class_obj):
             raise ValueError(
@@ -353,13 +372,17 @@ def _get_pipeline_class(
         else:
             file_name = CUSTOM_PIPELINE_FILE_NAME
 
+        if repo_id is not None and hub_revision is not None:
+            # if we load the pipeline code from the Hub
+            # make sure to overwrite the `revison`
+            revision = hub_revision
+
         return get_class_from_dynamic_module(
             custom_pipeline,
             module_file=file_name,
             class_name=class_name,
-            repo_id=repo_id,
             cache_dir=cache_dir,
-            revision=revision if hub_revision is None else hub_revision,
+            revision=revision,
         )
 
     if class_obj != DiffusionPipeline:
@@ -524,6 +547,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
         - **_optional_components** (`List[str]`) -- List of all optional components that don't have to be passed to the
           pipeline to function (should be overridden by subclasses).
     """
+
     config_name = "model_index.json"
     model_cpu_offload_seq = None
     _optional_components = []
@@ -538,14 +562,11 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
 
         for name, module in kwargs.items():
             # retrieve library
-            if module is None:
+            if module is None or isinstance(module, (tuple, list)) and module[0] is None:
                 register_dict = {name: (None, None)}
             else:
                 # register the config from the original module, not the dynamo compiled one
-                if is_compiled_module(module):
-                    not_compiled_module = module._orig_mod
-                else:
-                    not_compiled_module = module
+                not_compiled_module = _unwrap_model(module)
 
                 library = not_compiled_module.__module__.split(".")[0]
 
@@ -648,7 +669,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             # Dynamo wraps the original model in a private class.
             # I didn't find a public API to get the original class.
             if is_compiled_module(sub_model):
-                sub_model = sub_model._orig_mod
+                sub_model = _unwrap_model(sub_model)
                 model_cls = sub_model.__class__
 
             save_method_name = None
@@ -742,10 +763,10 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
 
         torch_dtype = kwargs.pop("torch_dtype", None)
         if torch_dtype is not None:
-            deprecate("torch_dtype", "0.25.0", "")
+            deprecate("torch_dtype", "0.27.0", "")
         torch_device = kwargs.pop("torch_device", None)
         if torch_device is not None:
-            deprecate("torch_device", "0.25.0", "")
+            deprecate("torch_device", "0.27.0", "")
 
         dtype_kwarg = kwargs.pop("dtype", None)
         device_kwarg = kwargs.pop("device", None)
@@ -893,6 +914,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
         return torch.float32
 
     @classmethod
+    @validate_hf_hub_args
     def from_pretrained(cls, pretrained_model_name_or_path: Optional[Union[str, os.PathLike]], **kwargs):
         r"""
         Instantiate a PyTorch diffusion pipeline from pretrained pipeline weights.
@@ -960,7 +982,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             local_files_only (`bool`, *optional*, defaults to `False`):
                 Whether to only load local model weights and configuration files or not. If set to `True`, the model
                 won't be downloaded from the Hub.
-            use_auth_token (`str` or *bool*, *optional*):
+            token (`str` or *bool*, *optional*):
                 The token to use as HTTP bearer authorization for remote files. If `True`, the token generated from
                 `diffusers-cli login` (stored in `~/.huggingface`) is used.
             revision (`str`, *optional*, defaults to `"main"`):
@@ -1040,12 +1062,12 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
         >>> pipeline.scheduler = scheduler
         ```
         """
-        cache_dir = kwargs.pop("cache_dir", DIFFUSERS_CACHE)
+        cache_dir = kwargs.pop("cache_dir", None)
         resume_download = kwargs.pop("resume_download", False)
         force_download = kwargs.pop("force_download", False)
         proxies = kwargs.pop("proxies", None)
-        local_files_only = kwargs.pop("local_files_only", HF_HUB_OFFLINE)
-        use_auth_token = kwargs.pop("use_auth_token", None)
+        local_files_only = kwargs.pop("local_files_only", None)
+        token = kwargs.pop("token", None)
         revision = kwargs.pop("revision", None)
         from_flax = kwargs.pop("from_flax", False)
         torch_dtype = kwargs.pop("torch_dtype", None)
@@ -1078,7 +1100,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 force_download=force_download,
                 proxies=proxies,
                 local_files_only=local_files_only,
-                use_auth_token=use_auth_token,
+                token=token,
                 revision=revision,
                 from_flax=from_flax,
                 use_safetensors=use_safetensors,
@@ -1283,7 +1305,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 "force_download": force_download,
                 "proxies": proxies,
                 "local_files_only": local_files_only,
-                "use_auth_token": use_auth_token,
+                "token": token,
                 "revision": revision,
                 "torch_dtype": torch_dtype,
                 "custom_pipeline": custom_pipeline,
@@ -1513,6 +1535,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 cpu_offload(model, device, offload_buffers=offload_buffers)
 
     @classmethod
+    @validate_hf_hub_args
     def download(cls, pretrained_model_name, **kwargs) -> Union[str, os.PathLike]:
         r"""
         Download and cache a PyTorch diffusion pipeline from pretrained pipeline weights.
@@ -1560,7 +1583,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             local_files_only (`bool`, *optional*, defaults to `False`):
                 Whether to only load local model weights and configuration files or not. If set to `True`, the model
                 won't be downloaded from the Hub.
-            use_auth_token (`str` or *bool*, *optional*):
+            token (`str` or *bool*, *optional*):
                 The token to use as HTTP bearer authorization for remote files. If `True`, the token generated from
                 `diffusers-cli login` (stored in `~/.huggingface`) is used.
             revision (`str`, *optional*, defaults to `"main"`):
@@ -1603,12 +1626,12 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
         </Tip>
 
         """
-        cache_dir = kwargs.pop("cache_dir", DIFFUSERS_CACHE)
+        cache_dir = kwargs.pop("cache_dir", None)
         resume_download = kwargs.pop("resume_download", False)
         force_download = kwargs.pop("force_download", False)
         proxies = kwargs.pop("proxies", None)
-        local_files_only = kwargs.pop("local_files_only", HF_HUB_OFFLINE)
-        use_auth_token = kwargs.pop("use_auth_token", None)
+        local_files_only = kwargs.pop("local_files_only", None)
+        token = kwargs.pop("token", None)
         revision = kwargs.pop("revision", None)
         from_flax = kwargs.pop("from_flax", False)
         custom_pipeline = kwargs.pop("custom_pipeline", None)
@@ -1630,11 +1653,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
         model_info_call_error: Optional[Exception] = None
         if not local_files_only:
             try:
-                info = model_info(
-                    pretrained_model_name,
-                    use_auth_token=use_auth_token,
-                    revision=revision,
-                )
+                info = model_info(pretrained_model_name, token=token, revision=revision)
             except HTTPError as e:
                 logger.warn(f"Couldn't connect to the Hub: {e}.\nWill try to load from local cache.")
                 local_files_only = True
@@ -1649,7 +1668,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 proxies=proxies,
                 force_download=force_download,
                 resume_download=resume_download,
-                use_auth_token=use_auth_token,
+                token=token,
             )
 
             config_dict = cls._dict_from_json_file(config_file)
@@ -1672,7 +1691,8 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 if module_candidate is None or not isinstance(module_candidate, str):
                     continue
 
-                candidate_file = os.path.join(component, module_candidate + ".py")
+                # We compute candidate file path on the Hub. Do not use `os.path.join`.
+                candidate_file = f"{component}/{module_candidate}.py"
 
                 if candidate_file in filenames:
                     custom_components[component] = module_candidate
@@ -1698,9 +1718,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             if revision in DEPRECATED_REVISION_ARGS and version.parse(
                 version.parse(__version__).base_version
             ) >= version.parse("0.22.0"):
-                warn_deprecated_model_variant(
-                    pretrained_model_name, use_auth_token, variant, revision, model_filenames
-                )
+                warn_deprecated_model_variant(pretrained_model_name, token, variant, revision, model_filenames)
 
             model_folder_names = {os.path.split(f)[0] for f in model_filenames if os.path.split(f)[0] in folder_names}
 
@@ -1769,7 +1787,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 )
             ):
                 raise EnvironmentError(
-                    f"Could not found the necessary `safetensors` weights in {model_filenames} (variant={variant})"
+                    f"Could not find the necessary `safetensors` weights in {model_filenames} (variant={variant})"
                 )
             if from_flax:
                 ignore_patterns = ["*.bin", "*.safetensors", "*.onnx", "*.pb"]
@@ -1842,7 +1860,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                 resume_download=resume_download,
                 proxies=proxies,
                 local_files_only=local_files_only,
-                use_auth_token=use_auth_token,
+                token=token,
                 revision=revision,
                 allow_patterns=allow_patterns,
                 ignore_patterns=ignore_patterns,
@@ -1866,7 +1884,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                         "force_download": force_download,
                         "proxies": proxies,
                         "local_files_only": local_files_only,
-                        "use_auth_token": use_auth_token,
+                        "token": token,
                         "variant": variant,
                         "use_safetensors": use_safetensors,
                     }
@@ -1890,12 +1908,19 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
                     " above."
                 ) from model_info_call_error
 
-    @staticmethod
-    def _get_signature_keys(obj):
+    @classmethod
+    def _get_signature_keys(cls, obj):
         parameters = inspect.signature(obj.__init__).parameters
         required_parameters = {k: v for k, v in parameters.items() if v.default == inspect._empty}
         optional_parameters = set({k for k, v in parameters.items() if v.default != inspect._empty})
         expected_modules = set(required_parameters.keys()) - {"self"}
+
+        optional_names = list(optional_parameters)
+        for name in optional_names:
+            if name in cls._optional_components:
+                expected_modules.add(name)
+                optional_parameters.remove(name)
+
         return expected_modules, optional_parameters
 
     @property

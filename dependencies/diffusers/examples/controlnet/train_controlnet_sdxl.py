@@ -21,6 +21,7 @@ import math
 import os
 import random
 import shutil
+from itertools import chain
 from pathlib import Path
 
 import accelerate
@@ -58,7 +59,7 @@ if is_wandb_available():
     import wandb
 
 # Will error if the minimal version of diffusers is not installed. Remove at your own risks.
-check_min_version("0.22.0.dev0")
+check_min_version("0.25.0.dev0")
 
 logger = get_logger(__name__)
 
@@ -74,6 +75,7 @@ def log_validation(vae, unet, controlnet, args, accelerator, weight_dtype, step)
         unet=unet,
         controlnet=controlnet,
         revision=args.revision,
+        variant=args.variant,
         torch_dtype=weight_dtype,
     )
     pipeline.scheduler = UniPCMultistepScheduler.from_config(pipeline.scheduler.config)
@@ -244,14 +246,17 @@ def parse_args(input_args=None):
         " If not specified controlnet weights are initialized from unet.",
     )
     parser.add_argument(
+        "--variant",
+        type=str,
+        default=None,
+        help="Variant of the model files of the pretrained model identifier from huggingface.co/models, 'e.g.' fp16",
+    )
+    parser.add_argument(
         "--revision",
         type=str,
         default=None,
         required=False,
-        help=(
-            "Revision of pretrained model identifier from huggingface.co/models. Trainable model components should be"
-            " float32 precision."
-        ),
+        help="Revision of pretrained model identifier from huggingface.co/models.",
     )
     parser.add_argument(
         "--tokenizer_name",
@@ -549,6 +554,34 @@ def parse_args(input_args=None):
             " more information see https://huggingface.co/docs/accelerate/v0.17.0/en/package_reference/accelerator#accelerate.Accelerator"
         ),
     )
+    parser.add_argument(
+        "--only_mid_control",
+        action="store_true",
+        help=("Whether to only infuse information into the mid block of the base model, and not the up blocks."),
+    )
+    parser.add_argument(
+        "--train_base",
+        action="store_true",
+        help=(
+            "Whether to unfreeze and also train the base model. By default, the base model is frozen and only the control model is trained."
+        ),
+    )
+    parser.add_argument(
+        "--output_subdir_unet",
+        type=str,
+        default="unet",
+        help=(
+            "Subdirectory of --output_dir to which the unet model will be saved. Only relevant when --train_base is set."
+        ),
+    )
+    parser.add_argument(
+        "--output_subdir_controlnet",
+        type=str,
+        default="controlnet",
+        help=(
+            "Subdirectory of --output_dir to which the controlnet  will be saved. Only relevant when --train_base is set, as otherwise the model be save into --output_dir."
+        ),
+    )
 
     if input_args is not None:
         args = parser.parse_args(input_args)
@@ -793,10 +826,16 @@ def main(args):
 
     # Load the tokenizers
     tokenizer_one = AutoTokenizer.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="tokenizer", revision=args.revision, use_fast=False
+        args.pretrained_model_name_or_path,
+        subfolder="tokenizer",
+        revision=args.revision,
+        use_fast=False,
     )
     tokenizer_two = AutoTokenizer.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="tokenizer_2", revision=args.revision, use_fast=False
+        args.pretrained_model_name_or_path,
+        subfolder="tokenizer_2",
+        revision=args.revision,
+        use_fast=False,
     )
 
     # import correct text encoder classes
@@ -810,10 +849,10 @@ def main(args):
     # Load scheduler and models
     noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="scheduler")
     text_encoder_one = text_encoder_cls_one.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision, variant=args.variant
     )
     text_encoder_two = text_encoder_cls_two.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="text_encoder_2", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="text_encoder_2", revision=args.revision, variant=args.variant
     )
     vae_path = (
         args.pretrained_model_name_or_path
@@ -824,9 +863,10 @@ def main(args):
         vae_path,
         subfolder="vae" if args.pretrained_vae_model_name_or_path is None else None,
         revision=args.revision,
+        variant=args.variant,
     )
     unet = UNet2DConditionModel.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision, variant=args.variant
     )
 
     if args.controlnet_model_name_or_path:
@@ -867,8 +907,19 @@ def main(args):
         accelerator.register_save_state_pre_hook(save_model_hook)
         accelerator.register_load_state_pre_hook(load_model_hook)
 
+    def is_in_decoder(name):
+        decoder_parts = ["conv_out", "conv_norm_out", "up_blocks"]
+        return any(name.startswith(p) for p in decoder_parts)
+
     vae.requires_grad_(False)
-    unet.requires_grad_(False)
+    if args.train_base:
+        unet.train()
+        # we unfreeze only the decoder
+        for n, p in unet.named_parameters():
+            if not is_in_decoder(n):
+                p.requires_grad_(False)
+    else:
+        unet.requires_grad_(False)
     text_encoder_one.requires_grad_(False)
     text_encoder_two.requires_grad_(False)
     controlnet.train()
@@ -889,7 +940,8 @@ def main(args):
 
     if args.gradient_checkpointing:
         controlnet.enable_gradient_checkpointing()
-        unet.enable_gradient_checkpointing()
+        if args.train_base:
+            unet.enable_gradient_checkpointing()
 
     # Check that all trainable models are in full precision
     low_precision_error_string = (
@@ -900,6 +952,10 @@ def main(args):
     if accelerator.unwrap_model(controlnet).dtype != torch.float32:
         raise ValueError(
             f"Controlnet loaded as datatype {accelerator.unwrap_model(controlnet).dtype}. {low_precision_error_string}"
+        )
+    if args.train_base and accelerator.unwrap_model(unet).dtype != torch.float32:
+        raise ValueError(
+            f"Base model loaded as datatype {accelerator.unwrap_model(unet).dtype}. {low_precision_error_string}"
         )
 
     # Enable TF32 for faster training on Ampere GPUs,
@@ -926,7 +982,12 @@ def main(args):
         optimizer_class = torch.optim.AdamW
 
     # Optimizer creation
-    params_to_optimize = controlnet.parameters()
+    if args.train_base:
+        params_unet_decoder = (p for n, p in unet.named_parameters() if is_in_decoder(n))
+        params_to_optimize = chain(controlnet.parameters(), params_unet_decoder)
+    else:
+        params_to_optimize = controlnet.parameters()
+
     optimizer = optimizer_class(
         params_to_optimize,
         lr=args.learning_rate,
@@ -949,7 +1010,8 @@ def main(args):
         vae.to(accelerator.device, dtype=weight_dtype)
     else:
         vae.to(accelerator.device, dtype=torch.float32)
-    unet.to(accelerator.device, dtype=weight_dtype)
+    if not args.train_base:
+        unet.to(accelerator.device, dtype=weight_dtype)
     text_encoder_one.to(accelerator.device, dtype=weight_dtype)
     text_encoder_two.to(accelerator.device, dtype=weight_dtype)
 
@@ -1032,6 +1094,8 @@ def main(args):
     controlnet, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
         controlnet, optimizer, train_dataloader, lr_scheduler
     )
+    if args.train_base:
+        unet = accelerator.prepare(unet)
 
     # We need to recalculate our total training steps as the size of the training dataloader may have changed.
     num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
@@ -1135,7 +1199,11 @@ def main(args):
                     added_cond_kwargs=batch["unet_added_conditions"],
                     controlnet_cond=controlnet_image,
                     return_dict=False,
+                    compute_down_block_res_samples=not args.only_mid_control,
                 )
+                mid_block_res_sample = mid_block_res_sample.to(dtype=weight_dtype)
+                if not args.only_mid_control:
+                    down_block_res_samples = [sample.to(dtype=weight_dtype) for sample in down_block_res_samples]
 
                 # Predict the noise residual
                 model_pred = unet(
@@ -1143,10 +1211,8 @@ def main(args):
                     timesteps,
                     encoder_hidden_states=batch["prompt_ids"],
                     added_cond_kwargs=batch["unet_added_conditions"],
-                    down_block_additional_residuals=[
-                        sample.to(dtype=weight_dtype) for sample in down_block_res_samples
-                    ],
-                    mid_block_additional_residual=mid_block_res_sample.to(dtype=weight_dtype),
+                    down_block_additional_residuals=down_block_res_samples,
+                    mid_block_additional_residual=mid_block_res_sample,
                 ).sample
 
                 # Get the target for loss depending on the prediction type
@@ -1160,8 +1226,13 @@ def main(args):
 
                 accelerator.backward(loss)
                 if accelerator.sync_gradients:
-                    params_to_clip = controlnet.parameters()
+                    if args.train_base:
+                        params_unet_decoder = (p for n, p in unet.named_parameters() if is_in_decoder(n))
+                        params_to_clip = chain(controlnet.parameters(), params_unet_decoder)
+                    else:
+                        params_to_clip = controlnet.parameters()
                     accelerator.clip_grad_norm_(params_to_clip, args.max_grad_norm)
+
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad(set_to_none=args.set_grads_to_none)
@@ -1213,7 +1284,14 @@ def main(args):
     accelerator.wait_for_everyone()
     if accelerator.is_main_process:
         controlnet = accelerator.unwrap_model(controlnet)
-        controlnet.save_pretrained(args.output_dir)
+        if args.train_base:
+            unet_path = os.path.join(args.output_dir, args.output_subdir_unet)
+            controlnet_path = os.path.join(args.output_dir, args.output_subdir_controlnet)
+            unet = accelerator.unwrap_model(unet)
+            unet.save_pretrained(unet_path)
+            controlnet.save_pretrained(controlnet_path)
+        else:
+            controlnet.save_pretrained(args.output_dir)
 
         if args.push_to_hub:
             save_model_card(

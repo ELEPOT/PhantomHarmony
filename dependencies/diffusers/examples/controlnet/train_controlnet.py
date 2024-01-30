@@ -19,6 +19,7 @@ import math
 import os
 import random
 import shutil
+from itertools import chain
 from pathlib import Path
 
 import accelerate
@@ -51,12 +52,23 @@ from diffusers.optimization import get_scheduler
 from diffusers.utils import check_min_version, is_wandb_available
 from diffusers.utils.import_utils import is_xformers_available
 
+# --- Added by ELEPOT ---
+
+from paths import DATA_DIR
+
+from riffusion.spectrogram_params import SpectrogramParams
+from riffusion.spectrogram_image_converter import SpectrogramImageConverter
+
+params = SpectrogramParams()
+converter = SpectrogramImageConverter(params)
+
+# -----------------------
 
 if is_wandb_available():
     import wandb
 
 # Will error if the minimal version of diffusers is not installed. Remove at your own risks.
-check_min_version("0.22.0.dev0")
+check_min_version("0.25.0.dev0")
 
 logger = get_logger(__name__)
 
@@ -86,6 +98,7 @@ def log_validation(vae, text_encoder, tokenizer, unet, controlnet, args, acceler
         controlnet=controlnet,
         safety_checker=None,
         revision=args.revision,
+        variant=args.variant,
         torch_dtype=weight_dtype,
     )
     pipeline.scheduler = UniPCMultistepScheduler.from_config(pipeline.scheduler.config)
@@ -121,11 +134,27 @@ def log_validation(vae, text_encoder, tokenizer, unet, controlnet, args, acceler
 
         images = []
 
+        # --- Added by ELEPOT ---
+
+        validation_audio = converter.audio_from_spectrogram_image(validation_image)
+
+        # -----------------------
+
         for _ in range(args.num_validation_images):
             with torch.autocast("cuda"):
                 image = pipeline(
                     validation_prompt, validation_image, num_inference_steps=20, generator=generator
                 ).images[0]
+
+            # --- Added by ELEPOT ---
+
+            audio = converter.audio_from_spectrogram_image(image)
+
+            validation_audio.overlay(audio).export(
+                os.path.join(args.logging_dir, "validation_mixed_audio", f"{validation_prompt}_{step}.wav")
+            )
+
+            # -----------------------
 
             images.append(image)
 
@@ -249,10 +278,13 @@ def parse_args(input_args=None):
         type=str,
         default=None,
         required=False,
-        help=(
-            "Revision of pretrained model identifier from huggingface.co/models. Trainable model components should be"
-            " float32 precision."
-        ),
+        help="Revision of pretrained model identifier from huggingface.co/models.",
+    )
+    parser.add_argument(
+        "--variant",
+        type=str,
+        default=None,
+        help="Variant of the model files of the pretrained model identifier from huggingface.co/models, 'e.g.' fp16",
     )
     parser.add_argument(
         "--tokenizer_name",
@@ -538,6 +570,34 @@ def parse_args(input_args=None):
             " more information see https://huggingface.co/docs/accelerate/v0.17.0/en/package_reference/accelerator#accelerate.Accelerator"
         ),
     )
+    parser.add_argument(
+        "--only_mid_control",
+        action="store_true",
+        help=("Whether to only infuse information into the mid block of the base model, and not the up blocks."),
+    )
+    parser.add_argument(
+        "--train_base",
+        action="store_true",
+        help=(
+            "Whether to unfreeze and also train the base model. By default, the base model is frozen and only the control model is trained."
+        ),
+    )
+    parser.add_argument(
+        "--output_subdir_unet",
+        type=str,
+        default="unet",
+        help=(
+            "Subdirectory of --output_dir to which the unet model will be saved. Only relevant when --train_base is set."
+        ),
+    )
+    parser.add_argument(
+        "--output_subdir_controlnet",
+        type=str,
+        default="controlnet",
+        help=(
+            "Subdirectory of --output_dir to which the controlnet  will be saved. Only relevant when --train_base is set, as otherwise the model be save into --output_dir."
+        ),
+    )
 
     if input_args is not None:
         args = parser.parse_args(input_args)
@@ -597,6 +657,10 @@ def make_train_dataset(args, tokenizer, accelerator):
             dataset = load_dataset(
                 args.train_data_dir,
                 cache_dir=args.cache_dir,
+                # --- Changed by ELEPOT ---
+                data_files=os.path.join(args.train_data_dir, "train.jsonl"),
+                ignore_verifications=True,
+                # -------------------------
             )
         # See more about loading custom images at
         # https://huggingface.co/docs/datasets/v2.0.0/en/dataset_script
@@ -673,11 +737,18 @@ def make_train_dataset(args, tokenizer, accelerator):
     )
 
     def preprocess_train(examples):
-        images = [Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[image_column]]
+        # --- Changed by ELEPOT ---
+        images = [
+            Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[image_column]
+        ]
         images = [image_transforms(image) for image in images]
 
-        conditioning_images = [Image.open(os.path.join(args.train_data_dir, image)).convert("RGB") for image in examples[conditioning_image_column]]
+        conditioning_images = [
+            Image.open(os.path.join(args.train_data_dir, image)).convert("RGB")
+            for image in examples[conditioning_image_column]
+        ]
         conditioning_images = [conditioning_image_transforms(image) for image in conditioning_images]
+        # -------------------------
 
         examples["pixel_values"] = images
         examples["conditioning_pixel_values"] = conditioning_images
@@ -750,6 +821,10 @@ def main(args):
                 repo_id=args.hub_model_id or Path(args.output_dir).name, exist_ok=True, token=args.hub_token
             ).repo_id
 
+    # --- Added by ELEPOT ---
+    os.makedirs(os.path.join(args.logging_dir, "validation_mixed_audio"), exist_ok=True)
+    # -----------------------
+
     # Load the tokenizer
     if args.tokenizer_name:
         tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, revision=args.revision, use_fast=False)
@@ -767,11 +842,13 @@ def main(args):
     # Load scheduler and models
     noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="scheduler")
     text_encoder = text_encoder_cls.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision, variant=args.variant
     )
-    vae = AutoencoderKL.from_pretrained(args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision)
+    vae = AutoencoderKL.from_pretrained(
+        args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision, variant=args.variant
+    )
     unet = UNet2DConditionModel.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision, variant=args.variant
     )
 
     if args.controlnet_model_name_or_path:
@@ -792,7 +869,13 @@ def main(args):
                     weights.pop()
                     model = models[i]
 
-                    sub_dir = "controlnet"
+                    # --- Changed by ELEPOT ---
+                    if isinstance(model, UNet2DConditionModel):
+                        sub_dir = "unet"
+                    else:
+                        sub_dir = "controlnet"
+                    # -------------------------
+
                     model.save_pretrained(os.path.join(output_dir, sub_dir))
 
                     i -= 1
@@ -803,7 +886,16 @@ def main(args):
                 model = models.pop()
 
                 # load diffusers style into model
-                load_model = ControlNetModel.from_pretrained(input_dir, subfolder="controlnet")
+
+                # --- Changed by ELEPOT ---
+                if isinstance(model, UNet2DConditionModel):
+                    sub_dir = "unet"
+                    load_model = UNet2DConditionModel.from_pretrained(os.path.join(input_dir, sub_dir))
+                else:
+                    sub_dir = "controlnet"
+                    load_model = ControlNetModel.from_pretrained(os.path.join(input_dir, sub_dir))
+                # -------------------------
+
                 model.register_to_config(**load_model.config)
 
                 model.load_state_dict(load_model.state_dict())
@@ -812,8 +904,19 @@ def main(args):
         accelerator.register_save_state_pre_hook(save_model_hook)
         accelerator.register_load_state_pre_hook(load_model_hook)
 
+    def is_in_decoder(name):
+        decoder_parts = ["conv_out", "conv_norm_out", "up_blocks"]
+        return any(name.startswith(p) for p in decoder_parts)
+
     vae.requires_grad_(False)
-    unet.requires_grad_(False)
+    if args.train_base:
+        unet.train()
+        # we unfreeze only the decoder
+        for n, p in unet.named_parameters():
+            if not is_in_decoder(n):
+                p.requires_grad_(False)
+    else:
+        unet.requires_grad_(False)
     text_encoder.requires_grad_(False)
     controlnet.train()
 
@@ -833,6 +936,8 @@ def main(args):
 
     if args.gradient_checkpointing:
         controlnet.enable_gradient_checkpointing()
+        if args.train_base:
+            unet.enable_gradient_checkpointing()
 
     # Check that all trainable models are in full precision
     low_precision_error_string = (
@@ -843,6 +948,11 @@ def main(args):
     if accelerator.unwrap_model(controlnet).dtype != torch.float32:
         raise ValueError(
             f"Controlnet loaded as datatype {accelerator.unwrap_model(controlnet).dtype}. {low_precision_error_string}"
+        )
+
+    if args.train_base and accelerator.unwrap_model(unet).dtype != torch.float32:
+        raise ValueError(
+            f"Base model loaded as datatype {accelerator.unwrap_model(unet).dtype}. {low_precision_error_string}"
         )
 
     # Enable TF32 for faster training on Ampere GPUs,
@@ -860,16 +970,19 @@ def main(args):
         try:
             import bitsandbytes as bnb
         except ImportError:
-            raise ImportError(
-                "To use 8-bit Adam, please install the bitsandbytes library: `pip install bitsandbytes`."
-            )
+            raise ImportError("To use 8-bit Adam, please install the bitsandbytes library: `pip install bitsandbytes`.")
 
         optimizer_class = bnb.optim.AdamW8bit
     else:
         optimizer_class = torch.optim.AdamW
 
     # Optimizer creation
-    params_to_optimize = controlnet.parameters()
+    if args.train_base:
+        params_unet_decoder = (p for n, p in unet.named_parameters() if is_in_decoder(n))
+        params_to_optimize = chain(controlnet.parameters(), params_unet_decoder)
+    else:
+        params_to_optimize = controlnet.parameters()
+
     optimizer = optimizer_class(
         params_to_optimize,
         lr=args.learning_rate,
@@ -908,6 +1021,8 @@ def main(args):
     controlnet, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
         controlnet, optimizer, train_dataloader, lr_scheduler
     )
+    if args.train_base:
+        unet = accelerator.prepare(unet)
 
     # For mixed precision training we cast the text_encoder and vae weights to half-precision
     # as these models are only used for inference, keeping weights in full precision is not required.
@@ -919,7 +1034,8 @@ def main(args):
 
     # Move vae, unet and text_encoder to device and cast to weight_dtype
     vae.to(accelerator.device, dtype=weight_dtype)
-    unet.to(accelerator.device, dtype=weight_dtype)
+    if not args.train_base:
+        unet.to(accelerator.device, dtype=weight_dtype)
     text_encoder.to(accelerator.device, dtype=weight_dtype)
 
     # We need to recalculate our total training steps as the size of the training dataloader may have changed.
@@ -1019,17 +1135,19 @@ def main(args):
                     encoder_hidden_states=encoder_hidden_states,
                     controlnet_cond=controlnet_image,
                     return_dict=False,
+                    compute_down_block_res_samples=not args.only_mid_control,
                 )
+                mid_block_res_sample = mid_block_res_sample.to(dtype=weight_dtype)
+                if not args.only_mid_control:
+                    down_block_res_samples = [sample.to(dtype=weight_dtype) for sample in down_block_res_samples]
 
                 # Predict the noise residual
                 model_pred = unet(
                     noisy_latents,
                     timesteps,
                     encoder_hidden_states=encoder_hidden_states,
-                    down_block_additional_residuals=[
-                        sample.to(dtype=weight_dtype) for sample in down_block_res_samples
-                    ],
-                    mid_block_additional_residual=mid_block_res_sample.to(dtype=weight_dtype),
+                    down_block_additional_residuals=down_block_res_samples,
+                    mid_block_additional_residual=mid_block_res_sample,
                 ).sample
 
                 # Get the target for loss depending on the prediction type
@@ -1043,7 +1161,11 @@ def main(args):
 
                 accelerator.backward(loss)
                 if accelerator.sync_gradients:
-                    params_to_clip = controlnet.parameters()
+                    if args.train_base:
+                        params_unet_decoder = (p for n, p in unet.named_parameters() if is_in_decoder(n))
+                        params_to_clip = chain(controlnet.parameters(), unet.parameters())
+                    else:
+                        params_to_clip = controlnet.parameters()
                     accelerator.clip_grad_norm_(params_to_clip, args.max_grad_norm)
                 optimizer.step()
                 lr_scheduler.step()
@@ -1104,7 +1226,14 @@ def main(args):
     accelerator.wait_for_everyone()
     if accelerator.is_main_process:
         controlnet = accelerator.unwrap_model(controlnet)
-        controlnet.save_pretrained(args.output_dir)
+        if args.train_base:
+            unet_path = os.path.join(args.output_dir, args.output_subdir_unet)
+            controlnet_path = os.path.join(args.output_dir, args.output_subdir_controlnet)
+            unet = accelerator.unwrap_model(unet)
+            unet.save_pretrained(unet_path)
+            controlnet.save_pretrained(controlnet_path)
+        else:
+            controlnet.save_pretrained(args.output_dir)
 
         if args.push_to_hub:
             save_model_card(
