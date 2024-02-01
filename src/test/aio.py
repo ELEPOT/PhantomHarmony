@@ -4,6 +4,9 @@ from riffusion.spectrogram_image_converter import SpectrogramImageConverter
 from pydub import AudioSegment
 from PIL import Image
 import sys
+import subprocess
+
+cmd = "spleeter separate "+
 
 if str(sys.argv[1]) == "m2s":
     params = SpectrogramParams()
