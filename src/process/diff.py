@@ -6,7 +6,7 @@ img = cv2.imread('/home/leo/blues.png')
 controlnet_model_path = "/mnt/d/models/diffusion_pytorch_model.safetensors"
 #main_model_path = "/mnt/d/models/riffusion-model-v1.safetensors"
 #url = "https://huggingface.co/leo1008/test/main/diffusion_pytorch_model.safetensors"  # can also be a local path
-controlnet = ControlNetModel.from_pretrained("leo1008/test")
+controlnet = ControlNetModel.from_pretrained("leo1008/test", torch_dtype=torch.float16)
 
 pipe = StableDiffusionControlNetPipeline.from_pretrained("riffusion/riffusion-model-v1", controlnet=controlnet, torch_dtype=torch.float16)
 
