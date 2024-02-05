@@ -9,7 +9,7 @@ einops
 pyyaml
 numpy
 pandas
-sklearn
+scikit-learn
 pydub
 opencv-python
 -r dependencies/diffusers/examples/controlnet/requirements.txt
