@@ -11,6 +11,7 @@ numpy
 pandas
 sklearn
 pydub
+opencv-python
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl
