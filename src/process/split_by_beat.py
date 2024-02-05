@@ -19,14 +19,13 @@ start_time = time.time()
 
 def beat(beat_path, vocals_path, accompaniment_path, out_path):
     track_id = Path(beat_path).stem
+    print(track_id)
 
-    if os.path.exists(os.path.join(out_path, "vocals", "%s_%05d.mp3" % (track_id, 1))):
+    if os.path.exists(out_path / "vocals" / f"{track_id}_00001.mp3"):
         print("skip")
         return
 
-    y, sr = torchaudio.load(
-        beat_path,
-    )
+    y, sr = torchaudio.load(beat_path)
     v_y, sr = torchaudio.load(vocals_path)
     a_y, sr = torchaudio.load(accompaniment_path)
 
@@ -38,15 +37,17 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
 
     # split the vocals file, accompaniment file by section and save to output directory
 
-    os.makedirs(os.path.join(out_path, "vocals"), exist_ok=True)
-    os.makedirs(os.path.join(out_path, "accompaniment"), exist_ok=True)
+    os.makedirs(out_path / "vocals", exist_ok=True)
+    os.makedirs(out_path / "accompaniment", exist_ok=True)
 
     for idx in range(beat_per_section, len(beat_samples), beat_per_section):
         beat_sample_start = beat_samples[idx - beat_per_section]
         beat_sample_end = beat_samples[idx]
 
-        v_path = os.path.join(out_path, "vocals", "%s_%05d.mp3" % (track_id, idx // 8))
-        a_path = os.path.join(out_path, "accompaniment", "%s_%05d.mp3" % (track_id, idx // 8))
+        filename = f"{track_id}_{idx // 8 : 05d}.mp3"
+        v_path = out_path / "vocals" / filename
+        a_path = out_path / "accompaniment" / filename
+
         if not os.path.exists(v_path):
             torchaudio.save(
                 v_path,
@@ -64,7 +65,7 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
 
 for f in dirs:
     beat(
-        DATASET_DIR / "spotify_114k" / f + ".mp3",
+        DATASET_DIR / "spotify_114k" / (f + ".mp3"),
         input_dir / f / "vocals.mp3",
         input_dir / f / "accompaniment.mp3",
         out_dir,

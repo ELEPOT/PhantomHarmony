@@ -27,11 +27,11 @@ with open(split_sampled_csv_dir) as f:
     reader = csv.DictReader(f)
 
     for row in reader:
-        v_path = v_input_dir / row["music_name"] + ".mp3"
-        a_path = a_input_dir / row["music_name"] + ".mp3"
+        v_path = v_input_dir / (row["music_name"] + ".mp3")
+        a_path = a_input_dir / (row["music_name"] + ".mp3")
 
-        v_out_path = v_spec_output_dir / row["music_name"] + ".png"
-        a_out_path = v_spec_output_dir / row["music_name"] + ".png"
+        v_out_path = v_spec_output_dir / (row["music_name"] + ".png")
+        a_out_path = v_spec_output_dir / (row["music_name"] + ".png")
 
         converter.spectrogram_image_from_audio(AudioSegment.from_mp3(v_path)).save(v_out_path)
         converter.spectrogram_image_from_audio(AudioSegment.from_mp3(a_path)).save(a_out_path)
