@@ -7,23 +7,24 @@ import sys
 import subprocess
 from colorama import *
 
-# cmd = "spleeter separate "+
+in_path = str(sys.argv[2])
+out_path = str(sys.argv[3])
 
 try:
     if str(sys.argv[1]) == "m2s":
         params = SpectrogramParams()
         converter = SpectrogramImageConverter(params)
 
-        seg = AudioSegment.from_file(str(sys.argv[2]))
+        seg = AudioSegment.from_file(in_path)
         seg = seg.set_frame_rate(44100)
-        converter.spectrogram_image_from_audio(seg).save(str(sys.argv[3]))
+        converter.spectrogram_image_from_audio(seg).save(out_path)
 
     elif str(sys.argv[1]) == "s2m":
         params = SpectrogramParams()
         converter = SpectrogramImageConverter(params)
 
-        img = Image.open(str(sys.argv[2]))
-        converter.audio_from_spectrogram_image(img).export(str(sys.argv[3]))
+        img = Image.open(in_path)
+        converter.audio_from_spectrogram_image(img).export(out_path)
 
 except:
     help_text = """
