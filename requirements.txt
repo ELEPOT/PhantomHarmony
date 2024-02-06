@@ -12,6 +12,7 @@ pandas
 scikit-learn
 pydub
 opencv-python
+omegaconf
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl
