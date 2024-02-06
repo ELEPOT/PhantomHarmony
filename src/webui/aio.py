@@ -7,9 +7,8 @@ import sys
 import subprocess
 from colorama import *
 
-in_path = str(sys.argv[2])
-out_path = str(sys.argv[3])
-def run(mode,in_path,out_path):
+
+def run(mode, in_path, out_path):
     if mode == "m2s":
         params = SpectrogramParams()
         converter = SpectrogramImageConverter(params)
@@ -24,6 +23,16 @@ def run(mode,in_path,out_path):
 
         img = Image.open(in_path)
         converter.audio_from_spectrogram_image(img).export(out_path)
+
+
+if __name__ == "__main__":
+    mode = str(sys.argv[1])
+    in_path = str(sys.argv[2])
+    out_path = str(sys.argv[3])
+
+    run(mode, in_path, out_path)
+
+
 '''
 try:
     if str(sys.argv[1]) == "m2s":

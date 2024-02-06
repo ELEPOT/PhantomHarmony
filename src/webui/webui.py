@@ -1,6 +1,11 @@
+import paths
+
 import gradio as gr
-import aio.py
-import diff.py
+from aio import run
+from process.diff import diff
+import os
+
+
 def zip_files(text, files):
     in_put = os.path.split(files[0])
     """
@@ -10,13 +15,13 @@ def zip_files(text, files):
     """
     if files == None or text == "":
         with open("error.txt", "w") as f:
-            f.write( "please write command here.And upload music file to next block. \n")
-        return "writeSomething.txt","please write command here.And upload music file to next block. \n"+text
+            f.write("please write command here.And upload music file to next block. \n")
+        return "writeSomething.txt", "please write command here.And upload music file to next block. \n" + text
     else:
-        run("m2s",files[0],in_put[0]+"unf1.png")
-        diff(in_put[0]+"unf2.png",in_put[0]+"unf1.png")
-        run("s2m",in_put[0]+"unf1.png",in_put[0]+"finish.mp3")
-        return "finish.mp3","SUCCESSFUL!!!"+text
+        run("m2s", files[0], in_put[0] + "unf1.png")
+        diff(in_put[0] + "unf2.png", in_put[0] + "unf1.png")
+        run("s2m", in_put[0] + "unf1.png", in_put[0] + "finish.mp3")
+        return "finish.mp3", "SUCCESSFUL!!!" + text
 
 
 demo = gr.Interface(
@@ -25,7 +30,7 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="please write command here.And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["text", ".json", ".csv"]),
     ],
-    outputs=["file","text"]
+    outputs=["file", "text"],
 )
 
 if __name__ == "__main__":
