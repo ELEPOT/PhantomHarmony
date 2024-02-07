@@ -2,3 +2,4 @@ dataset_dir: "/mnt/d/data/dataset" # Where to save all scraped and processed dat
 cache_dir: "/mnt/d/data/cache" # Where to save huggingface downloading caches
 validation_dir: "/mnt/d/data/tests" # Where to save all spectrogram for validating the model
 output_dir: "/mnt/g/data/output" # Where to output model checkpoint and logs
+nextcloud_model_dir: "/mnt/g/nextcloud_data/models"
