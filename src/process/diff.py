@@ -8,7 +8,7 @@ import torch
 from PIL import Image
 import os
 
-torch.set_default_device("cuda")
+#torch.set_default_device("cuda")
 
 
 def load_model(root_model_dir):
