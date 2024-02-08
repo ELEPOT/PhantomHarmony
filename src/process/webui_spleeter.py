@@ -4,8 +4,10 @@ import os
 from spleeter.audio import Codec
 from spleeter.separator import Separator
 
-from paths import DATASET_DIR
+from paths import DATASET_DIR, VENV_BIN_DIR
 
-separator = Separator("spleeter:2stems")
-def separate_to_file(input_path ,output_path)
-    separator.separate_to_file(input_path, output_path, codec=Codec.MP3)
+import subprocess
+
+
+def separate_to_file(input_path, output_path):
+    subprocess.call((VENV_BIN_DIR / "spleeter", "separate", input_path, "-o", output_path))

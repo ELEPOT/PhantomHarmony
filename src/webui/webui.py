@@ -8,7 +8,7 @@ import os
 from paths import NEXTCLOUD_MODEL_DIR
 
 
-pipe = load_model(NEXTCLOUD_MODEL_DIR / "first-7500")
+pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
 
 
 def zip_files(text, files):
@@ -19,11 +19,11 @@ def zip_files(text, files):
             f.write("please write command here. And upload music file to next block. \n")
         return "error.txt", "please write command here. And upload music file to next block. \n" + text
     else:
-        separate_to_file(files[0].name,in_put[0])
-        aio("m2s", in_put[0] + "/vocals.wav", in_put[0] + "/unf1.png")
+        separate_to_file(files[0].name, in_put[0])
+        aio("m2s", in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.mp3", in_put[0] + "/unf1.png")
         run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text)
         aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
-        return in_put[0] + "/finish.mp3", "SUCCESSFUL!!!" + text
+        return in_put[0] + "/finish.mp3", in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.mp3", "SUCCESSFUL!!!" + text
 
 
 demo = gr.Interface(
@@ -32,7 +32,7 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
     ],
-    outputs=["file", "text"],
+    outputs=["file", "file", "text"],
 )
 
 if __name__ == "__main__":

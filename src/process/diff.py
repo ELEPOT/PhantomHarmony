@@ -8,7 +8,7 @@ import torch
 from PIL import Image
 import os
 
-#torch.set_default_device("cuda")
+torch.set_default_device("cuda")
 
 
 def load_model(root_model_dir):
@@ -38,6 +38,7 @@ def load_model(root_model_dir):
 
 def run_pipeline(pipe, input_path, output_path, text):
     img = Image.open(input_path)
+    img = img.crop((0, 0, 512, 512))
 
     torch.manual_seed(0)
     generator = torch.random.manual_seed(0)

@@ -54,6 +54,8 @@ from diffusers.utils.import_utils import is_xformers_available
 
 # --- Added by ELEPOT ---
 
+import paths
+
 from riffusion.spectrogram_params import SpectrogramParams
 from riffusion.spectrogram_image_converter import SpectrogramImageConverter
 
