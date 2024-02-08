@@ -58,7 +58,7 @@ class OnnxRuntimeModel:
 
     def __call__(self, **kwargs):
         inputs = {k: np.array(v) for k, v in kwargs.items()}
-        return self.model.run(None, inputs)
+        return self.model.aio(None, inputs)
 
     @staticmethod
     def load_model(path: Union[str, Path], provider=None, sess_options=None):

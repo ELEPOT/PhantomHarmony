@@ -14,7 +14,7 @@ logger = Logger("Trimmer")
 
 
 # Remove the warnings from tensorflow
-environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 # Ignore warnings
 filterwarnings("ignore")
 
@@ -29,13 +29,10 @@ class Trim:
     the music timestamps. Once we have the stamps, we can just
     trim the music part from the song and keep the name same.
     """
+
     def __init__(self, filename):
         self.filename = filename
-        self.segmenter = Segmenter(
-                                vad_engine='smn',
-                                detect_gender=False,
-                                ffmpeg='ffmpeg'
-                            )
+        self.segmenter = Segmenter(vad_engine="smn", detect_gender=False, ffmpeg="ffmpeg")
         self._find_music()
         self._trim()
 
@@ -51,9 +48,7 @@ class Trim:
         segmentation = [stamp for stamp in segmentation if stamp[0] == "music"]
 
         if not len(segmentation):
-            logger.critical(
-                "Could not find music in the file. Try disabling trimming!"
-            )
+            logger.critical("Could not find music in the file. Try disabling trimming!")
 
         # We want to consider just the last time stamp tuple,
         # Mostly there are just one time stamp with music, but sometimes
@@ -75,17 +70,9 @@ class Trim:
         logger.info("Trimming the song to the found time stamps")
 
         # Create the temp file name
-        temp_name = "{}_temp.{}".format(
-                                    self.filename,
-                                    self.filename.split(".")[-1]
-                                )
+        temp_name = "{}_temp.{}".format(self.filename, self.filename.split(".")[-1])
 
-        ffmpeg.input(self.filename).output(
-                                        temp_name,
-                                        loglevel="panic",
-                                        ss=self.start_time,
-                                        to=self.end_time
-                    ).run()
+        ffmpeg.input(self.filename).output(temp_name, loglevel="panic", ss=self.start_time, to=self.end_time).aio()
 
         # Once that's done, remove the original file
         remove(self.filename)

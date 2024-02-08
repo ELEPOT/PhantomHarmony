@@ -24,4 +24,5 @@ VENV_BIN_DIR = PROJECT_DIR / "venv/bin"
 SRC_DIR = PROJECT_DIR / "src"
 
 
+sys.path.append(str(PROJECT_DIR))
 sys.path.append(str(SRC_DIR))

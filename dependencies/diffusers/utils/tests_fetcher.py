@@ -384,7 +384,7 @@ def get_new_doctest_files(repo, base_commit, branching_commit) -> List[str]:
     Returns:
         `List[str]`: List of files that were removed from "utils/not_doctested.txt".
     """
-    for diff_obj in branching_commit.diff(base_commit):
+    for diff_obj in branching_commit.run_pipeline(base_commit):
         # Ignores all but the "utils/not_doctested.txt" file.
         if diff_obj.a_path != "utils/not_doctested.txt":
             continue
@@ -720,9 +720,7 @@ def init_test_examples_dependencies() -> Tuple[Dict[str, List[str]], List[str]]:
                 str(e.relative_to(PATH_TO_REPO)) for e in examples if e.name in content
             ]
             # Also map the test files to themselves.
-            test_example_deps[str(test_file.relative_to(PATH_TO_REPO))].append(
-                str(test_file.relative_to(PATH_TO_REPO))
-            )
+            test_example_deps[str(test_file.relative_to(PATH_TO_REPO))].append(str(test_file.relative_to(PATH_TO_REPO)))
     return test_example_deps, all_examples
 
 

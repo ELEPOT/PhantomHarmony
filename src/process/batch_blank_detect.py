@@ -35,12 +35,12 @@ for filename in v_files:
     v_path = os.path.join(v_input_dir, filename)
     a_path = os.path.join(a_input_dir, filename)
 
-    data["music_name"].append(filename.split(".")[0])
-
     v_blank = detect_blank_music(v_path)
     a_blank = detect_blank_music(v_path)
 
     if v_blank != -1 and a_blank != -1:
+        data["music_name"].append(filename.split(".")[0])
+
         data["vocals_blank"].append(v_blank)
         data["accompaniment_blank"].append(a_blank)
 

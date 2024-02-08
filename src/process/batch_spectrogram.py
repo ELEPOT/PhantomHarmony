@@ -2,8 +2,8 @@ import os
 
 from paths import DATASET_DIR
 
-from riffusion.spectrogram_params import SpectrogramParams
-from riffusion.spectrogram_image_converter import SpectrogramImageConverter
+from src.riffusion.spectrogram_params import SpectrogramParams
+from src.riffusion.spectrogram_image_converter import SpectrogramImageConverter
 
 import csv
 from pydub import AudioSegment

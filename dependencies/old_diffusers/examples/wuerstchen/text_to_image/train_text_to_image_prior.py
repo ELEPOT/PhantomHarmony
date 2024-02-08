@@ -122,8 +122,8 @@ These are the key hyperparameters used during training:
     wandb_info = ""
     if is_wandb_available():
         wandb_run_url = None
-        if wandb.run is not None:
-            wandb_run_url = wandb.run.url
+        if wandb.aio is not None:
+            wandb_run_url = wandb.aio.url
 
     if wandb_run_url is not None:
         wandb_info = f"""
@@ -483,9 +483,7 @@ def main():
 
     # Load scheduler, effnet, tokenizer, clip_model
     noise_scheduler = DDPMWuerstchenScheduler()
-    tokenizer = PreTrainedTokenizerFast.from_pretrained(
-        args.pretrained_prior_model_name_or_path, subfolder="tokenizer"
-    )
+    tokenizer = PreTrainedTokenizerFast.from_pretrained(args.pretrained_prior_model_name_or_path, subfolder="tokenizer")
 
     def deepspeed_zero_init_disabled_context_manager():
         """

@@ -36,7 +36,7 @@ def main():
 
     # Run
     service = args.func(args)
-    service.run()
+    service.aio()
 
 
 if __name__ == "__main__":

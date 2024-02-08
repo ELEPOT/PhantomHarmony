@@ -123,8 +123,8 @@ These are the key hyperparameters used during training:
     wandb_info = ""
     if is_wandb_available():
         wandb_run_url = None
-        if wandb.run is not None:
-            wandb_run_url = wandb.run.url
+        if wandb.aio is not None:
+            wandb_run_url = wandb.aio.url
 
     if wandb_run_url is not None:
         wandb_info = f"""
@@ -569,9 +569,7 @@ def main():
         text_encoder = CLIPTextModel.from_pretrained(
             args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision
         )
-        vae = AutoencoderKL.from_pretrained(
-            args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision
-        )
+        vae = AutoencoderKL.from_pretrained(args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision)
 
     unet = UNet2DConditionModel.from_pretrained(
         args.pretrained_model_name_or_path, subfolder="unet", revision=args.non_ema_revision

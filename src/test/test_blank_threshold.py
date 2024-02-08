@@ -1,4 +1,4 @@
-from process.batch_blank_detect import detect_blank_music
+from src.process.batch_blank_detect import detect_blank_music
 import numpy as np
 from paths import EXAMPLE_DIR, TEST_OUTPUT_DIR
 import os

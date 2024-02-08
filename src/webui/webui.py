@@ -1,9 +1,13 @@
 import paths
 
 import gradio as gr
-from aio import run
-from process.diff import diff
+from src.test.aio import aio
+from src.process.diff import run_pipeline, load_model
 import os
+from paths import NEXTCLOUD_MODEL_DIR
+
+
+pipe = load_model(NEXTCLOUD_MODEL_DIR / "first-7500")
 
 
 def zip_files(text, files):
@@ -14,9 +18,9 @@ def zip_files(text, files):
             f.write("please write command here. And upload music file to next block. \n")
         return "writeSomething.txt", "please write command here. And upload music file to next block. \n" + text
     else:
-        run("m2s", files[0].name, in_put[0] + "/unf1.png")
-        diff(in_put[0] + "/unf2.png", in_put[0] + "/unf1.png", text)
-        run("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
+        aio("m2s", files[0].name, in_put[0] + "/unf1.png")
+        run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text)
+        aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
         return in_put[0] + "/finish.mp3", "SUCCESSFUL!!!" + text
 
 
