@@ -3,6 +3,7 @@ import paths
 import gradio as gr
 from src.test.aio import aio
 from src.process.diff import run_pipeline, load_model
+from src.process.webui_spleeter import separate_to_file
 import os
 from paths import NEXTCLOUD_MODEL_DIR
 
@@ -16,9 +17,10 @@ def zip_files(text, files):
     if files == None or text == "":
         with open("error.txt", "w") as f:
             f.write("please write command here. And upload music file to next block. \n")
-        return "writeSomething.txt", "please write command here. And upload music file to next block. \n" + text
+        return "error.txt", "please write command here. And upload music file to next block. \n" + text
     else:
-        aio("m2s", files[0].name, in_put[0] + "/unf1.png")
+        separate_to_file(files[0].name,in_put[0])
+        aio("m2s", in_put[0] + "/vocals.wav", in_put[0] + "/unf1.png")
         run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text)
         aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
         return in_put[0] + "/finish.mp3", "SUCCESSFUL!!!" + text
