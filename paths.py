@@ -14,7 +14,9 @@ DATASET_DIR = Path(config["dataset_dir"])
 CACHE_DIR = Path(config["cache_dir"])
 VALIDATION_DIR = Path(config["validation_dir"])
 OUTPUT_DIR = Path(config["output_dir"])
+
 NEXTCLOUD_MODEL_DIR = Path(config["nextcloud_model_dir"])
+NEXTCLOUD_RIFFUSION_DIR = NEXTCLOUD_MODEL_DIR.parent / "riffusion"
 
 TEST_OUTPUT_DIR = PROJECT_DIR / "test_output"
 EXAMPLE_DIR = PROJECT_DIR / "example"

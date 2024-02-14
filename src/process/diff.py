@@ -1,4 +1,4 @@
-from paths import NEXTCLOUD_MODEL_DIR
+from paths import NEXTCLOUD_MODEL_DIR, NEXTCLOUD_RIFFUSION_DIR
 
 from diffusers import *
 from transformers import *
@@ -16,18 +16,19 @@ def load_model(root_model_dir):
     controlnet_model_path = root_model_dir / "controlnet"
 
     if os.path.isdir(root_model_dir / "unet"):
+        print("using self unet")
         main_model_path = root_model_dir / "unet"
     else:
-        main_model_path = NEXTCLOUD_MODEL_DIR / "riffusion/unet"
+        main_model_path = NEXTCLOUD_RIFFUSION_DIR / "unet"
 
     controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
     main_model = UNet2DConditionModel.from_pretrained(main_model_path)
-    vae = AutoencoderKL.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/vae")
-    text_encoder = CLIPTextModel.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/text_encoder")
-    tokenizer = CLIPTokenizer.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/tokenizer")
-    scheduler = PNDMScheduler.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/scheduler")
-    safety_checker = StableDiffusionSafetyChecker.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/safety_checker")
-    feature_extractor = CLIPImageProcessor.from_pretrained(NEXTCLOUD_MODEL_DIR / "riffusion/feature_extractor")
+    vae = AutoencoderKL.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "vae")
+    text_encoder = CLIPTextModel.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "text_encoder")
+    tokenizer = CLIPTokenizer.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "tokenizer")
+    scheduler = PNDMScheduler.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "scheduler")
+    safety_checker = StableDiffusionSafetyChecker.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "safety_checker")
+    feature_extractor = CLIPImageProcessor.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "feature_extractor")
 
     pipe = StableDiffusionControlNetPipeline(
         vae, text_encoder, tokenizer, main_model, controlnet, scheduler, safety_checker, feature_extractor
