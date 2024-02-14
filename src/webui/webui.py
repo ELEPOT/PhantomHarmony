@@ -8,10 +8,11 @@ import os
 from paths import NEXTCLOUD_MODEL_DIR
 
 
-pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
+#pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
+mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 
-
-def zip_files(text, files, spl):
+def zip_files(text, files, spl, mo):
+    pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
     in_put = os.path.split(files[0].name)
 
     if files == None or text == "":
@@ -38,6 +39,9 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
+        gr.Dropdown(
+            mods, label="models", info="Which models do you want to use?"
+        ),
     ],
     outputs=["file", "text"],
 )
