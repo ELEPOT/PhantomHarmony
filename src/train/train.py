@@ -21,6 +21,7 @@ command += [
     f"--output_dir={OUTPUT_DIR}/{run_name}/models",
     f"--cache_dir={CACHE_DIR}",
     f"--logging_dir={OUTPUT_DIR}/{run_name}",
+    "--report_to=wandb",
     f"--resume_from_checkpoint=latest",
     f"--resolution=512",
     f"--learning_rate=1e-5",

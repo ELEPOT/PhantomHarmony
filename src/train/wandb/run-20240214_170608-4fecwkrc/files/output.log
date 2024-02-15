@@ -1,0 +1,1169 @@
+02/14/2024 17:06:09 - INFO - __main__ - ***** Running training *****
+02/14/2024 17:06:09 - INFO - __main__ -   Num examples = 244442
+02/14/2024 17:06:09 - INFO - __main__ -   Num batches each epoch = 61111
+02/14/2024 17:06:09 - INFO - __main__ -   Num Epochs = 1
+02/14/2024 17:06:09 - INFO - __main__ -   Instantaneous batch size per device = 4
+02/14/2024 17:06:09 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 4
+02/14/2024 17:06:09 - INFO - __main__ -   Gradient Accumulation steps = 1
+02/14/2024 17:06:09 - INFO - __main__ -   Total optimization steps = 61111
+Steps:   0%|          | 0/61111 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   0%|          | 100/61111 [02:33<15:04:01,  1.12it/s, loss=0.0591, lr=1e-5]02/14/2024 17:08:43 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 548.05it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   0%|          | 200/61111 [04:30<14:33:54,  1.16it/s, loss=0.0971, lr=1e-5]02/14/2024 17:10:39 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 4044.00it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   0%|          | 300/61111 [06:27<15:15:42,  1.11it/s, loss=0.168, lr=1e-5]02/14/2024 17:12:37 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3669.56it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|          | 400/61111 [08:22<14:08:45,  1.19it/s, loss=0.145, lr=1e-5]02/14/2024 17:14:32 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3551.99it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|          | 500/61111 [10:13<14:03:30,  1.20it/s, loss=0.0993, lr=1e-5]02/14/2024 17:16:22 - INFO - accelerate.accelerator - Saving current state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500
+Configuration saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/controlnet/config.json
+Model weights saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/controlnet/diffusion_pytorch_model.safetensors
+02/14/2024 17:16:39 - INFO - accelerate.checkpointing - Optimizer state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/optimizer.bin
+02/14/2024 17:16:39 - INFO - accelerate.checkpointing - Scheduler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/scheduler.bin
+02/14/2024 17:16:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/sampler.bin
+02/14/2024 17:16:39 - INFO - accelerate.checkpointing - Gradient scaler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/scaler.pt
+02/14/2024 17:16:39 - INFO - accelerate.checkpointing - Random states saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500/random_states_0.pkl
+02/14/2024 17:16:39 - INFO - __main__ - Saved state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-500
+02/14/2024 17:16:39 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3810.12it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|          | 600/61111 [12:21<13:53:49,  1.21it/s, loss=0.101, lr=1e-5]02/14/2024 17:18:31 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 2575.30it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|          | 700/61111 [14:12<14:13:01,  1.18it/s, loss=0.0615, lr=1e-5]02/14/2024 17:20:22 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 2744.66it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|▏         | 800/61111 [16:03<13:49:05,  1.21it/s, loss=0.291, lr=1e-5]02/14/2024 17:22:12 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3728.82it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   1%|▏         | 900/61111 [17:51<13:36:51,  1.23it/s, loss=0.118, lr=1e-5]02/14/2024 17:24:01 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3691.09it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1000/61111 [19:41<13:46:49,  1.21it/s, loss=0.194, lr=1e-5]02/14/2024 17:25:51 - INFO - accelerate.accelerator - Saving current state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000
+Configuration saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/controlnet/config.json
+Model weights saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/controlnet/diffusion_pytorch_model.safetensors
+02/14/2024 17:26:08 - INFO - accelerate.checkpointing - Optimizer state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/optimizer.bin
+02/14/2024 17:26:08 - INFO - accelerate.checkpointing - Scheduler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/scheduler.bin
+02/14/2024 17:26:08 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/sampler.bin
+02/14/2024 17:26:09 - INFO - accelerate.checkpointing - Gradient scaler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/scaler.pt
+02/14/2024 17:26:09 - INFO - accelerate.checkpointing - Random states saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000/random_states_0.pkl
+02/14/2024 17:26:09 - INFO - __main__ - Saved state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1000
+02/14/2024 17:26:09 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3622.02it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1100/61111 [21:48<13:31:09,  1.23it/s, loss=0.146, lr=1e-5]02/14/2024 17:27:57 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3866.91it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1200/61111 [23:36<13:14:24,  1.26it/s, loss=0.0133, lr=1e-5]02/14/2024 17:29:45 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3571.14it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1300/61111 [25:23<13:23:19,  1.24it/s, loss=0.0655, lr=1e-5]02/14/2024 17:31:33 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3402.17it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1400/61111 [27:11<13:11:36,  1.26it/s, loss=0.19, lr=1e-5]02/14/2024 17:33:21 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3464.94it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|▏         | 1500/61111 [28:59<13:25:13,  1.23it/s, loss=0.0786, lr=1e-5]02/14/2024 17:35:09 - INFO - accelerate.accelerator - Saving current state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500
+Configuration saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/controlnet/config.json
+Model weights saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/controlnet/diffusion_pytorch_model.safetensors
+02/14/2024 17:35:36 - INFO - accelerate.checkpointing - Optimizer state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/optimizer.bin
+02/14/2024 17:35:36 - INFO - accelerate.checkpointing - Scheduler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/scheduler.bin
+02/14/2024 17:35:36 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/sampler.bin
+02/14/2024 17:35:36 - INFO - accelerate.checkpointing - Gradient scaler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/scaler.pt
+02/14/2024 17:35:37 - INFO - accelerate.checkpointing - Random states saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500/random_states_0.pkl
+02/14/2024 17:35:37 - INFO - __main__ - Saved state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-1500
+02/14/2024 17:35:37 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3176.70it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 1600/61111 [31:15<13:29:07,  1.23it/s, loss=0.0107, lr=1e-5]02/14/2024 17:37:24 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3825.76it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 1700/61111 [33:03<13:07:58,  1.26it/s, loss=0.198, lr=1e-5]02/14/2024 17:39:12 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 4104.02it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 1800/61111 [34:50<13:02:36,  1.26it/s, loss=0.0711, lr=1e-5]02/14/2024 17:41:00 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3935.23it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 1900/61111 [36:37<13:11:23,  1.25it/s, loss=0.147, lr=1e-5]02/14/2024 17:42:47 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3739.35it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 2000/61111 [38:24<12:40:42,  1.30it/s, loss=0.0995, lr=1e-5]02/14/2024 17:44:34 - INFO - accelerate.accelerator - Saving current state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000
+Configuration saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/controlnet/config.json
+Model weights saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/controlnet/diffusion_pytorch_model.safetensors
+02/14/2024 17:44:47 - INFO - accelerate.checkpointing - Optimizer state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/optimizer.bin
+02/14/2024 17:44:47 - INFO - accelerate.checkpointing - Scheduler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/scheduler.bin
+02/14/2024 17:44:47 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/sampler.bin
+02/14/2024 17:44:47 - INFO - accelerate.checkpointing - Gradient scaler state saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/scaler.pt
+02/14/2024 17:44:47 - INFO - accelerate.checkpointing - Random states saved in /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000/random_states_0.pkl
+02/14/2024 17:44:47 - INFO - __main__ - Saved state to /mnt/g/data/output/fp16_lr1e-5/models/checkpoint-2000
+02/14/2024 17:44:47 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3745.47it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|▎         | 2100/61111 [40:23<12:44:05,  1.29it/s, loss=0.177, lr=1e-5]02/14/2024 17:46:33 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3806.66it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   4%|▎         | 2200/61111 [42:08<13:13:59,  1.24it/s, loss=0.0849, lr=1e-5]02/14/2024 17:48:18 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3880.02it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   4%|▍         | 2300/61111 [43:55<13:47:06,  1.19it/s, loss=0.172, lr=1e-5]02/14/2024 17:50:05 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder', 'controlnet'} was not found in config. Values will be initialized to default values.
+                                                                     Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of riffusion/riffusion-model-v1.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of riffusion/riffusion-model-v1.
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 3686.22it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.controlnet.pipeline_controlnet.StableDiffusionControlNetPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+{'sample_max_value', 'solver_type', 'solver_order', 'prediction_type', 'solver_p', 'use_karras_sigmas', 'disable_corrector', 'predict_x0', 'thresholding', 'dynamic_thresholding_ratio', 'timestep_spacing', 'lower_order_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+

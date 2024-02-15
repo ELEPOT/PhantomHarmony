@@ -10,7 +10,7 @@ import pandas as pd
 v_input_dir = DATASET_DIR / "split_by_beat" / "vocals"
 a_input_dir = DATASET_DIR / "split_by_beat" / "accompaniment"
 
-csv_output_dir = DATASET_DIR / "blank_detect_beat.csv"
+csv_output_dir = DATASET_DIR / "split_by_beat_blank_detect.csv"
 
 v_files = [f for f in os.listdir(v_input_dir)]
 
@@ -19,7 +19,7 @@ def detect_blank_music(path, threshold=0.008):
     try:
         y, sr = torchaudio.load(path)
         blank = int(torch.count_nonzero(torch.abs(y) < threshold))
-        avg = blank / y.shape[1]
+        avg = blank / torch.numel(y)
         return avg
 
     except:
@@ -36,7 +36,7 @@ for filename in v_files:
     a_path = os.path.join(a_input_dir, filename)
 
     v_blank = detect_blank_music(v_path)
-    a_blank = detect_blank_music(v_path)
+    a_blank = detect_blank_music(a_path)
 
     if v_blank != -1 and a_blank != -1:
         data["music_name"].append(filename.split(".")[0])
@@ -45,7 +45,7 @@ for filename in v_files:
         data["accompaniment_blank"].append(a_blank)
 
     if len(data["music_name"]) % 10 == 0:
-        print(len(data["music_name"]))
+        print(len(data["music_name"]), filename.split(".")[0])
 
 
 end_time = time.time()

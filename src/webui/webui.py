@@ -2,14 +2,15 @@ import paths
 
 import gradio as gr
 from src.test.aio import aio
-from src.process.diff import run_pipeline, load_model
-from src.process.webui_spleeter import separate_to_file
+from src.test.diff import run_pipeline, load_model
+from src.webui.webui_spleeter import separate_to_file
 import os
 from paths import NEXTCLOUD_MODEL_DIR
 
 
-#pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
+# pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
 mods = os.listdir(NEXTCLOUD_MODEL_DIR)
+
 
 def zip_files(text, files, spl, mo):
     pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
@@ -39,9 +40,7 @@ demo = gr.Interface(
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
-        gr.Dropdown(
-            mods, label="models", info="Which models do you want to use?"
-        ),
+        gr.Dropdown(mods, label="models", info="Which models do you want to use?"),
     ],
     outputs=["file", "text"],
 )

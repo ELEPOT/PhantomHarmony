@@ -5,9 +5,9 @@ import pandas as pd
 
 from sklearn.utils import shuffle
 
-number_of_samples = 25
+number_of_samples = 1000
 
-blank_detect = pd.read_csv(DATASET_DIR / "blank_detect.csv")
+blank_detect = pd.read_csv(DATASET_DIR / "split_by_time_blank_detect.csv")
 blank_detect = shuffle(blank_detect)
 exclude = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
 
@@ -25,4 +25,4 @@ for index, row in blank_detect.iterrows():
 
 df = pd.DataFrame()
 df["music_name"] = sampled_music
-df.to_csv(DATASET_DIR / "validation_sample.csv")
+df.to_csv(DATASET_DIR / "validation_sample_1000.csv")
