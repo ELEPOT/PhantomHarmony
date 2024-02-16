@@ -12,7 +12,7 @@ torch.set_default_device("cuda")
 
 
 def load_model(root_model_dir=None, use_controlnet=True):
-    torch.set_default_device("cuda")
+    #torch.set_default_device("cuda")
 
     if root_model_dir != None and os.path.isdir(root_model_dir / "unet"):
         print("using self unet")
@@ -44,7 +44,7 @@ def load_model(root_model_dir=None, use_controlnet=True):
     return pipe
 
 
-def run_pipeline(pipe, input_path, output_path, text):
+def run_pipeline(pipe, input_path, output_path, text, times):
     torch.manual_seed(0)
     generator = torch.random.manual_seed(0)
 
@@ -52,7 +52,7 @@ def run_pipeline(pipe, input_path, output_path, text):
         img = Image.open(input_path)
         img = img.crop((0, 0, 512, 512))
 
-        out_image = pipe(text, num_inference_steps=20, generator=generator, image=img).images[0]
+        out_image = pipe(text, num_inference_steps=times, generator=generator, image=img).images[0]
 
     else:
         out_image = pipe(text, num_inference_steps=20, generator=generator).images[0]
