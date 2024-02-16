@@ -37,13 +37,13 @@ def load_model(root_model_dir):
     return pipe
 
 
-def run_pipeline(pipe, input_path, output_path, text):
+def run_pipeline(pipe, input_path, output_path, text, times):
     img = Image.open(input_path)
     img = img.crop((0, 0, 512, 512))
 
     torch.manual_seed(0)
     generator = torch.random.manual_seed(0)
 
-    out_image = pipe(text, num_inference_steps=20, generator=generator, image=img).images[0]
+    out_image = pipe(text, num_inference_steps=times, generator=generator, image=img).images[0]
 
     out_image.save(output_path)
