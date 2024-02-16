@@ -12,7 +12,7 @@ torch.set_default_device("cuda")
 
 
 def load_model(root_model_dir):
-    torch.set_default_device("cuda")
+    #torch.set_default_device("cuda")
     controlnet_model_path = root_model_dir / "controlnet"
 
     if os.path.isdir(root_model_dir / "unet"):
