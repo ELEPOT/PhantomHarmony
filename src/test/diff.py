@@ -12,7 +12,7 @@ torch.set_default_device("cuda")
 
 
 def load_model(root_model_dir=None, use_controlnet=True):
-    #torch.set_default_device("cuda")
+    # torch.set_default_device("cuda")
 
     if root_model_dir != None and os.path.isdir(root_model_dir / "unet"):
         print("using self unet")

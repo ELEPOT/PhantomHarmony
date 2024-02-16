@@ -31,7 +31,9 @@ if os.path.isdir(model_path) and checkpoint_name not in ("controlnet", "unet"):
         output_path = TEST_OUTPUT_DIR / "fp16_lr1e-5_train_base" / checkpoint_name / f"{music_name}.mp3"
 
         y, sr = librosa.load(input_path)
-        original_bpm = librosa.beat.tempo(y=y, sr=sr)[0]
+        tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
+        first_beat_time, last_beat_time = librosa.frames_to_time((beats[0], beats[-1]), sr=sr)
+        original_bpm = 60 / ((last_beat_time - first_beat_time) / (len(beats) - 1))
 
         genre = spotify_114k.loc[spotify_114k["track_id"] == track_id].iloc[0]["track_genre"]
 
