@@ -15,7 +15,10 @@ checkpoint_name = "checkpoint-61000"
 model_path = checkpoints / checkpoint_name
 
 if os.path.isdir(model_path) and checkpoint_name not in ("controlnet", "unet"):
+    # if True:
     pipe = load_model(model_path)
+    # pipe = load_model(use_controlnet=False)
+
     bpm_similarities = []
 
     for i, row in pd.read_csv(DATASET_DIR / "validation_sample_1000.csv").iterrows():
@@ -32,14 +35,15 @@ if os.path.isdir(model_path) and checkpoint_name not in ("controlnet", "unet"):
 
         genre = spotify_114k.loc[spotify_114k["track_id"] == track_id].iloc[0]["track_genre"]
 
-        aio("m2s", input_path, TEST_OUTPUT_DIR / "a.png")
+        aio("m2s", DATASET_DIR / "split_by_time/vocals" / f"{music_name}.mp3", TEST_OUTPUT_DIR / "a.png")
         run_pipeline(pipe, TEST_OUTPUT_DIR / "a.png", TEST_OUTPUT_DIR / "b.png", genre)
+        # run_pipeline(pipe, None, TEST_OUTPUT_DIR / "b.png", genre)
         aio("s2m", TEST_OUTPUT_DIR / "b.png", output_path)
 
         y, sr = librosa.load(output_path)
-        output_bpm = librosa.beat.tempo(y=y, sr=sr, ac_size=5)[0]
+        output_bpm = librosa.beat.tempo(y=y, sr=sr)[0]
 
-        bpm_similarity = max((output_bpm, original_bpm)) / min((output_bpm, original_bpm))
+        bpm_similarity = abs(output_bpm - original_bpm)
 
         bpm_similarities.append(bpm_similarity)
 
@@ -53,4 +57,4 @@ if os.path.isdir(model_path) and checkpoint_name not in ("controlnet", "unet"):
     df[checkpoint_name.split("-")[1]] = bpm_similarities
 
 df = df.reindex(sorted(df.columns, key=lambda s: int(s)), axis=1)
-df.to_csv(TEST_OUTPUT_DIR / "fp16_lr1e-5_train_base_beat_similarity_single_checkpoint_i_am_so_tired.csv")
+df.to_csv(TEST_OUTPUT_DIR / "fp16_lr1e-5_train_base_beat_similarity_single_checkpoint.csv")

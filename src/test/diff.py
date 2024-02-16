@@ -11,17 +11,15 @@ import os
 torch.set_default_device("cuda")
 
 
-def load_model(root_model_dir):
-    #torch.set_default_device("cuda")
-    controlnet_model_path = root_model_dir / "controlnet"
+def load_model(root_model_dir=None, use_controlnet=True):
+    torch.set_default_device("cuda")
 
-    if os.path.isdir(root_model_dir / "unet"):
+    if root_model_dir != None and os.path.isdir(root_model_dir / "unet"):
         print("using self unet")
         main_model_path = root_model_dir / "unet"
     else:
         main_model_path = NEXTCLOUD_RIFFUSION_DIR / "unet"
 
-    controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
     main_model = UNet2DConditionModel.from_pretrained(main_model_path)
     vae = AutoencoderKL.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "vae")
     text_encoder = CLIPTextModel.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "text_encoder")
@@ -30,20 +28,33 @@ def load_model(root_model_dir):
     safety_checker = StableDiffusionSafetyChecker.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "safety_checker")
     feature_extractor = CLIPImageProcessor.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "feature_extractor")
 
-    pipe = StableDiffusionControlNetPipeline(
-        vae, text_encoder, tokenizer, main_model, controlnet, scheduler, safety_checker, feature_extractor
-    ).to("cuda")
+    if use_controlnet:
+        controlnet_model_path = root_model_dir / "controlnet"
+        controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
+
+        pipe = StableDiffusionControlNetPipeline(
+            vae, text_encoder, tokenizer, main_model, controlnet, scheduler, safety_checker, feature_extractor
+        ).to("cuda")
+
+    else:
+        pipe = StableDiffusionPipeline(
+            vae, text_encoder, tokenizer, main_model, scheduler, safety_checker, feature_extractor
+        ).to("cuda")
 
     return pipe
 
 
 def run_pipeline(pipe, input_path, output_path, text):
-    img = Image.open(input_path)
-    img = img.crop((0, 0, 512, 512))
-
     torch.manual_seed(0)
     generator = torch.random.manual_seed(0)
 
-    out_image = pipe(text, num_inference_steps=20, generator=generator, image=img).images[0]
+    if isinstance(pipe, StableDiffusionControlNetPipeline):
+        img = Image.open(input_path)
+        img = img.crop((0, 0, 512, 512))
+
+        out_image = pipe(text, num_inference_steps=20, generator=generator, image=img).images[0]
+
+    else:
+        out_image = pipe(text, num_inference_steps=20, generator=generator).images[0]
 
     out_image.save(output_path)

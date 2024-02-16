@@ -6,6 +6,7 @@ import pandas as pd
 from src.test.diff import load_model, run_pipeline
 from src.test.aio import aio
 
+bv
 checkpoints = OUTPUT_DIR / "fp16_lr1e-5_train_base/models"
 spotify_114k = pd.read_csv(DATASET_DIR / "spotify_114k.csv")
 df = pd.DataFrame()
