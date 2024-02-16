@@ -55,6 +55,6 @@ def run_pipeline(pipe, input_path, output_path, text, times):
         out_image = pipe(text, num_inference_steps=times, generator=generator, image=img).images[0]
 
     else:
-        out_image = pipe(text, num_inference_steps=20, generator=generator).images[0]
+        out_image = pipe(text, num_inference_steps=times, generator=generator).images[0]
 
     out_image.save(output_path)
