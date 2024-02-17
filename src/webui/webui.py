@@ -12,7 +12,7 @@ from pydub import AudioSegment
 mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 
 
-def zip_files(text, files, spl, mo, times):
+def zip_files(mo, text, files, times, spl):
     in_put = os.path.split(files[0].name)
 
     if files == None or text == "":
@@ -49,11 +49,12 @@ def zip_files(text, files, spl, mo, times):
 demo = gr.Interface(
     zip_files,
     inputs=[
+        gr.Dropdown(mods, label="models", info="Which models do you want to use?"),
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
+        gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step = 1),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
-        gr.Dropdown(mods, label="models", info="Which models do you want to use?"),
-        gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?"),
+        
     ],
     outputs=["file", "file", "file", "text"],
 )
