@@ -18,7 +18,7 @@ def zip_files(mo, text, files, times, spl):
     if files == None or text == "":
         with open("error.txt", "w") as f:
             f.write("please write command here. And upload music file to next block. \n")
-        return "error.txt", "please write command here. And upload music file to next block. \n" + text
+        return "error.txt", "error.txt",  "error.txt","please write command here. And upload music file to next block. \n" + text
     else:
         if spl:
             separate_to_file(files[0].name, in_put[0])
@@ -33,7 +33,7 @@ def zip_files(mo, text, files, times, spl):
                 in_put[0] + "/finish.mp3",
                 f"/{in_put[1].split('.')[0]}/vocals.wav",
                 "output.wav",
-                "SUCCESSFUL!!!" + text,
+                "SUCCESSFUL!!!",
             )
         else:
             aio("m2s", files[0].name, in_put[0] + "/unf1.png")
@@ -43,7 +43,7 @@ def zip_files(mo, text, files, times, spl):
             sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
             output = sound1.overlay(sound2)
             output.export("output.wav", format="wav")
-            return in_put[0] + "/finish.mp3", files[0].name, "output.wav", "SUCCESSFUL!!!" + text
+            return in_put[0] + "/finish.mp3", files[0].name, "output.wav", "SUCCESSFUL!!!" 
 
 
 demo = gr.Interface(
