@@ -15,10 +15,10 @@ mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 def zip_files(mo, text, files, times, spl):
     in_put = os.path.split(files[0].name)
 
-    if files == None or text == "":
+    if files == None or text == "" or type(times) == "float":
         with open("error.txt", "w") as f:
-            f.write("please write command here. And upload music file to next block. \n")
-        return "error.txt", "error.txt",  "error.txt","please write command here. And upload music file to next block. \n" + text
+            f.write("please write command here. And upload music file to next block.Don't input float type in times block. \n")
+        return "error.txt", "error.txt",  "error.txt","please write command here. And upload music file to next block.Don't input float type in times block \n" 
     else:
         if spl:
             separate_to_file(files[0].name, in_put[0])
@@ -49,7 +49,7 @@ def zip_files(mo, text, files, times, spl):
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Dropdown(mods, label="models", info="Which models do you want to use?"),
+        gr.Dropdown(mods, label="models",value = "fp16_lr1e-5_train_base-61000", info="Which models do you want to use?"),
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
         gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step = 1),
