@@ -13,13 +13,16 @@ mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 
 
 def zip_files(mo, text, files, times, spl):
-    in_put = os.path.split(files[0].name)
+#    in_put = os.path.split(files[0].name)
 
-    if files == None or text == "" or type(times) == "float":
+    if files == None or text == "" or str(type(times)) != "<class 'int'>":
         with open("error.txt", "w") as f:
             f.write("please write command here. And upload music file to next block.Don't input float type in times block. \n")
         return "error.txt", "error.txt",  "error.txt","please write command here. And upload music file to next block.Don't input float type in times block \n" 
     else:
+        in_put = os.path.split(files[0].name)
+        a=os.path.join(NEXTCLOUD_MODEL_DIR, str(mo))
+        pipe = load_model(a)
         if spl:
             separate_to_file(files[0].name, in_put[0])
             aio("m2s", in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav", in_put[0] + "/unf1.png")
