@@ -13,15 +13,22 @@ mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 
 
 def zip_files(mo, text, files, times, spl):
-#    in_put = os.path.split(files[0].name)
+    #    in_put = os.path.split(files[0].name)
 
     if files == None or text == "" or str(type(times)) != "<class 'int'>":
         with open("error.txt", "w") as f:
-            f.write("please write command here. And upload music file to next block.Don't input float type in times block. \n")
-        return "error.txt", "error.txt",  "error.txt","please write command here. And upload music file to next block.Don't input float type in times block \n" 
+            f.write(
+                "please write command here. And upload music file to next block.Don't input float type in times block. \n"
+            )
+        return (
+            "error.txt",
+            "error.txt",
+            "error.txt",
+            "please write command here. And upload music file to next block.Don't input float type in times block \n",
+        )
     else:
         in_put = os.path.split(files[0].name)
-        a=os.path.join(NEXTCLOUD_MODEL_DIR, str(mo))
+        a = NEXTCLOUD_MODEL_DIR / str(mo)
         pipe = load_model(a)
         if spl:
             separate_to_file(files[0].name, in_put[0])
@@ -46,18 +53,19 @@ def zip_files(mo, text, files, times, spl):
             sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
             output = sound1.overlay(sound2)
             output.export("output.wav", format="wav")
-            return in_put[0] + "/finish.mp3", files[0].name, "output.wav", "SUCCESSFUL!!!" 
+            return in_put[0] + "/finish.mp3", files[0].name, "output.wav", "SUCCESSFUL!!!"
 
 
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Dropdown(mods, label="models",value = "fp16_lr1e-5_train_base-61000", info="Which models do you want to use?"),
+        gr.Dropdown(
+            mods, label="models", value="fp16_lr1e-5_train_base-61000", info="Which models do you want to use?"
+        ),
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
         gr.File(file_count="multiple", file_types=["audio"]),
-        gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step = 1),
+        gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step=1),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
-        
     ],
     outputs=["file", "file", "file", "text"],
 )
