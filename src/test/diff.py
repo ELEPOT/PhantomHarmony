@@ -31,7 +31,12 @@ def load_model(root_model_dir=None):
     feature_extractor = CLIPImageProcessor.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "feature_extractor")
 
     if os.path.isdir(controlnet_model_path):
-        controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
+        print("using controlnet")
+
+        if os.path.isfile(controlnet_model_path / "diffusion_pytorch_model.safetensors"):
+            controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
+        else:
+            controlnet = ControlNetModel.from_single_file(str(controlnet_model_path / "diffusion_pytorch_model.ckpt"))
 
         pipe = StableDiffusionControlNetPipeline(
             vae,
