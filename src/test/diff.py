@@ -37,7 +37,7 @@ def load_model(root_model_dir=None):
             controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
         else:
             controlnet = ControlNetModel.from_single_file(str(controlnet_model_path / "diffusion_pytorch_model.ckpt"))
-
+        print("os.path.isfile(controlnet_model_path / diffusion_pytorch_model.safetensors):")
         pipe = StableDiffusionControlNetPipeline(
             vae,
             text_encoder,
@@ -48,8 +48,10 @@ def load_model(root_model_dir=None):
             safety_checker,
             feature_extractor,
             requires_safety_checker=False,
-        ).to("cuda")
-
+        )
+        print("StableDiffusionControlNetPipeline")
+        pipe=pipe.to("cuda")
+        print("cuda \n")
     else:
         pipe = StableDiffusionPipeline(
             vae,

@@ -28,20 +28,23 @@ def zip_files(mo, text, files, times, spl):
         )
     else:
         in_put = os.path.split(files[0].name)
-        a = NEXTCLOUD_MODEL_DIR / str(mo)
-        pipe = load_model(a)
+        print("in_put")
+        pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
         if spl:
             separate_to_file(files[0].name, in_put[0])
+            print("spl finish")
             aio("m2s", in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav", in_put[0] + "/unf1.png")
+            print("aio")
             run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text, times)
+            print("pipe")
             aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
-            sound1 = AudioSegment.from_mp3(in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav")
+            sound1 = AudioSegment.from_wav(in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav")  #mp3 load wav 
             sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
             output = sound1.overlay(sound2)
             output.export("output.wav", format="wav")
             return (
                 in_put[0] + "/finish.mp3",
-                f"/{in_put[1].split('.')[0]}/vocals.wav",
+                in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav",
                 "output.wav",
                 "SUCCESSFUL!!!",
             )
@@ -53,6 +56,7 @@ def zip_files(mo, text, files, times, spl):
             sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
             output = sound1.overlay(sound2)
             output.export("output.wav", format="wav")
+            print("finish")
             return in_put[0] + "/finish.mp3", files[0].name, "output.wav", "SUCCESSFUL!!!"
 
 
@@ -71,4 +75,4 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.queue().launch(share=True, inline=False)
