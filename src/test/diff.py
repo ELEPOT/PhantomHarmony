@@ -50,7 +50,7 @@ def load_model(root_model_dir=None):
             requires_safety_checker=False,
         )
         print("StableDiffusionControlNetPipeline")
-        pipe=pipe.to("cuda")
+        pipe = pipe.to("cuda")
         print("cuda \n")
     else:
         pipe = StableDiffusionPipeline(
@@ -73,7 +73,6 @@ def run_pipeline(pipe, input_path, output_path, text, times=20):
 
     if isinstance(pipe, StableDiffusionControlNetPipeline):
         img = Image.open(input_path)
-        img = img.crop((0, 0, 512, 512))
 
         out_image = pipe(text, num_inference_steps=times, generator=generator, image=img).images[0]
 
