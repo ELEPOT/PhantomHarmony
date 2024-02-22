@@ -7,7 +7,7 @@ from diffusers.pipelines.stable_diffusion.safety_checker import StableDiffusionS
 import torch
 from PIL import Image
 import os
-
+import time
 torch.set_default_device("cuda")
 
 
@@ -38,6 +38,7 @@ def load_model(root_model_dir=None):
         else:
             controlnet = ControlNetModel.from_single_file(str(controlnet_model_path / "diffusion_pytorch_model.ckpt"))
         print("os.path.isfile(controlnet_model_path / diffusion_pytorch_model.safetensors):")
+        begin = time.time()
         pipe = StableDiffusionControlNetPipeline(
             vae,
             text_encoder,
@@ -50,8 +51,13 @@ def load_model(root_model_dir=None):
             requires_safety_checker=False,
         )
         print("StableDiffusionControlNetPipeline")
+        '''
         pipe=pipe.to("cuda")
         print("cuda \n")
+        '''
+        print(f"Load             : {time.time()-begin}")
+        pipe.to("cuda")
+        print(f"Load+cuda        : {time.time()-begin}")
     else:
         pipe = StableDiffusionPipeline(
             vae,
