@@ -10,11 +10,11 @@ from pydub import AudioSegment
 
 # pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
 mods = os.listdir(NEXTCLOUD_MODEL_DIR)
-
-
+pipe = ""
+same = ""
 def zip_files(mo, text, files, times, spl):
     #    in_put = os.path.split(files[0].name)
-
+    global same ,pipe
     if files == None or text == "" or str(type(times)) != "<class 'int'>":
         with open("error.txt", "w") as f:
             f.write(
@@ -29,7 +29,10 @@ def zip_files(mo, text, files, times, spl):
     else:
         in_put = os.path.split(files[0].name)
         print("in_put")
-        pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
+        if same != mo:
+            pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
+            same = mo
+        #pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
         if spl:
             separate_to_file(files[0].name, in_put[0])
             print("spl finish")
