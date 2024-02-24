@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import paths
 
 import gradio as gr
@@ -12,9 +14,11 @@ from pydub import AudioSegment
 mods = os.listdir(NEXTCLOUD_MODEL_DIR)
 pipe = ""
 same = ""
+
+
 def zip_files(mo, text, files, times, spl):
-    #    in_put = os.path.split(files[0].name)
-    global same ,pipe
+    #    in_put = os.path.split(in_put)
+    global same, pipe
     if files == None or text == "" or str(type(times)) != "<class 'int'>":
         with open("error.txt", "w") as f:
             f.write(
@@ -27,40 +31,45 @@ def zip_files(mo, text, files, times, spl):
             "please write command here. And upload music file to next block.Don't input float type in times block \n",
         )
     else:
-        in_put = os.path.split(files[0].name)
+        in_put = Path(files[0].name)
+        root_dir = in_put.parent.resolve()
+        filename = in_put.stem
+
         print("in_put")
         if same != mo:
             pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
             same = mo
-        #pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
+        # pipe = load_model(NEXTCLOUD_MODEL_DIR / mo)
+
         if spl:
-            separate_to_file(files[0].name, in_put[0])
+            separate_to_file(in_put, root_dir)
             print("spl finish")
-            aio("m2s", in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav", in_put[0] + "/unf1.png")
+            aio("m2s", root_dir / filename / "vocals.wav", root_dir / "unf1.png")
             print("aio")
-            run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text, times)
+            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, times)
             print("pipe")
-            aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
-            sound1 = AudioSegment.from_wav(in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav")  #mp3 load wav 
-            sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
+            aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
+            sound1 = AudioSegment.from_wav(root_dir / filename / "vocals.wav")  # mp3 load wav
+            sound2 = AudioSegment.from_wav(root_dir / "finish.wav")
             output = sound1.overlay(sound2)
-            output.export(in_put[0] +"output.wav", format="wav")
+            output.export(root_dir / "output.wav", format="wav")
             return (
-                in_put[0] + "/finish.mp3",
-                in_put[0] + f"/{in_put[1].split('.')[0]}/vocals.wav",
-                in_put[0] + "output.wav",
+                root_dir / "finish.wav",
+                root_dir / filename / "vocals.wav",
+                root_dir / "output.wav",
                 "SUCCESSFUL!!!",
             )
+
         else:
-            aio("m2s", files[0].name, in_put[0] + "/unf1.png")
-            run_pipeline(pipe, in_put[0] + "/unf1.png", in_put[0] + "/unf2.png", text, times)
-            aio("s2m", in_put[0] + "/unf2.png", in_put[0] + "/finish.mp3")
-            sound1 = AudioSegment.from_mp3(files[0].name)
-            sound2 = AudioSegment.from_mp3(in_put[0] + "/finish.mp3")
+            aio("m2s", in_put, root_dir / "unf1.png")
+            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, times)
+            aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
+            sound1 = AudioSegment.from_file(in_put)
+            sound2 = AudioSegment.from_mp3(root_dir / "finish.wav")
             output = sound1.overlay(sound2)
-            output.export(in_put[0] + "output.wav", format="wav")
+            output.export(root_dir / "output.wav", format="wav")
             print("finish")
-            return in_put[0] + "/finish.mp3", files[0].name, in_put[0] + "output.wav", "SUCCESSFUL!!!"
+            return root_dir / "finish.wav", in_put, root_dir / "output.wav", "SUCCESSFUL!!!"
 
 
 demo = gr.Interface(
@@ -74,7 +83,7 @@ demo = gr.Interface(
         gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step=1),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
     ],
-    outputs=["file", "file", "file", "text"],
+    outputs=["audio", "audio", "audio", "text"],
 )
 
 if __name__ == "__main__":

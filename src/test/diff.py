@@ -8,6 +8,8 @@ import torch
 from PIL import Image
 import os
 import time
+import random
+
 torch.set_default_device("cuda")
 
 
@@ -71,8 +73,8 @@ def load_model(root_model_dir=None):
 
 
 def run_pipeline(pipe, input_path, output_path, text, times=20):
-    torch.manual_seed(0)
-    generator = torch.random.manual_seed(0)
+    torch.manual_seed(random.randint(1, 100000))
+    generator = torch.random.manual_seed(random.randint(1, 100000))
 
     if isinstance(pipe, StableDiffusionControlNetPipeline):
         img = Image.open(input_path)
