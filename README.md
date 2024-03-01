@@ -4,7 +4,7 @@ accompaniment generation AI for a science fair project.
 
 如何抓資料：
 
-**注意：目前因為 windows 路徑字元格式問題，有些程式只能跑在 linux 上，因此沒裝 linux 了話建議用 wsl 跑**
+**注意：目前因為 windows 路徑字元格式問題，有些程式只能跑在 linux 上，因此沒裝 linux 了話建議用 wsl 或 docker 跑**
 
 用 git clone 下來的資料夾裡：
 
@@ -56,3 +56,7 @@ exclude_genre: list[str] = ["classical", "sleep", "study"]  # 不抓的音樂類
 min_duration_ms = 2 * 60 * 1000
 max_duration_ms = 7 * 60 * 1000
 ```
+# use webui
+use docker image
+
+docker also can be running code env.
