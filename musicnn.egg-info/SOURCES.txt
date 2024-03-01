@@ -1,0 +1,6 @@
+README.md
+musicnn.egg-info/PKG-INFO
+musicnn.egg-info/SOURCES.txt
+musicnn.egg-info/dependency_links.txt
+musicnn.egg-info/requires.txt
+musicnn.egg-info/top_level.txt

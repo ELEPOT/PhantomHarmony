@@ -27,7 +27,7 @@ def beat(beat_path, vocals_path, accompaniment_path, out_path):
     a_y, sr = torchaudio.load(accompaniment_path)
 
     # detect frames of beat and change frames to samples
-    tempo, beat_frames = librosa.beat.beat_track(y=y.numpy()[0], sr=sr)
+    _, beat_frames = librosa.beat.beat_track(y=y.numpy()[0], sr=sr)
 
     # beat_frames  = np.insert(beat_frames, 0, 0)
     beat_samples = librosa.frames_to_samples(beat_frames)

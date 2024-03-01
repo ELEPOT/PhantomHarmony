@@ -39,7 +39,6 @@ def load_model(root_model_dir=None):
             controlnet = ControlNetModel.from_pretrained(controlnet_model_path)
         else:
             controlnet = ControlNetModel.from_single_file(str(controlnet_model_path / "diffusion_pytorch_model.ckpt"))
-        print("os.path.isfile(controlnet_model_path / diffusion_pytorch_model.safetensors):")
         begin = time.time()
         pipe = StableDiffusionControlNetPipeline(
             vae,

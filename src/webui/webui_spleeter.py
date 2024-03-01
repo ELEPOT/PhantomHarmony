@@ -10,4 +10,4 @@ import subprocess
 
 
 def separate_to_file(input_path, output_path):
-    subprocess.call(( "spleeter", "separate", input_path, "-o", output_path))
+    subprocess.call(("spleeter", "separate", input_path, "-o", output_path))

@@ -6,6 +6,7 @@ samples = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
 spotify_114k = pd.read_csv(DATASET_DIR / "spotify_114k.csv")
 
 vocals_paths = []
+vocals_beat_mark_paths = []
 accompaniment_paths = []
 prompt = []
 

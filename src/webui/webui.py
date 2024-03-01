@@ -9,6 +9,7 @@ from src.webui.webui_spleeter import separate_to_file
 import os
 from paths import NEXTCLOUD_MODEL_DIR
 from pydub import AudioSegment
+import numpy as np
 
 # pipe = load_model(NEXTCLOUD_MODEL_DIR / "fp16_lr1e-5-best")
 mods = os.listdir(NEXTCLOUD_MODEL_DIR)
@@ -16,10 +17,14 @@ pipe = ""
 same = ""
 
 
-def zip_files(mo, text, files, times, spl):
+def segment_to_sr_ndarray(segment: AudioSegment):
+    return segment.frame_rate, np.array(segment.split_to_mono()[0].get_array_of_samples())
+
+
+def zip_files(mo, text, file, times, spl):
     #    in_put = os.path.split(in_put)
     global same, pipe
-    if files == None or text == "" or str(type(times)) != "<class 'int'>":
+    if file == None or text == "" or str(type(times)) != "<class 'int'>":
         with open("error.txt", "w") as f:
             f.write(
                 "please write command here. And upload music file to next block.Don't input float type in times block. \n"
@@ -31,9 +36,11 @@ def zip_files(mo, text, files, times, spl):
             "please write command here. And upload music file to next block.Don't input float type in times block \n",
         )
     else:
-        in_put = Path(files[0].name)
-        root_dir = in_put.parent.resolve()
+        in_put = Path(file)
+        root_dir = in_put.parent
         filename = in_put.stem
+
+        print(root_dir)
 
         print("in_put")
         if same != mo:
@@ -52,11 +59,10 @@ def zip_files(mo, text, files, times, spl):
             sound1 = AudioSegment.from_wav(root_dir / filename / "vocals.wav")  # mp3 load wav
             sound2 = AudioSegment.from_wav(root_dir / "finish.wav")
             output = sound1.overlay(sound2)
-            output.export(root_dir / "output.wav", format="wav")
             return (
-                root_dir / "finish.wav",
-                root_dir / filename / "vocals.wav",
-                root_dir / "output.wav",
+                segment_to_sr_ndarray(sound2),
+                segment_to_sr_ndarray(sound1),
+                segment_to_sr_ndarray(output),
                 "SUCCESSFUL!!!",
             )
 
@@ -69,17 +75,20 @@ def zip_files(mo, text, files, times, spl):
             output = sound1.overlay(sound2)
             output.export(root_dir / "output.wav", format="wav")
             print("finish")
-            return root_dir / "finish.wav", in_put, root_dir / "output.wav", "SUCCESSFUL!!!"
+            return (
+                segment_to_sr_ndarray(sound2),
+                segment_to_sr_ndarray(sound1),
+                segment_to_sr_ndarray(output),
+                "SUCCESSFUL!!!",
+            )
 
 
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Dropdown(
-            mods, label="models", value="fp16_lr1e-5_train_base-61000", info="Which models do you want to use?"
-        ),
+        gr.Dropdown(mods, label="models", value="第三代 (無敘述比例 = 0.1)-61000", info="Which models do you want to use?"),
         gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
-        gr.File(file_count="multiple", file_types=["audio"]),
+        gr.Audio(type="filepath"),
         gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step=1),
         gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
     ],

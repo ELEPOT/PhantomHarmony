@@ -7,3 +7,5 @@ writeSomething.txt
 pretrained_models
 error.txt
 output.wav
+venvs
+src/train/wandb/run-*
