@@ -87,10 +87,10 @@ demo = gr.Interface(
     zip_files,
     inputs=[
         gr.Dropdown(mods, label="models", value="第三代 (無敘述比例 = 0.1)-61000", info="Which models do you want to use?"),
-        gr.Textbox(lines=2, placeholder="please write command here. And upload music file to next block."),
+        gr.Textbox(lines=2, placeholder="先選模型，輸入音樂類型，上傳音檔或直接錄音，如果上船的音檔有伴奏，勾選spleeter，選擇執行步數，少可以快，多可以品質增加"),
         gr.Audio(type="filepath"),
-        gr.Slider(2, 50, value=20, label="times", info="How many times do you want to run?", step=1),
-        gr.Checkbox(label="spleeter", info="Do you need spleeter?"),
+        gr.Slider(2, 50, value=20, label="times", step=1),
+        gr.Checkbox(label="spleeter",),
     ],
     outputs=["audio", "audio", "audio", "text"],
 )
