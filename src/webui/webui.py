@@ -86,13 +86,19 @@ def zip_files(mo, text, file, times, spl):
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Dropdown(mods, label="models", value="第三代 (無敘述比例 = 0.1)-61000", info="Which models do you want to use?"),
-        gr.Textbox(lines=2, placeholder="先選模型，輸入音樂類型，上傳音檔或直接錄音，如果上船的音檔有伴奏，勾選spleeter，選擇執行步數，少可以快，多可以品質增加"),
-        gr.Audio(type="filepath"),
-        gr.Slider(2, 50, value=20, label="times", step=1),
-        gr.Checkbox(label="spleeter",),
+        gr.Dropdown(mods, label="models", value="第三代 (無敘述比例 = 0.1)-61000", info="選模型"),
+        gr.Textbox(lines=2, placeholder="輸入音樂類型上傳音檔或直接錄音，如果上船的音檔有伴奏，勾選spleeter，選擇執行步數，少可以快，多可以品質增加"),
+        gr.Audio(type="filepath", info="上傳音檔或直接錄音"),
+        gr.Slider(2, 50, value=20, label="times", step=1, info="選擇執行步數，少可以快，多可以品質增加"),
+        gr.Checkbox(label="spleeter", info="如果上傳的音檔有伴奏，勾選spleeter"),
     ],
-    outputs=["audio", "audio", "audio", "text"],
+    outputs=[
+        gr.Audio(info="伴奏"),
+        gr.Audio(info="人聲"),
+        gr.Audio(info="合成結果"),
+        gr.Textbox()
+    ],
+    #outputs=["audio", "audio", "audio", "text"],
 )
 
 if __name__ == "__main__":
