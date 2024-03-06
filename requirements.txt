@@ -13,7 +13,8 @@ scikit-learn
 pydub
 opencv-python
 omegaconf
+matplotlib
+pyqt5
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl
--e dependencies/musicnn

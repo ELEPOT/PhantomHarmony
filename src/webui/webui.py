@@ -57,7 +57,7 @@ def zip_files(mo, text, file, times, spl):
             print("pipe")
             aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
             sound1 = AudioSegment.from_wav(root_dir / filename / "vocals.wav")  # mp3 load wav
-            sound2 = AudioSegment.from_wav(root_dir / "finish.wav")
+            sound2 = AudioSegment.from_file(root_dir / "finish.wav")
             output = sound1.overlay(sound2)
             return (
                 segment_to_sr_ndarray(sound2),
@@ -71,9 +71,8 @@ def zip_files(mo, text, file, times, spl):
             run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, times)
             aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
             sound1 = AudioSegment.from_file(in_put)
-            sound2 = AudioSegment.from_mp3(root_dir / "finish.wav")
+            sound2 = AudioSegment.from_file(root_dir / "finish.wav")
             output = sound1.overlay(sound2)
-            output.export(root_dir / "output.wav", format="wav")
             print("finish")
             return (
                 segment_to_sr_ndarray(sound2),
@@ -86,19 +85,14 @@ def zip_files(mo, text, file, times, spl):
 demo = gr.Interface(
     zip_files,
     inputs=[
-        gr.Dropdown(mods, label="models", value="第三代 (無敘述比例 = 0.1)-61000", info="選模型"),
-        gr.Textbox(lines=2, placeholder="輸入音樂類型上傳音檔或直接錄音，如果上傳的音檔有伴奏，勾選spleeter，選擇執行步數，少可以快，多可以品質增加"),
-        gr.Audio(type="filepath", info="上傳音檔或直接錄音"),
-        gr.Slider(2, 50, value=20, label="times", step=1, info="選擇執行步數，少可以快，多可以品質增加"),
-        gr.Checkbox(label="spleeter", info="如果上傳的音檔有伴奏，勾選spleeter"),
+        gr.Dropdown(mods, label="模型", value="第三代 (無敘述比例 = 0.1)-61000", info="選模型，用於比較不同模型生成結果，建議第三代"),
+        gr.Textbox(lines=2, label="音樂類型", placeholder="輸入想要的音樂類型"),
+        gr.Audio(type="filepath", label="上傳音檔或直接錄音", show_label=True),
+        gr.Slider(2, 50, value=20, label="步數", step=1, info="選擇執行步數，一般來說，少可以加快速度，多可以增加生成結果品質，但超過一定數值就不會再有更明顯的改善了"),
+        gr.Checkbox(label="使用spleeter", info="如果上傳的音檔有伴奏，勾選使用spleeter"),
     ],
-    outputs=[
-        gr.Audio(info="伴奏"),
-        gr.Audio(info="人聲"),
-        gr.Audio(info="合成結果"),
-        gr.Textbox()
-    ],
-    #outputs=["audio", "audio", "audio", "text"],
+    outputs=[gr.Audio(label="AI生成伴奏"), gr.Audio(label="原人聲"), gr.Audio(label="合成結果"), gr.Textbox(label="訊息")],
+    # outputs=["audio", "audio", "audio", "text"],
 )
 
 if __name__ == "__main__":

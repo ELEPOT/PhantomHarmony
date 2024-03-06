@@ -468,7 +468,7 @@ def get_attn_maps(self, attn):
     for b in range(self.batch):
         for t in target_tokens:
             power = self.power
-            add = attn[b, :, :, t[0] : t[0] + len(t)] ** (power) * (self.attnmaps_sizes.index((height, width)) + 1)
+            add = attn[b, :, :, t[0] : t[0] + len(t)] ** (power) * (self.attnmaps_sizes.i((height, width)) + 1)
             add = torch.sum(add, dim=2)
             key = f"{t}-{b}"
             if key not in self.attnmaps:

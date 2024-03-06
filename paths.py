@@ -21,8 +21,7 @@ NEXTCLOUD_RIFFUSION_DIR = NEXTCLOUD_MODEL_DIR.parent / "riffusion"
 TEST_OUTPUT_DIR = PROJECT_DIR / "test_output"
 EXAMPLE_DIR = PROJECT_DIR / "example"
 DEPENDENCIES_DIR = PROJECT_DIR / "dependencies"
-VENV_PYTHON_DIR = PROJECT_DIR / "venv/bin/python"
-VENV_BIN_DIR = PROJECT_DIR / "venv/bin"
+VENVS_DIR = PROJECT_DIR / "venvs"
 SRC_DIR = PROJECT_DIR / "src"
 
 

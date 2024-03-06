@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from paths import DATASET_DIR, VALIDATION_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENV_PYTHON_DIR
+from paths import DATASET_DIR, VALIDATION_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENVS_DIR
 
 validation_images = [VALIDATION_DIR / filename for filename in os.listdir(VALIDATION_DIR)]
 validation_prompts = [os.path.basename(img_path).split(".")[0] for img_path in validation_images]
@@ -11,7 +11,7 @@ run_name = "lr2.56e-3_gas256"
 command = []
 
 command += [
-    VENV_PYTHON_DIR,
+    VENVS_DIR / "dev" / "bin" / "python",
     os.path.join(DEPENDENCIES_DIR, "diffusers/examples/controlnet/train_controlnet.py"),
 ]
 

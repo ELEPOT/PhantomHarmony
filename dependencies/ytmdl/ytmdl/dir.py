@@ -135,7 +135,7 @@ def make_custom_dir(DIR, TRACK_INFO):
     The DIR is probably in the format of
     keyword->keyword->keyword
     """
-    pos = DIR.index('$')
+    pos = DIR.i('$')
 
     # base_DIR is where the folders will be made
     base_DIR = DIR[:pos]

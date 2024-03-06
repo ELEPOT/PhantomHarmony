@@ -1417,7 +1417,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             raise ImportError("`enable_model_cpu_offload` requires `accelerate v0.17.0` or higher.")
 
         torch_device = torch.device(device)
-        device_index = torch_device.index
+        device_index = torch_device.i
 
         if gpu_id is not None and device_index is not None:
             raise ValueError(
@@ -1426,7 +1426,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             )
 
         # _offload_gpu_id should be set to passed gpu_id (or id in passed `device`) or default to previously set id or default to 0
-        self._offload_gpu_id = gpu_id or torch_device.index or getattr(self, "_offload_gpu_id", 0)
+        self._offload_gpu_id = gpu_id or torch_device.i or getattr(self, "_offload_gpu_id", 0)
 
         device_type = torch_device.type
         device = torch.device(f"{device_type}:{self._offload_gpu_id}")
@@ -1502,7 +1502,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             raise ImportError("`enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher")
 
         torch_device = torch.device(device)
-        device_index = torch_device.index
+        device_index = torch_device.i
 
         if gpu_id is not None and device_index is not None:
             raise ValueError(
@@ -1511,7 +1511,7 @@ class DiffusionPipeline(ConfigMixin, PushToHubMixin):
             )
 
         # _offload_gpu_id should be set to passed gpu_id (or id in passed `device`) or default to previously set id or default to 0
-        self._offload_gpu_id = gpu_id or torch_device.index or getattr(self, "_offload_gpu_id", 0)
+        self._offload_gpu_id = gpu_id or torch_device.i or getattr(self, "_offload_gpu_id", 0)
 
         device_type = torch_device.type
         device = torch.device(f"{device_type}:{self._offload_gpu_id}")

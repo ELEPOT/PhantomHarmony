@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from paths import DATASET_DIR, VALIDATION_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENV_PYTHON_DIR
+from paths import DATASET_DIR, VALIDATION_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENVS_DIR
 
 validation_images = [VALIDATION_DIR / filename for filename in os.listdir(VALIDATION_DIR)]
 validation_prompts = [os.path.basename(img_path).split(".")[0] for img_path in validation_images]
@@ -11,7 +11,7 @@ run_name = "fp16_lr1e-5_train_base"
 command = []
 
 command += [
-    VENV_PYTHON_DIR,
+    VENVS_DIR / "dev" / "bin" / "python",
     os.path.join(DEPENDENCIES_DIR, "diffusers/examples/controlnet/train_controlnet.py"),
 ]
 
@@ -29,7 +29,6 @@ command += [
     "--num_validation_images=1",
     "--gradient_accumulation_steps=2",  # To stay consistent
     "--mixed_precision=fp16",
-    "--proportion_empty_prompts=0.5",
     "--train_base",
 ]
 
