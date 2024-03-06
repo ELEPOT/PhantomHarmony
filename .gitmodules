@@ -1,0 +1,3 @@
+[submodule "dependencies/diffusers"]
+	path = dependencies/diffusers
+	url = https://github.com/ELEPOT/diffusers
