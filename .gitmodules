@@ -1,4 +1,4 @@
 [submodule "dependencies/diffusers"]
 	path = dependencies/diffusers
-	url = https://github.com/UmerHA/diffusers.git
-	branch = 5070-controlnet
+	url = https://github.com/ELEPOT/diffusers.git
+    branch = 5070-controlnet
