@@ -14,8 +14,9 @@ scikit-learn
 pydub
 opencv-python
 omegaconf
+wandb
+seaborn
 matplotlib
-pyqt5
 -r dependencies/diffusers/examples/controlnet/requirements.txt
 -e dependencies/diffusers
 -e dependencies/ytmdl

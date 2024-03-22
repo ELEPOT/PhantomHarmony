@@ -1,0 +1,2202 @@
+genre,prompt,ground_truth_bpm,output_bpm
+cantopop,cantopop slow synth pop new age electronic,130.1287095323741,142.23767201834863
+sad,sad rock,112.34714673913047,88.59375
+groove,groove guitar,113.76031839622641,115.94801682692305
+tango,violin tango opera female,166.70866935483875,118.53139334862382
+psych-rock,punk psych-rock goth blues punk-rock,114.84374999999999,119.49060693641617
+blues,punk psych-rock goth blues punk-rock,114.84374999999999,120.49668069948186
+punk,punk psych-rock goth blues punk-rock,114.84374999999999,118.80387931034483
+punk-rock,punk psych-rock goth blues punk-rock,114.84374999999999,106.77621384297521
+goth,punk psych-rock goth blues punk-rock,114.84374999999999,154.26772388059703
+cantopop,guitar drums cantopop pop rock slow no vocals piano male country male vocal,73.82812499999999,74.5380108173077
+show-tunes,show-tunes,86.1328125,94.30599908759123
+punk-rock,punk-rock punk metal,149.59909539473682,138.0755009541985
+punk,punk-rock punk metal,149.59909539473682,86.61400139664804
+metal,pop guitar drums metal rock,120.18531976744184,116.69606854838709
+rockabilly,rockabilly,258.3984375,109.95678191489363
+j-dance,electronic techno,99.38401442307693,117.45383522727272
+indian,beat indian electronic,90.34910402097903,92.83776197604791
+pagode,pagode guitar,150.23164970930233,155.0390625
+house,house edm drums swedish electro slow guitar male rock male voice male vocal,62.015625,123.04687500000001
+swedish,house edm drums swedish electro slow guitar male rock male voice male vocal,62.015625,132.1355646306818
+edm,house edm drums swedish electro slow guitar male rock male voice male vocal,62.015625,83.35433467741937
+electro,house edm drums swedish electro slow guitar male rock male voice male vocal,62.015625,123.04687500000001
+comedy,quiet comedy slow ambient soft electronic opera synth vocal,78.90028625954199,126.04801829268291
+opera,opera slow strings piano guitar soft classical,69.36870805369128,68.60135508849558
+hip-hop,hip-hop fast indian drums beat sitar beats electronic,162.421875,161.4990234375
+pop-film,pop-film techno pop fast beat pop drums dance,129.92100209497207,129.92100209497207
+pop,pop-film techno pop fast beat pop drums dance,129.92100209497207,130.01179245283018
+garage,strings garage slow guitar vocal drums pop electronic ambient,104.19291834677419,97.50884433962263
+reggaeton,reggae beat reggaeton electronic beats synth techno drums male vocal,127.0811987704918,123.70137965425532
+reggae,reggae beat reggaeton electronic beats synth techno drums male vocal,127.0811987704918,121.59926470588235
+latino,latin latino beat electronic techno synth drums slow weird beats no vocals,120.49668069948189,165.81717914438502
+latin,latin latino beat electronic techno synth drums slow weird beats no vocals,120.49668069948189,85.18629807692308
+pagode,drums fast,105.46875,158.20312499999997
+comedy,drums comedy quiet soft slow flute beat classical electronic,178.20581896551724,77.51953125
+french,guitar woman slow,123.78368263473055,90.34910402097903
+house,house beat electronic techno drums beats slow synth pop no vocals weird,121.75842604712041,121.39523909395973
+cantopop,pop cantopop vocal female guitar drums vocals,126.04801829268291,74.5380108173077
+acoustic,strings acoustic cello,77.71381578947368,68.44991721854305
+j-pop,drums j-pop strings violin rock guitar loud slow no vocals indian classical,109.95678191489363,105.46875
+malay,malay rock guitar fast drums loud slow,145.9878177966102,71.77734375
+new-age,new-age slow classical soft strings flute ambient piano,147.27372085492226,177.3322610294118
+heavy-metal,heavy-metal drums,127.7794471153846,100.15443313953489
+indian,indian slow techno beat electronic synth,111.13911290322581,95.70312499999999
+latino,beat techno reggaeton latino electronic reggae drums synth,95.70312499999999,123.046875
+reggaeton,beat techno reggaeton latino electronic reggae drums synth,95.70312499999999,190.86248224431822
+reggae,beat techno reggaeton latino electronic reggae drums synth,95.70312499999999,128.48541091160223
+ska,ska male vocal male male voice man vocals electronic vocal choir techno,85.5623965231788,135.99917763157896
+party,disco party beat dance techno beats fast electronic synth drums no vocal,129.19921875,130.83465189873417
+disco,disco party beat dance techno beats fast electronic synth drums no vocal,129.19921875,130.65089536516857
+honky-tonk,honky-tonk,71.77734375,145.16766151685397
+german,german male man opera male vocal slow quiet vocal,73.828125,121.39523909395973
+folk,beat folk drums techno electronic weird beats no vocals fast,120.18531976744185,116.13412921348313
+salsa,drums guitar salsa,110.9686541411043,112.34714673913045
+british,pop singing british guitar rock slow vocal,109.18243838028168,109.95678191489363
+malay,techno synth,104.55428106936417,132.51201923076923
+metalcore,metalcore groove rock metal guitar fast,195.0176886792453,130.1287095323741
+groove,metalcore groove rock metal guitar fast,195.0176886792453,123.78368263473054
+metal,metalcore groove rock metal guitar fast,195.0176886792453,124.03125
+hard-rock,hard-rock pop guitar vocal slow rock female vocals woman,116.79025423728811,116.13412921348313
+grunge,drums guitar grunge loud rock metal no vocals,126.04801829268293,95.19942434210526
+soul,vocal slow male vocal male soul guitar singing man strings vocals violin,84.03201219512195,140.43393342391303
+samba,samba,126.04801829268293,93.6226222826087
+goth,goth electronic weird,131.8359375,92.28515625
+techno,techno electronic techno club synth slow drums beat ambient beats,100.93688964843751,200.97656250000003
+club,techno electronic techno club synth slow drums beat ambient beats,100.93688964843751,100.67471590909089
+electro,edm electronic,149.7961956521739,150.390625
+edm,edm electronic,149.7961956521739,150.390625
+world-music,world-music guitar vocal male vocal man male,74.68162933526013,147.18898338607593
+opera,opera,96.8994140625,168.0640243902439
+french,techno french synth electronic beats beat drums fast,107.666015625,85.56239652317879
+country,country man country guitar male,75.99954044117648,77.71381578947368
+tango,classical tango flute opera violin female strings slow singing,101.99938322368419,64.599609375
+synth-pop,ambient slow synth-pop classical weird electronic no vocals violin,195.30114462209303,109.95678191489363
+chill,chill beat drums sad techno slow weird synth electronic beats no vocals,131.38903601694912,132.51201923076923
+sad,chill beat drums sad techno slow weird synth electronic beats no vocals,131.38903601694912,131.38903601694912
+sad,sad beat techno electronic slow beats drums indian synth no vocal no vocals,130.50426136363637,118.53139334862382
+spanish,spanish guitar rock drums male,126.04801829268291,126.04801829268293
+mandopop,mandopop indian guitar sitar drums strings country,164.0625,82.82001201923076
+trip-hop,trip-hop techno electronic drums beat synth beats weird dance slow,92.28515625,121.75842604712041
+rockabilly,rockabilly country,93.6226222826087,94.30599908759123
+rock-n-roll,rockabilly country,93.6226222826087,93.6226222826087
+drum-and-bass,techno drum-and-bass beat electronic drums synth,86.1328125,179.2359104046243
+cantopop,guitar mandopop cantopop vocal slow male vocal male singing man vocals male voice,169.189453125,141.8040205792683
+mandopop,guitar mandopop cantopop vocal slow male vocal male singing man vocals male voice,169.189453125,84.72079918032786
+pop,pop slow ambient new age synth techno soft electronic female,150.732421875,72.78829225352113
+gospel,gospel pop,135.2084847383721,137.20271017699116
+brazil,gospel pop,135.2084847383721,136.79917279411765
+dancehall,beat dancehall techno fast electronic synth dance drums beats weird,127.37951144366197,172.265625
+j-idol,j-idol techno fast synth electronic dance beat pop,127.7794471153846,128.48541091160223
+sertanejo,sertanejo guitar vocal slow pop singing vocals country male man,100.1544331395349,203.66379310344826
+j-idol,rock guitar metal fast j-idol drums loud no vocal beat,127.77944711538463,127.60416666666667
+latino,beat techno latino electronic synth pop guitar vocals vocal,115.94801682692308,123.78368263473055
+r-n-b,r-n-b rock drums hard-rock guitar loud,118.53139334862382,121.59926470588236
+hard-rock,r-n-b rock drums hard-rock guitar loud,118.53139334862382,113.58173076923079
+punk,emo rock punk slow drums country,169.18945312499997,169.189453125
+emo,emo rock punk slow drums country,169.18945312499997,82.82001201923077
+j-pop,fast electronic techno j-pop dance synth,129.92100209497207,126.82131901840489
+hardcore,fast dance hardcore,185.51682692307693,110.74218749999999
+blues,blues slow drums ambient indian weird electronic beat,84.99948601973684,84.99948601973684
+psych-rock,psych-rock rock guitar drums loud vocal male metal male vocal,137.6086353550296,139.1376201923077
+country,country electronic fast techno rock loud guitar synth,104.75612331081082,105.16215479651163
+disney,disney guitar drums slow vocals female woman beat female vocal pop,139.67483108108107,69.83741554054055
+world-music,techno world-music synth electronic ambient new age slow,140.43393342391306,121.88605542452831
+country,classical country slow soft quiet flute,141.4120802238806,134.9842583955224
+funk,pop synth funk techno electronic slow beat no vocals drums ambient guitar,53.8330078125,107.666015625
+world-music,world-music guitar rock drums slow ambient loud,123.78368263473052,65.69451800847457
+malay,techno malay beat dance electronic fast drums pop synth beats indian,114.4803204113924,115.48533519553072
+salsa,salsa indian sitar drums guitar fast strings,100.67471590909092,131.16671954314722
+groove,groove gospel guitar strings vocal slow,86.61400139664804,138.427734375
+gospel,groove gospel guitar strings vocal slow,86.61400139664804,97.1422697368421
+power-pop,techno female woman,140.625,160.6622409326425
+k-pop,electronic slow,150.2316497093023,100.15443313953489
+turkish,turkish,100.02520161290323,223.07778776978418
+world-music,rock guitar ambient world-music loud piano electronic drums slow techno synth,136.71875,72.78829225352112
+ambient,rock guitar ambient world-music loud piano electronic drums slow techno synth,136.71875,67.99958881578948
+garage,rock garage,138.18098262032086,82.03125
+indie,indie electronic techno indie-pop beat drums synth slow ambient female,85.56239652317879,77.71381578947368
+indie-pop,indie electronic techno indie-pop beat drums synth slow ambient female,85.56239652317879,172.26562499999997
+anime,drums anime slow guitar ambient piano synth indian new age,181.5772804054054,120.5859375
+r-n-b,r-n-b electronic techno synth drums dance beat no vocals beats slow pop,133.65436422413794,132.51201923076925
+hard-rock,slow hard-rock piano ambient new age classical soft quiet violin,78.30255681818181,85.5623965231788
+mandopop,mandopop loud drums rock guitar metal beat,100.15443313953489,77.1338619402985
+malay,techno malay beat electronic pop female synth vocal drums fast woman,135.11029411764707,141.20133196721312
+hip-hop,techno hip-hop beat slow electronic synth,142.6739838957055,142.76156767955803
+j-pop,rock drums j-pop beat guitar fast no vocals,143.5546875,143.5546875
+j-rock,guitar rockabilly j-rock rock,95.703125,75.26168082524272
+rockabilly,guitar rockabilly j-rock rock,95.703125,97.14226973684212
+j-idol,j-idol techno dance fast beat electronic synth loud,145.34912109375,145.1676615168539
+malay,rock malay guitar drums slow pop male vocal vocal vocals,93.39702560240966,93.9630681818182
+show-tunes,classical slow ambient show-tunes flute violin,130.8346518987342,103.359375
+spanish,drums spanish indian beat rock guitar techno,131.66799363057325,130.1287095323741
+indian,indian electronic dance fast,129.92100209497207,130.83465189873417
+party,fast electronic techno party,129.92100209497207,130.83465189873417
+spanish,spanish guitar slow country solo strings,143.5546875,142.5646551724138
+british,british soul slow classical soft,134.58251953125,138.427734375
+soul,british soul slow classical soft,134.58251953125,103.359375
+happy,happy dance,142.76156767955803,96.2121841755319
+romance,romance strings slow classical violin piano vocal opera guitar,77.13386194029852,147.27372085492226
+new-age,guitar new-age rock pop country vocal singing drums slow,127.08119877049181,128.39673913043478
+sertanejo,techno sertanejo synth,81.38533464566929,170.37259615384613
+mandopop,rock pop mandopop female guitar,124.36288435828877,125.28409090909089
+j-idol,techno j-idol electronic pop,134.9842583955224,143.5546875
+metalcore,metalcore techno drums loud fast,160.66224093264248,150.88959854014598
+dancehall,techno beat electronic dancehall drums fast dance beats,132.99919577205884,157.91015625000003
+pop,pop techno electronic slow,107.666015625,107.02893860946746
+deep-house,guitar deep-house vocal slow vocals man male vocal pop,101.3327205882353,109.49086334745762
+party,synth pop party electronic techno,131.83593750000003,165.64002403846155
+pop-film,hip-hop drums guitar pop-film beat rock electronic fast,125.70734797297297,135.99917763157893
+hip-hop,hip-hop drums guitar pop-film beat rock electronic fast,125.70734797297297,96.72668783422459
+punk-rock,rock punk-rock guitar drums metal slow male vocal vocals vocal singing male,93.39702560240964,92.28515625
+mandopop,cantopop mandopop beat drums pop,120.88815789473682,123.04687500000001
+cantopop,cantopop mandopop beat drums pop,120.88815789473682,129.19921875
+german,german slow ambient quiet soft,120.5859375,172.26562500000003
+turkish,rock slow guitar pop turkish strings vocal,179.23591040462426,87.29676942567568
+j-pop,j-pop drums,100.67471590909092,86.1328125
+rockabilly,drums strings rockabilly indian,120.88815789473685,123.046875
+pop,piano slow pop synth,168.0640243902439,88.59375
+reggae,reggae latino reggaeton pop woman female drums vocal female vocal beat vocals,118.125,184.5703125
+latino,reggae latino reggaeton pop woman female drums vocal female vocal beat vocals,118.125,171.38671875
+reggaeton,reggae latino reggaeton pop woman female drums vocal female vocal beat vocals,118.125,120.18531976744184
+swedish,loud drums rock swedish,141.97716346153845,73.13163325471697
+sad,sad beat techno electronic drums slow synth beats,110.29201600609757,112.34714673913042
+blues,blues ambient electronic,99.38401442307693,126.04801829268293
+club,rock drums pop fast club,132.89062499999997,130.6508953651685
+sertanejo,strings sertanejo flute violin guitar indian no vocals drums fast,118.125,93.39702560240964
+pop-film,pop-film female,109.18243838028171,98.30375339673913
+opera,ambient guitar opera drums slow new age piano strings,95.11598926380368,92.83776197604791
+alternative,alternative rock drums guitar vocal alt-rock loud pop vocals female,84.03201219512195,83.8955965909091
+alt-rock,alternative rock drums guitar vocal alt-rock loud pop vocals female,84.03201219512195,83.35433467741936
+pagode,drums pagode guitar electronic,158.52664877300612,155.32146516393442
+emo,emo violin flute opera,119.4906069364162,120.49668069948189
+latin,latin drums rock beat electronic techno pop synth male beats,66.25600961538463,135.99917763157893
+k-pop,beat k-pop drums techno electronic,105.46875,102.1914724576271
+edm,edm dance ambient trance house,120.49668069948189,126.04801829268291
+trance,edm dance ambient trance house,120.49668069948189,122.21547719594595
+dance,edm dance ambient trance house,120.49668069948189,62.26468373493976
+house,edm dance ambient trance house,120.49668069948189,124.52936746987952
+blues,blues beat guitar drums vocal electronic,127.60416666666666,131.38903601694915
+soul,techno synth electronic,95.70312499999999,192.05289273648648
+british,techno synth electronic,95.70312499999999,95.70312499999999
+disney,choir opera disney vocal slow strings classical choral,76.44924186390531,175.45572916666666
+mandopop,mandopop,89.10290948275862,98.30375339673911
+world-music,world-music rock loud fast male,67.99958881578948,135.11029411764707
+trip-hop,trip-hop ambient,150.23164970930233,87.890625
+ambient,trip-hop ambient,150.23164970930233,126.66590073529412
+brazil,guitar brazil mpb male vocal pop drums rock man,205.07812500000003,178.20581896551724
+mpb,guitar brazil mpb male vocal pop drums rock man,205.07812500000003,167.1233675373134
+rock-n-roll,slow rock-n-roll vocal pop vocals drums guitar female,104.4034090909091,104.19291834677419
+happy,electronic quiet happy,130.65089536516857,119.87556378865979
+club,club female woman pop drums rock guitar loud vocal,154.47732676630432,72.99390889830507
+piano,guitar piano singing pop vocals rock vocal,80.24796195652175,159.01442307692307
+folk,k-pop folk electronic,136.79917279411765,140.43393342391303
+k-pop,k-pop folk electronic,136.79917279411765,102.53906249999999
+indian,k-pop folk electronic,136.79917279411765,143.5546875
+garage,slow garage guitar piano vocal male vocal pop vocals male synth ambient,120.88815789473685,125.03150201612901
+spanish,spanish rock drums guitar male vocal slow male vocal,81.77165743670886,81.25737028301887
+malay,malay,129.92100209497207,129.19921875
+r-n-b,mpb guitar,109.62357954545456,140.94460227272728
+brazil,mpb guitar,109.62357954545456,224.12109374999997
+mpb,mpb guitar,109.62357954545456,130.6508953651685
+party,electronic techno party dance fast beat pop,122.31878698224853,123.04687499999999
+chill,chill female techno electronic,78.30255681818183,78.30255681818183
+samba,samba slow piano guitar vocal vocals singing pop,98.62535782442747,144.89632009345794
+k-pop,k-pop techno electronic slow synth beat ambient no vocals,65.69451800847459,131.16671954314722
+mpb,female mpb,75.55509868421052,101.61736306179775
+emo,emo rock drums pop guitar loud country vocal,106.19113869863013,106.39935661764706
+j-idol,fast j-idol techno,125.03150201612904,126.04801829268293
+french,ambient slow french electronic synth new age female strings weird,166.29602413366337,214.05787721893492
+rockabilly,rockabilly rock-n-roll strings classical slow violin vocals vocal,86.13281249999999,87.5926906779661
+rock-n-roll,rockabilly rock-n-roll strings classical slow violin vocals vocal,86.13281249999999,107.666015625
+forro,electronic guitar forro synth beat techno,151.11019736842107,151.99908088235296
+j-dance,j-dance electronic beat techno drums fast dance synth rock pop beats,201.873779296875,201.34943181818184
+house,techno electro house electronic slow weird synth guitar no vocal ambient,107.66601562499999,145.01953125
+electro,techno electro house electronic slow weird synth guitar no vocal ambient,107.66601562499999,218.54594216417908
+ska,guitar ska rock loud drums metal fast no vocal no vocals no voice,90.13898982558139,175.8732820680628
+metal,metal alt-rock alternative hard-rock industrial techno,125.03150201612904,94.9994255514706
+alt-rock,metal alt-rock alternative hard-rock industrial techno,125.03150201612904,172.265625
+alternative,metal alt-rock alternative hard-rock industrial techno,125.03150201612904,155.0390625
+hard-rock,metal alt-rock alternative hard-rock industrial techno,125.03150201612904,140.43393342391303
+industrial,metal alt-rock alternative hard-rock industrial techno,125.03150201612904,95.703125
+mandopop,pop mandopop techno vocal electronic guitar rock male vocal,99.38401442307693,138.18098262032086
+guitar,guitar slow techno strings guitar synth electronic male man,117.45383522727272,77.36480164670658
+sertanejo,sertanejo fast electronic techno drums loud beat rock synth,131.07167119565216,106.92349137931033
+malay,malay loud guitar rock fast pop drums no vocal,115.48533519553072,161.49902343750003
+german,german techno electronic,86.7108850671141,129.92100209497207
+goth,techno goth male guitar male vocal electronic rock vocal weird,84.26036005434781,120.18531976744187
+j-idol,j-idol guitar drums techno rock no vocals electronic beat,174.20119382022474,87.29676942567568
+hardstyle,hardstyle fast rock techno electronic,150.23164970930233,151.19057513297872
+pop,guitar pop classical strings quiet,175.45572916666666,132.51201923076923
+forro,drums forro pop beat guitar vocal singing indian electronic,114.4803204113924,126.04801829268291
+pop,drums pop-film pop vocal singing,150.88959854014598,82.82001201923077
+pop-film,drums pop-film pop vocal singing,150.88959854014598,95.703125
+rock-n-roll,rockabilly classical rock-n-roll quiet slow opera soft strings violin guitar piano,121.12426757812499,151.01207386363635
+rockabilly,rockabilly classical rock-n-roll quiet slow opera soft strings violin guitar piano,121.12426757812499,143.5546875
+brazil,techno beat brazil electronic synth drums female vocal ambient weird,80.12354651162791,159.0144230769231
+rock-n-roll,rock-n-roll,107.02893860946746,107.02893860946746
+party,beat techno party drums beats,139.25664296407183,141.20133196721312
+electronic,electronic male dubstep electronic male vocal dub drums male voice slow,113.76031839622641,223.07778776978412
+dubstep,electronic male dubstep electronic male vocal dub drums male voice slow,113.76031839622641,160.38523706896552
+dub,electronic male dubstep electronic male vocal dub drums male voice slow,113.76031839622641,176.1807528409091
+pop,hip-hop pop ambient electronic beat techno slow synth drums new age,119.78735513245033,94.30599908759123
+hip-hop,hip-hop pop ambient electronic beat techno slow synth drums new age,119.78735513245033,107.666015625
+forro,fast indian forro,165.25481468023256,116.79025423728811
+party,techno,142.76156767955803,143.5546875
+romance,slow romance quiet guitar soft classical strings flute violin ambient solo,44.55145474137931,78.30255681818183
+samba,samba guitar vocals slow drums pop vocal male vocal male,177.73437500000003,177.734375
+chicago-house,chicago-house electronic techno drums synth dance,121.75842604712041,122.21547719594595
+psych-rock,psych-rock british guitar slow country pop vocal rock male vocal man singing,130.83465189873417,131.66799363057325
+british,psych-rock british guitar slow country pop vocal rock male vocal man singing,130.83465189873417,135.99917763157896
+hard-rock,hard-rock,135.99917763157896,128.48541091160223
+funk,funk brazil beat electronic synth techno,80.12354651162791,121.59926470588235
+brazil,funk brazil beat electronic synth techno,80.12354651162791,123.88966181506851
+folk,techno folk synth beat beats drums electronic pop ambient,138.07550095419845,161.4990234375
+power-pop,rock power-pop,161.4990234375,135.28714005235602
+romance,romance strings classical,100.02520161290325,149.36325867052025
+funk,funk,60.09265988372093,181.5772804054054
+songwriter,rock female songwriter singer-songwriter slow drums pop,176.5455163043478,89.87771739130436
+singer-songwriter,rock female songwriter singer-songwriter slow drums pop,176.5455163043478,88.34134615384616
+rock,rock female songwriter singer-songwriter slow drums pop,176.5455163043478,175.45572916666666
+brazil,slow ambient brazil,67.40828804347825,159.8340850515464
+samba,samba fast guitar drums female pop vocals beat,109.9567819148936,110.54478609625669
+cantopop,guitar,159.28670804794518,71.77734375
+world-music,guitar world-music drums vocal rock slow male vocals country male vocal,94.5360137195122,143.5546875
+trip-hop,rock guitar trip-hop pop drums,66.82718211206897,113.76031839622641
+heavy-metal,heavy-metal loud rock metal guitar no vocal,115.20949442675158,113.76031839622641
+k-pop,k-pop techno beat dance,64.599609375,129.19921875
+british,british male vocal psych-rock guitar man male male voice rock pop vocal,129.19921875,139.25664296407183
+psych-rock,british male vocal psych-rock guitar man male male voice rock pop vocal,129.19921875,81.38533464566929
+comedy,vocal comedy drums slow opera male voice,134.23295454545453,161.49902343749997
+heavy-metal,drums rock guitar heavy-metal pop vocal male,148.040771484375,147.27372085492226
+malay,malay beat,115.20949442675158,151.99908088235296
+groove,groove techno deep-house,120.88815789473682,154.01231374172187
+deep-house,groove techno deep-house,120.88815789473682,122.31878698224853
+indie-pop,piano classical indie-pop slow solo no vocals strings no vocal guitar,87.5926906779661,135.99917763157893
+acoustic,guitar acoustic slow vocal pop vocals country female drums,73.30452127659575,150.23164970930233
+reggae,latino reggae drums beat reggaeton,191.40624999999997,93.96306818181819
+latino,latino reggae drums beat reggaeton,191.40624999999997,171.31388121546962
+reggaeton,latino reggae drums beat reggaeton,191.40624999999997,95.11598926380368
+alt-rock,guitar drums alt-rock,90.13898982558139,89.10290948275862
+pop,techno electronic pop synth female fast beat woman pop drums beats,132.51201923076925,123.046875
+malay,slow ambient,118.99928042763156,86.1328125
+groove,rock groove,109.95678191489363,133.65436422413794
+tango,strings tango classical violin opera female flute,107.02893860946745,120.18531976744187
+j-pop,guitar j-pop slow,84.99948601973682,95.703125
+reggaeton,latin reggaeton reggae drums guitar vocals techno beat pop electronic vocal,93.39702560240966,92.28515625000001
+latin,latin reggaeton reggae drums guitar vocals techno beat pop electronic vocal,93.39702560240966,92.83776197604791
+reggae,latin reggaeton reggae drums guitar vocals techno beat pop electronic vocal,93.39702560240966,92.83776197604791
+j-pop,j-pop guitar male vocal rock drums man male ska vocal indian male voice,98.62535782442748,128.39673913043478
+ska,j-pop guitar male vocal rock drums man male ska vocal indian male voice,98.62535782442748,97.14226973684212
+romance,romance slow,159.68442766853934,130.01179245283018
+j-pop,guitar rock drums slow j-pop pop no vocals piano synth loud,68.60135508849558,147.65624999999997
+disney,show-tunes electronic disney slow ambient strings,135.28714005235602,135.2084847383721
+show-tunes,show-tunes electronic disney slow ambient strings,135.28714005235602,105.46875
+metalcore,metalcore techno electronic hardcore beat drums fast rock,145.7632211538462,145.57658450704224
+hardcore,metalcore techno electronic hardcore beat drums fast rock,145.7632211538462,104.75612331081082
+pop-film,pop-film pop electronic synth slow ambient soft,111.1391129032258,69.83741554054055
+pop,pop-film pop electronic synth slow ambient soft,111.1391129032258,118.80387931034483
+blues,electronic techno blues fast,170.20256362275452,81.77165743670885
+new-age,new-age male vocal slow guitar man singing,165.64002403846152,110.9686541411043
+swedish,female rock swedish guitar,124.52936746987952,123.78368263473052
+pagode,pagode guitar,111.65364583333333,88.09037642045455
+pagode,guitar country slow pagode male drums pop male vocal,159.68442766853934,161.4990234375
+power-pop,power-pop rock synth loud electronic drums pop beat,159.50520833333334,161.4990234375
+pop-film,pop-film slow beat ambient,156.1748798076923,151.1905751329787
+piano,piano pop guitar vocal,150.23164970930233,139.6748310810811
+sertanejo,guitar sertanejo pop slow vocals singing male vocal vocal male female,99.38401442307692,98.12598892405065
+reggaeton,beat,184.5703125,184.5703125
+latin,beat,184.5703125,129.19921875
+latino,beat,184.5703125,126.82131901840489
+reggae,beat,184.5703125,146.8172940340909
+spanish,beat spanish drums techno fast electronic beats synth no vocals no vocal,122.21547719594595,160.58659957627117
+power-pop,pop power-pop woman vocal female female vocal,95.70312499999999,96.41732742537314
+metalcore,metalcore guitar rock drums loud metal fast no vocals beat no vocal,133.88520077720207,134.58251953124997
+party,party techno fast electronic synth drums dance loud beat,139.67483108108107,129.92100209497207
+forro,forro electronic drums beat,93.39702560240964,103.35937499999997
+k-pop,k-pop pop slow female vocals vocal woman rock female vocal,112.9610655737705,98.62535782442748
+hard-rock,drums hard-rock rock guitar,145.76322115384613,167.958984375
+singer-songwriter,singer-songwriter songwriter piano classical ambient slow guitar quiet,58.726917613636374,98.12598892405063
+songwriter,singer-songwriter songwriter piano classical ambient slow guitar quiet,58.726917613636374,44.55145474137931
+j-pop,j-pop techno,130.01179245283018,173.316025152439
+heavy-metal,heavy-metal drums loud rock,152.81628024193546,151.99908088235296
+soul,guitar drums slow soul country strings beat soft classical,40.061773255813954,120.88815789473684
+garage,garage techno beat electronic synth female fast drums loud,176.5455163043478,172.265625
+j-idol,j-idol rock loud fast,99.38401442307692,111.1391129032258
+hardcore,beat drums flute hardcore techno electronic indian female vocal pop beats,84.4439338235294,89.10290948275862
+funk,techno funk synth slow,120.74693341121494,88.49261558219179
+j-rock,j-rock drums beat synth no vocals electronic beats,98.12598892405062,76.5625
+ska,loud ska rock fast guitar male metal drums vocal,105.04001524390245,109.62357954545456
+punk,punk guitar punk-rock acoustic slow pop vocals vocal,115.70079291044776,112.34714673913042
+punk-rock,punk guitar punk-rock acoustic slow pop vocals vocal,115.70079291044776,117.45383522727275
+acoustic,punk guitar punk-rock acoustic slow pop vocals vocal,115.70079291044776,126.04801829268293
+samba,indian samba,121.59926470588236,97.1422697368421
+progressive-house,techno fast progressive-house beat electronic,124.5293674698795,83.35433467741936
+j-dance,slow j-dance electronic synth drums new age ambient vocal techno,59.17521469465649,118.12499999999999
+brazil,brazil gospel guitar slow male vocal pop,66.25600961538461,74.5380108173077
+gospel,brazil gospel guitar slow male vocal pop,66.25600961538461,82.29249601910826
+salsa,salsa guitar fast drums indian sitar loud rock no vocals beat no vocal,129.19921875,129.19921875
+jazz,jazz,75.44479927007299,95.703125
+blues,jazz,75.44479927007299,125.03150201612904
+spanish,spanish drums,98.84093237704917,121.59926470588235
+j-idol,rock j-idol country drums guitar male vocal male vocal pop man vocals,108.31072230538922,111.73986486486486
+turkish,beat turkish pop drums electronic synth slow no vocals techno,163.1990131578947,145.34912109375
+indie-pop,indie electro indie-pop,223.9453125,118.12499999999999
+indie,indie electro indie-pop,223.9453125,107.02893860946746
+electro,indie electro indie-pop,223.9453125,53.8330078125
+disney,pop disney slow guitar vocal soft,146.26326650943395,142.76156767955803
+latin,techno,120.18531976744185,120.88815789473682
+latino,techno,120.18531976744185,120.18531976744185
+spanish,spanish guitar pop drums fast rock singing,100.67471590909092,99.38401442307693
+samba,female beat woman samba electronic female vocal pop drums synth,116.79025423728814,118.12499999999999
+hip-hop,hip-hop,155.32146516393442,99.38401442307692
+j-dance,j-dance techno electronic female female vocal fast woman pop beat,105.77713815789471,102.77210582386365
+hip-hop,dance techno,90.1389898255814,125.2840909090909
+dance,dance techno,90.1389898255814,93.71964054404144
+gospel,electronic gospel techno synth beat slow ambient pop,105.77713815789475,150.732421875
+synth-pop,guitar drums synth-pop pop beat electronic synth no vocal,121.75842604712044,119.87556378865979
+garage,beat techno garage pop drums female electronic vocal,146.6090425531915,193.0563038793104
+sertanejo,sertanejo,156.60511363636365,110.74218749999999
+pagode,sertanejo,156.60511363636365,111.37863685344828
+sad,sad slow vocal male vocal male voice man male electronic guitar voice singing,131.38903601694915,117.45383522727272
+house,house dance electronic techno ambient synth vocal slow female beat,88.59374999999999,90.13898982558139
+dance,house dance electronic techno ambient synth vocal slow female beat,88.59374999999999,151.99908088235296
+indian,guitar indian male vocal male slow drums vocal man male voice,118.22150735294119,120.18531976744185
+british,psych-rock british guitar drums slow beat indian no vocal rock,110.74218749999999,108.96319653614457
+psych-rock,psych-rock british guitar drums slow beat indian no vocal rock,110.74218749999999,114.84375000000001
+pop,pop guitar pop-film,90.13898982558139,90.66611842105264
+pop-film,pop guitar pop-film,90.13898982558139,90.66611842105264
+j-pop,guitar j-rock,115.70079291044776,123.04687500000001
+j-rock,guitar j-rock,115.70079291044776,117.45383522727272
+funk,funk guitar drums slow indie,98.12598892405063,100.67471590909092
+indie,funk guitar drums slow indie,98.12598892405063,99.38401442307692
+swedish,techno swedish electronic synth weird ambient,139.67483108108107,97.77238175675676
+pagode,guitar pagode slow drums country piano strings no vocals,113.58173076923076,114.4803204113924
+alt-rock,funk alt-rock metal rock drums fast vocal guitar pop loud,123.78368263473052,123.78368263473052
+metal,funk alt-rock metal rock drums fast vocal guitar pop loud,123.78368263473052,122.21547719594595
+funk,funk alt-rock metal rock drums fast vocal guitar pop loud,123.78368263473052,123.046875
+industrial,loud industrial fast electronic,129.92100209497207,164.0625
+reggae,reggae reggaeton,177.52564408396947,174.957275390625
+reggaeton,reggae reggaeton,177.52564408396947,174.957275390625
+singer-songwriter,slow guitar male vocal singer-songwriter,118.22150735294116,117.45383522727275
+songwriter,slow guitar male vocal singer-songwriter,118.22150735294116,145.01953125
+punk,rock punk-rock drums male guitar punk,144.44633152173915,82.29249601910827
+punk-rock,rock punk-rock drums male guitar punk,144.44633152173915,119.87556378865979
+children,slow children guitar,160.49592391304347,88.34134615384616
+rockabilly,rockabilly drums guitar female rock-n-roll woman vocal pop slow female vocal singing,116.13412921348313,123.04687500000001
+rock-n-roll,rockabilly drums guitar female rock-n-roll woman vocal pop slow female vocal singing,116.13412921348313,116.13412921348316
+punk-rock,punk-rock pop drums guitar,109.18243838028168,118.125
+indian,indian drums beat indian female guitar,84.26036005434784,122.39925986842107
+j-rock,rock,101.61736306179775,83.8955965909091
+garage,rock,101.61736306179775,127.60416666666666
+sad,sad techno fast beat electronic synth dance loud drums rock,65.00589622641509,165.81717914438502
+funk,hip-hop,94.30599908759123,105.77713815789471
+hip-hop,hip-hop,94.30599908759123,92.94907823741009
+reggae,latin beat reggae reggaeton latino synth techno,135.99917763157896,135.99917763157896
+reggaeton,latin beat reggae reggaeton latino synth techno,135.99917763157896,130.1287095323741
+latin,latin beat reggae reggaeton latino synth techno,135.99917763157896,102.19147245762713
+latino,latin beat reggae reggaeton latino synth techno,135.99917763157896,101.61736306179775
+malay,malay electronic ambient synth new age no vocals techno no voice weird slow no vocal,116.69606854838709,71.77734375
+malay,drums malay beat fast guitar indian beats sitar,100.02520161290325,96.2121841755319
+gospel,gospel guitar,81.77165743670885,128.13145661157026
+brazil,gospel guitar,81.77165743670885,87.890625
+swedish,slow swedish beat drums electronic synth ambient piano,133.19507087628867,108.96319653614457
+kids,drums slow beat,169.44159836065575,123.78368263473052
+j-idol,fast j-idol,126.39054008152175,127.08119877049181
+spanish,spanish electronic ambient synth drums,199.951171875,128.39673913043478
+mandopop,mandopop guitar vocal piano rock pop drums,104.0530620805369,85.42097107438016
+house,house edm slow dance,89.10290948275862,90.34910402097903
+edm,house edm slow dance,89.10290948275862,86.1328125
+dance,house edm slow dance,89.10290948275862,160.6622409326425
+mandopop,mandopop guitar slow vocal rock drums male pop,79.75260416666667,72.1783344972067
+acoustic,acoustic male rock country guitar male vocal pop vocal drums man,92.83776197604791,162.3445680628272
+death-metal,death-metal rock techno drums guitar loud,95.703125,171.31388121546962
+brazil,slow beat brazil,173.55118936567166,132.51201923076925
+rock-n-roll,rock-n-roll piano guitar pop drums rock fast,66.82718211206897,69.36870805369128
+world-music,electronic world-music,101.61736306179775,102.19147245762713
+swedish,swedish slow,142.119140625,101.73166830708662
+goth,swedish slow,142.119140625,124.23001802884616
+r-n-b,indian r-n-b fast techno electronic,141.97716346153845,126.04801829268291
+hardstyle,hardstyle techno fast dance synth,114.2092541436464,150.390625
+anime,electronic anime male vocal male voice male slow techno synth vocals vocal beat,168.8878676470588,77.8308546686747
+dancehall,j-dance,68.90625,135.99917763157896
+j-dance,j-dance,68.90625,108.79934210526314
+club,club rock drums,133.65436422413794,73.828125
+breakbeat,techno breakbeat beat synth electronic slow voice male,94.30599908759123,93.6226222826087
+j-idol,techno j-idol pop drums fast beat electronic rock synth,123.8896618150685,124.36288435828877
+synth-pop,electronic synth-pop techno ambient slow beat synth,105.46875,105.46875
+gospel,gospel,126.82131901840489,112.34714673913045
+mandopop,electronic synth mandopop slow beat techno,93.96306818181817,111.65364583333334
+electro,electro reggaeton latin reggae latino electronic techno classical piano synth fast,162.9539695945946,91.63065159574468
+reggae,electro reggaeton latin reggae latino electronic techno classical piano synth fast,162.9539695945946,92.28515625
+latin,electro reggaeton latin reggae latino electronic techno classical piano synth fast,162.9539695945946,90.98536531690142
+reggaeton,electro reggaeton latin reggae latino electronic techno classical piano synth fast,162.9539695945946,98.75099522292994
+latino,electro reggaeton latin reggae latino electronic techno classical piano synth fast,162.9539695945946,176.1807528409091
+grindcore,grindcore drums rock metal techno guitar,118.12499999999999,116.79025423728814
+salsa,salsa slow guitar,113.99931066176471,81.38533464566929
+pop,strings pop-film pop guitar drums slow beat indian no vocal no vocals country,149.59909539473685,150.03780241935485
+pop-film,strings pop-film pop guitar drums slow beat indian no vocal no vocals country,149.59909539473685,147.65624999999997
+hard-rock,hard-rock drums guitar male vocal rock male slow pop,161.49902343750003,161.4990234375
+brazil,brazil,99.38401442307692,113.99931066176474
+power-pop,power-pop rock loud guitar drums,164.29958453757223,79.75260416666667
+j-idol,techno j-idol synth,100.15443313953489,205.07812499999997
+techno,techno j-idol synth,100.15443313953489,207.7575376884422
+r-n-b,guitar techno electronic r-n-b fast beat pop,95.70312499999999,96.2975543478261
+guitar,guitar guitar piano slow,81.59950657894737,61.03900098425197
+samba,guitar samba,113.76031839622641,153.80859375
+metalcore,metalcore country guitar drums,130.6508953651685,131.8359375
+j-idol,j-idol indian sitar fast techno drums electronic loud synth beat guitar,103.359375,104.55428106936417
+breakbeat,guitar breakbeat country rock drums pop male vocal male voice,108.96319653614457,107.666015625
+progressive-house,progressive-house fast beat electronic techno rock synth drums pop,128.39673913043478,83.35433467741935
+cantopop,cantopop slow electronic ambient no vocals synth new age,178.6797706117021,140.625
+j-rock,j-rock guitar slow,93.96306818181819,161.4990234375
+folk,techno electronic drums slow folk beat synth ambient no vocals,122.07800196850394,109.18243838028168
+world-music,world-music,110.74218749999999,144.55856643356643
+indie-pop,indie-pop beat,153.80859375,156.1748798076923
+hardstyle,hardstyle techno electronic,172.26562499999997,170.37259615384616
+gospel,gospel drums,69.83741554054055,69.83741554054053
+blues,electronic,102.77210582386364,119.62890625
+j-idol,drums j-idol rock fast guitar beat,88.59375,89.61795520231213
+malay,malay beat drums synth techno electronic slow,109.95678191489363,109.9567819148936
+pagode,guitar pagode beat electronic drums fast techno female,109.62357954545453,108.96319653614457
+french,french beat techno,123.04687499999999,121.75842604712041
+pop-film,hip-hop techno drums slow,125.70734797297297,96.29755434782608
+hip-hop,hip-hop techno drums slow,125.70734797297297,111.65364583333333
+goth,goth drums slow ambient piano new age synth guitar pop violin,139.67483108108107,120.5859375
+metalcore,metalcore loud rock guitar metal fast male vocal,99.38401442307693,193.45337566844918
+children,children guitar slow male vocal male vocal man singing male voice vocals country,132.51201923076923,133.65436422413794
+reggaeton,reggae beat techno electronic reggaeton drums beats synth,128.48541091160223,122.07800196850394
+reggae,reggae beat techno electronic reggaeton drums beats synth,128.48541091160223,129.8484610552764
+j-rock,loud techno j-rock rock drums fast electronic synth,99.93309737569061,155.0390625
+emo,techno indian emo electronic beat,119.26081730769229,118.99928042763159
+metalcore,metalcore rock loud drums techno metal fast electronic no vocals guitar,92.83776197604791,92.94907823741006
+piano,acoustic piano guitar drums rock piano slow,108.96319653614457,109.375
+acoustic,acoustic piano guitar drums rock piano slow,108.96319653614457,108.41892482517481
+hardstyle,hardstyle drums indian fast sitar beat electronic,162.42187499999997,145.34912109375
+reggaeton,reggaeton drums beat fast rock,95.11598926380368,95.703125
+tango,tango piano fast classical flute,135.99917763157896,102.33601485148515
+edm,edm fast house techno synth beat electronic drums dance,123.88966181506851,125.03150201612904
+house,edm fast house techno synth beat electronic drums dance,123.88966181506851,96.72668783422459
+edm,classical edm drums strings quiet slow piano ambient violin soft,134.23295454545456,134.9842583955224
+industrial,industrial drums rock metal guitar loud fast vocals no vocals,144.2833914974619,155.6617093373494
+hardstyle,hardstyle techno electronic,84.26036005434781,156.1748798076923
+metalcore,metalcore rock techno synth fast loud electronic beat drums weird,162.421875,123.046875
+punk-rock,emo punk-rock punk guitar pop vocal rock male vocal slow male vocals,169.65553977272728,167.1233675373134
+emo,emo punk-rock punk guitar pop vocal rock male vocal slow male vocals,169.65553977272728,169.44159836065575
+punk,emo punk-rock punk guitar pop vocal rock male vocal slow male vocals,169.65553977272728,170.2025636227545
+synth-pop,synth-pop guitar slow drums pop vocals vocal rock male vocal singing,125.2840909090909,124.36288435828877
+indie,indie indie-pop piano slow classical soft,37.44904891304348,91.19944852941177
+indie-pop,indie indie-pop piano slow classical soft,37.44904891304348,73.82812500000001
+honky-tonk,honky-tonk drums slow quiet strings classical violin vocal indian,80.74951171874999,106.55605670103093
+emo,emo,97.1422697368421,80.74951171874999
+indie-pop,slow female indie-pop electronic ambient vocal female vocal woman synth techno,90.34910402097901,90.34910402097903
+pop-film,pop-film electronic ambient,164.93517287234044,88.59375
+cantopop,guitar cantopop beat slow drums vocal male vocal man male voice male pop,190.39884868421052,102.19147245762713
+k-pop,ambient k-pop synth guitar slow female new age,90.34910402097903,90.34910402097903
+dub,dub dance fast,183.63340736040607,74.68162933526013
+dubstep,dub dance fast,183.63340736040607,133.36693548387098
+k-pop,k-pop drums beat techno beats ambient electronic,94.53601371951218,168.18833210059174
+drum-and-bass,drum-and-bass classical opera choir slow,118.99928042763159,145.9878177966102
+sertanejo,sertanejo rock guitar pop country singing drums vocal,130.01179245283018,130.83465189873417
+j-idol,rock drums j-idol guitar pop male vocal singing male vocal vocals,133.88520077720207,134.42693280346822
+rock,classical slow rock piano classic flute violin,103.35937500000001,105.16215479651163
+pop,pop electronic slow techno synth drums beat ambient,92.8377619760479,93.96306818181819
+emo,sad,120.5859375,166.70866935483872
+sad,sad,120.5859375,167.79119318181816
+j-idol,pop drums guitar piano j-idol rock country slow vocal,84.72079918032786,83.8955965909091
+hip-hop,techno hip-hop electronic,84.72079918032787,86.13281249999999
+kids,kids,112.9610655737705,107.66601562499999
+indian,pop-film indian,150.23164970930233,149.59909539473685
+pop-film,pop-film indian,150.23164970930233,92.94907823741008
+pop-film,guitar pop pop-film strings slow drums no vocals,96.41732742537313,96.72668783422459
+pop,guitar pop pop-film strings slow drums no vocals,96.41732742537313,193.0563038793104
+dance,dance techno beat drums electronic fast synth beats,132.89062499999997,131.38903601694912
+mandopop,mandopop man slow,76.5625,155.0390625
+rock-n-roll,rock guitar slow rock-n-roll electronic drums,118.22150735294119,119.49060693641617
+acoustic,slow indian vocal guitar sitar acoustic drums female,77.1338619402985,123.046875
+country,country piano soft classical slow vocal female,53.8330078125,81.38533464566929
+british,metal,144.703125,142.83330716080403
+metal,metal,144.703125,151.99908088235293
+k-pop,k-pop beat electronic techno synth female pop,96.29755434782608,146.6090425531915
+pagode,country pagode guitar pop drums beat fast slow no vocals,139.6748310810811,140.9446022727273
+goth,goth rock,100.15443313953489,132.1355646306818
+british,rock electronic british pop synth,98.12598892405063,99.38401442307693
+turkish,slow turkish guitar,95.11598926380368,90.9853653169014
+electronic,electronic,123.78368263473055,122.21547719594595
+folk,folk electronic techno slow beat synth no vocal,118.99928042763159,90.66611842105264
+dancehall,synth dancehall techno pop electronic drums fast no vocals guitar strings,162.34456806282725,101.04966829608938
+j-dance,techno electronic,117.45383522727275,89.61795520231213
+honky-tonk,honky-tonk guitar slow indian,108.41892482517481,113.04931640625
+party,party electronic guitar,151.19057513297872,151.19057513297872
+alternative,metal alternative,64.599609375,102.67487582781457
+grunge,metal alternative,64.599609375,73.82812499999999
+metal,metal alternative,64.599609375,156.60511363636363
+pagode,guitar vocal pagode pop slow female singing vocals male vocal voice,98.62535782442747,151.19057513297872
+singer-songwriter,classical songwriter,152.89848372781063,114.84374999999999
+songwriter,classical songwriter,152.89848372781063,100.15443313953489
+metalcore,metalcore rock loud drums fast guitar techno metal,67.11647727272727,150.23164970930233
+folk,folk guitar pop vocal drums singing,103.359375,106.39935661764707
+heavy-metal,heavy-metal rock techno synth electronic guitar loud drums vocal weird fast,131.8359375,88.49261558219179
+metal,metal techno beat electronic weird,111.53889388489209,121.59926470588233
+opera,violin opera slow ambient classical female strings synth new age soft vocal,88.59375,127.7794471153846
+groove,electronic indian drums groove synth beat techno female,124.5293674698795,125.03150201612904
+party,guitar drums slow,84.4439338235294,82.6875
+hardcore,happy hardstyle hardcore techno,121.12426757812499,145.9878177966102
+happy,happy hardstyle hardcore techno,121.12426757812499,101.04966829608938
+hardstyle,happy hardstyle hardcore techno,121.12426757812499,84.72079918032787
+techno,happy hardstyle hardcore techno,121.12426757812499,157.40006345177662
+chicago-house,electronic fast chicago-house beat beats techno synth,77.1338619402985,125.6103515625
+hardcore,hardcore drums techno rock beat fast,112.34714673913045,107.666015625
+bluegrass,guitar bluegrass fast indian strings country,150.23164970930233,101.61736306179775
+breakbeat,breakbeat,109.9567819148936,109.375
+ska,drums ska guitar,90.13898982558139,189.9988511029412
+punk,hard-rock punk punk-rock hardcore drums metal rock loud guitar fast no vocals,112.9610655737705,108.57077205882354
+hard-rock,hard-rock punk punk-rock hardcore drums metal rock loud guitar fast no vocals,112.9610655737705,109.18243838028168
+hardcore,hard-rock punk punk-rock hardcore drums metal rock loud guitar fast no vocals,112.9610655737705,141.8040205792683
+punk-rock,hard-rock punk punk-rock hardcore drums metal rock loud guitar fast no vocals,112.9610655737705,89.10290948275862
+happy,slow happy ambient quiet soft electronic male flute voice synth vocal,83.35433467741936,100.15443313953489
+j-idol,rock fast loud j-idol,99.93309737569061,123.7013796542553
+show-tunes,strings show-tunes,110.29201600609757,99.38401442307693
+disney,strings show-tunes,110.29201600609757,120.18531976744185
+goth,beat goth electronic synth techno drums ambient no vocals beats slow,82.46758643617022,166.22121710526318
+groove,groove male guitar drums rock male vocal pop vocal loud,69.83741554054053,131.66799363057325
+metalcore,electronic metalcore beat techno dance fast beats,90.66611842105263,131.0716711956522
+forro,forro guitar drums country slow,127.60416666666666,129.19921875
+forro,forro electronic techno synth fast beat beats weird drums dance no vocals,138.73741610738253,93.11655405405405
+world-music,quiet slow soft world-music classical strings piano,149.59909539473685,144.2833914974619
+samba,samba rock drums guitar beat female woman pop vocal vocals female vocal,158.52664877300614,155.32146516393442
+forro,guitar pop electronic forro female vocal,168.8029993718593,147.2737208549223
+emo,ambient emo synth electronic slow,112.34714673913047,137.0294744318182
+french,french techno synth,123.78368263473052,152.8162802419355
+psych-rock,psych-rock drums electronic fast rock,93.96306818181819,177.18749999999997
+samba,drums indian guitar fast samba rock female vocal woman,159.8340850515464,164.29958453757223
+british,british vocal slow guitar,63.02400914634146,148.1264928343949
+opera,opera,129.19921875,123.046875
+death-metal,rock,144.2833914974619,151.99908088235293
+metalcore,rock,144.2833914974619,148.040771484375
+emo,rock punk-rock metal fast emo,103.359375,65.83399681528662
+punk-rock,rock punk-rock metal fast emo,103.359375,132.02839872262774
+pagode,pagode guitar pop vocals drums singing female vocal woman,143.5546875,100.48828124999999
+sad,sad synth techno,94.5360137195122,84.72079918032787
+show-tunes,show-tunes strings classical drums fast guitar indian techno electronic,290.6982421875,164.58499203821657
+electro,electronic electro techno female vocal female,94.30599908759126,266.2286931818182
+comedy,electronic guitar techno comedy beat pop drums fast synth no vocal no vocals,138.18098262032086,138.18098262032086
+turkish,techno electronic beat turkish synth,126.04801829268293,121.124267578125
+house,house,99.38401442307692,100.15443313953489
+edm,house,99.38401442307692,100.34890776699028
+dance,house,99.38401442307692,100.02520161290323
+progressive-house,house,99.38401442307692,100.02520161290323
+electro,house,99.38401442307692,100.02520161290323
+french,french techno electronic fast,65.00589622641509,127.08119877049181
+pagode,pagode slow guitar drums pop rock,95.703125,191.953125
+dancehall,dancehall techno electronic beat beats synth female pop,117.45383522727272,118.35042938931298
+afrobeat,afrobeat techno synth electronic beats beat drums slow weird no vocals ambient,107.666015625,107.666015625
+samba,samba guitar country pop slow male drums male vocal man,160.38523706896552,111.37863685344828
+swedish,swedish guitar pop singing vocal,105.16215479651163,109.95678191489363
+folk,synth folk beat electronic drums techno pop,118.53139334862382,123.046875
+spanish,spanish guitar pop rock drums country female vocal fast beat piano,99.38401442307692,100.48828124999999
+salsa,guitar salsa male man vocal pop male vocal,113.58173076923079,131.38903601694915
+detroit-techno,techno detroit-techno beat synth ambient weird drums electronic beats,128.39673913043478,64.06572830578513
+grunge,grunge strings classical guitar vocal male vocal,94.5360137195122,121.124267578125
+hardcore,hardcore techno electronic synth,96.41732742537313,175.45572916666666
+trance,fast trance loud drums techno rock beat,157.56002286585365,175.18538135593218
+pop-film,techno pop-film beat,108.22971204188481,108.22971204188481
+tango,flute violin tango classic strings,110.29201600609757,112.34714673913045
+hard-rock,hard-rock metal guitar slow synth pop electronic,132.89062499999997,133.65436422413794
+metal,hard-rock metal guitar slow synth pop electronic,132.89062499999997,133.8852007772021
+heavy-metal,heavy-metal,110.29201600609757,109.375
+progressive-house,progressive-house techno fast dance loud,124.74407327586208,124.52936746987953
+goth,goth strings slow violin guitar no vocals classical electronic synth,196.4432565789474,101.61736306179775
+french,french beat,100.02520161290325,96.7266878342246
+ska,ska pop female vocal woman vocals guitar drums singing synth rock,164.29958453757226,164.93517287234044
+malay,malay,150.732421875,176.1807528409091
+spanish,electronic synth spanish techno,183.6334073604061,170.51673540609139
+kids,kids electronic beat beats synth techno slow drums dance ambient,78.30255681818181,145.34912109375
+punk-rock,punk-rock punk electronic drums slow,127.60416666666667,126.39054008152175
+punk,punk-rock punk electronic drums slow,127.60416666666667,167.19898897058826
+rock,punk-rock punk electronic drums slow,127.60416666666667,122.39925986842107
+black-metal,loud black-metal rock fast metal,122.31878698224853,108.79934210526314
+latino,techno latino electronic,109.49086334745765,105.77713815789475
+gospel,guitar pop gospel female rock vocal,130.0117924528302,132.99919577205884
+hardcore,electronic techno synth hardcore drums beats flute beat fast,87.890625,176.1807528409091
+country,country guitar slow drums rock,98.30375339673913,97.14226973684212
+ska,woman pop,173.31602515243904,169.99897203947364
+indian,indian,109.62357954545456,108.41892482517481
+mandopop,piano,69.2138671875,70.79409246575344
+german,techno german slow classical piano,78.30255681818181,92.83776197604791
+chill,electronic beat chill drums techno rock,88.09037642045455,88.34134615384616
+acoustic,acoustic piano slow soft quiet,210.9375,47.85156249999999
+mandopop,mandopop drums cantopop vocal,115.94801682692308,81.77165743670886
+cantopop,mandopop drums cantopop vocal,115.94801682692308,87.59269067796609
+j-pop,j-pop guitar female pop rock woman female vocal fast vocal,128.39673913043478,126.04801829268291
+edm,edm dance house,98.30375339673913,125.2840909090909
+dance,edm dance house,98.30375339673913,123.70137965425532
+house,edm dance house,98.30375339673913,133.65436422413794
+swedish,edm dance house,98.30375339673913,123.78368263473052
+electro,edm dance house,98.30375339673913,200.8278011658031
+world-music,world-music piano slow ambient quiet,69.83741554054055,104.75612331081082
+show-tunes,show-tunes quiet guitar,112.34714673913038,117.45383522727272
+j-idol,guitar j-idol drums indian,112.9610655737705,119.87556378865979
+piano,electronic piano acoustic slow synth,83.35433467741935,118.65234375
+acoustic,electronic piano acoustic slow synth,83.35433467741935,145.87008568548387
+samba,samba mpb,96.29755434782608,123.046875
+mpb,samba mpb,96.29755434782608,118.22150735294119
+latin,latin drums,150.23164970930233,116.57072368421053
+drum-and-bass,electronic drum-and-bass,116.79025423728814,141.8040205792683
+heavy-metal,heavy-metal techno fast,144.35666899441338,118.99928042763159
+gospel,slow violin gospel ambient strings classical quiet,131.66799363057325,136.79917279411765
+j-rock,j-rock,156.60511363636363,152.99907483552633
+house,house piano edm slow vocal classical,42.36039959016393,84.03201219512195
+edm,house piano edm slow vocal classical,42.36039959016393,78.30255681818181
+honky-tonk,honky-tonk,145.57658450704224,119.62890625
+j-rock,rockabilly j-rock guitar slow pop drums rock male,123.7013796542553,122.31878698224851
+rockabilly,rockabilly j-rock guitar slow pop drums rock male,123.7013796542553,121.59926470588235
+show-tunes,show-tunes,133.19507087628867,118.80387931034485
+funk,piano funk soul synth ambient slow soft electronic,99.38401442307692,123.046875
+soul,piano funk soul synth ambient slow soft electronic,99.38401442307692,60.79963235294118
+hip-hop,pop techno beat drums electronic hip-hop slow,92.28515625000001,122.21547719594595
+pop,pop techno beat drums electronic hip-hop slow,92.28515625000001,91.63065159574468
+spanish,spanish electronic techno beat guitar fast drums synth dance beats pop,121.75842604712044,154.47732676630432
+forro,guitar forro pop vocal vocals country drums male vocal singing male,84.99948601973682,149.4866993801653
+j-pop,j-pop songwriter jazz turkish guitar slow singer-songwriter classical,89.61795520231213,180.27797965116278
+jazz,j-pop songwriter jazz turkish guitar slow singer-songwriter classical,89.61795520231213,131.38903601694912
+turkish,j-pop songwriter jazz turkish guitar slow singer-songwriter classical,89.61795520231213,184.5703125
+songwriter,j-pop songwriter jazz turkish guitar slow singer-songwriter classical,89.61795520231213,89.87771739130434
+singer-songwriter,j-pop songwriter jazz turkish guitar slow singer-songwriter classical,89.61795520231213,67.99958881578948
+malay,malay techno beat electronic slow ambient,92.28515625,124.23001802884616
+party,techno synth electronic party dance no vocals no vocal ambient,140.21620639534885,142.76156767955803
+happy,happy techno,99.38401442307692,118.99928042763156
+party,party german techno,118.125,121.75842604712041
+disco,party german techno,118.125,127.77944711538463
+german,party german techno,118.125,120.18531976744184
+latin,reggae latin reggaeton drums latino beat electronic,180.60105846774192,115.48533519553072
+reggae,reggae latin reggaeton drums latino beat electronic,180.60105846774192,89.10290948275863
+reggaeton,reggae latin reggaeton drums latino beat electronic,180.60105846774192,89.72167968750001
+latino,reggae latin reggaeton drums latino beat electronic,180.60105846774192,180.60105846774195
+hip-hop,reggae latin reggaeton drums latino beat electronic,180.60105846774192,90.34910402097903
+dance,pop dance slow,140.09553840361443,87.890625
+pop,pop dance slow,140.09553840361443,141.20133196721312
+sertanejo,sertanejo guitar rock vocal female slow pop female vocal woman singing drums,105.46875,95.11598926380368
+goth,rock techno drums electronic goth beat fast loud synth ambient female,105.46875,206.71875
+j-idol,pop techno j-idol rock drums guitar country beat synth electronic,121.59926470588235,126.48874562937063
+techno,pop techno j-idol rock drums guitar country beat synth electronic,121.59926470588235,122.07800196850394
+indian,electronic slow synth techno indian ambient beat,135.99917763157896,120.49668069948186
+metal,guitar,76.90429687499999,140.43393342391306
+soul,soul techno beat electronic ambient synth weird beats slow drums,91.7390902366864,121.59926470588235
+grunge,grunge fast loud rock drums techno metal beat guitar electronic no vocals,104.05306208053692,106.55605670103093
+sertanejo,sertanejo guitar country slow,74.5380108173077,149.36325867052025
+groove,groove rock slow vocal vocals drums pop guitar female,70.79409246575344,66.25600961538461
+anime,anime slow j-rock violin classical strings piano cello,160.24709302325581,73.828125
+j-rock,anime slow j-rock violin classical strings piano cello,160.24709302325581,166.7086693548387
+bluegrass,bluegrass pop country piano slow guitar,129.19921875,129.19921875
+dancehall,dancehall beat techno,132.51201923076925,97.77238175675676
+sad,electronic beat sad beats techno drums slow synth weird ambient no vocals,89.7216796875,175.78125
+k-pop,k-pop electronic drums,137.445977393617,135.99917763157896
+sertanejo,sertanejo pop slow guitar vocal country,88.09037642045455,94.30599908759123
+rock,slow rock piano ambient synth,69.36870805369128,92.28515625
+reggae,reggae reggaeton latino latin beat,98.30375339673913,116.79025423728811
+reggaeton,reggae reggaeton latino latin beat,98.30375339673913,200.97656250000003
+latino,reggae reggaeton latino latin beat,98.30375339673913,98.75099522292994
+latin,reggae reggaeton latino latin beat,98.30375339673913,119.62890625
+forro,forro drums fast guitar beat indian techno pop electronic,160.49592391304347,162.51474056603774
+goth,slow guitar beat vocal,62.26468373493976,61.5234375
+k-pop,k-pop,95.703125,100.02520161290325
+dance,dance electronic guitar slow drums beat techno male vocal,196.25197784810126,195.54476351351357
+romance,romance guitar man slow male vocal male vocal vocals male voice,145.1676615168539,137.8125
+funk,funk techno beat electronic beats synth drums dance flute,167.6097972972973,87.59269067796609
+punk-rock,punk-rock,113.99931066176471,179.97901119402982
+alt-rock,drums,178.20581896551724,147.65625
+turkish,drums,178.20581896551724,68.60135508849558
+salsa,guitar salsa indian strings drums country pop,123.70137965425532,201.34943181818184
+drum-and-bass,drum-and-bass dance techno electronic beat fast synth loud beats,88.59375,85.5623965231788
+kids,drums kids beat vocal slow,122.21547719594595,123.04687500000001
+j-dance,j-dance electronic beat techno synth drums beats ambient weird slow,102.53906249999999,137.44597739361703
+emo,emo punk punk-rock rock pop guitar drums vocals,125.03150201612904,153.6423141891892
+punk,emo punk punk-rock rock pop guitar drums vocals,125.03150201612904,129.92100209497204
+punk-rock,emo punk punk-rock rock pop guitar drums vocals,125.03150201612904,143.5546875
+country,indian country drums electronic techno female vocals,141.97716346153845,140.21620639534885
+dancehall,dancehall techno no vocal,115.94801682692308,143.5546875
+heavy-metal,drums heavy-metal fast guitar,138.427734375,109.375
+rock-n-roll,rockabilly classical rock-n-roll,90.66611842105263,94.5360137195122
+rockabilly,rockabilly classical rock-n-roll,90.66611842105263,91.19944852941177
+party,fast beat party,141.97716346153848,145.01953125
+edm,electro ambient edm slow electronic,159.50520833333334,142.56465517241378
+electro,electro ambient edm slow electronic,159.50520833333334,82.82001201923077
+latin,alternative latin drums guitar alt-rock vocal pop rock country beat,95.703125,127.37951144366197
+alternative,alternative latin drums guitar alt-rock vocal pop rock country beat,95.703125,83.35433467741936
+alt-rock,alternative latin drums guitar alt-rock vocal pop rock country beat,95.703125,144.44633152173915
+j-idol,fast j-idol synth,128.28291223404256,124.74407327586206
+r-n-b,r-n-b beat,171.31388121546962,167.7911931818182
+alt-rock,r-n-b beat,171.31388121546962,150.732421875
+alternative,r-n-b beat,171.31388121546962,170.51673540609139
+rock,rock drums beat electronic latin guitar,96.41732742537313,93.6226222826087
+latin,rock drums beat electronic latin guitar,96.41732742537313,64.19836956521739
+pagode,pagode country slow drums guitar sertanejo beat,132.1355646306818,134.4269328034682
+sertanejo,pagode country slow drums guitar sertanejo beat,132.1355646306818,133.36693548387098
+honky-tonk,pop honky-tonk guitar rock,75.55509868421053,76.904296875
+reggaeton,reggaeton techno reggae beat beats electronic drums no vocals,126.8213190184049,120.5859375
+reggae,reggaeton techno reggae beat beats electronic drums no vocals,126.8213190184049,129.19921875
+forro,forro electronic guitar beat techno synth male vocal drums,114.84375000000001,115.48533519553072
+edm,electronic techno edm beat drums synth,103.359375,105.90099897540985
+country,country rock,90.1389898255814,97.77238175675676
+romance,romance techno synth fast ambient,135.99917763157896,174.0507610103627
+malay,malay beat,160.49592391304347,89.7216796875
+forro,guitar pop forro country vocals rock,117.45383522727272,89.10290948275862
+world-music,vocal drums female indian guitar world-music woman slow vocals beat,165.64002403846155,123.046875
+funk,beat funk electronic slow female drums,102.19147245762713,98.30375339673913
+goth,goth rock no vocal,131.38903601694915,130.8346518987342
+dancehall,dancehall singing guitar pop vocals vocal,74.89809782608695,131.38903601694912
+pop-film,pop-film synth new age electronic ambient slow no vocal techno,107.66601562499999,105.16215479651163
+pop-film,pop-film slow beat drums electronic ambient female indian vocal,123.70137965425532,127.08119877049181
+emo,guitar emo rock drums beat loud metal fast techno,129.92100209497207,129.19921875
+punk,slow electronic guitar synth punk ambient male vocal strings,107.66601562499999,107.02893860946745
+tango,tango classical choir,114.84374999999999,133.36693548387098
+k-pop,k-pop drums beat pop-film strings violin beats,115.48533519553072,116.79025423728814
+pop-film,k-pop drums beat pop-film strings violin beats,115.48533519553072,116.79025423728811
+hardcore,hardcore rock drums guitar loud no vocal,103.359375,83.8955965909091
+samba,samba fast piano,119.4906069364162,164.58499203821654
+j-dance,j-dance techno,119.78735513245033,143.5546875
+turkish,turkish electronic beat techno beats,110.54478609625669,109.95678191489363
+edm,house edm dance techno,123.04687500000001,158.52664877300614
+dance,house edm dance techno,123.04687500000001,121.12426757812499
+house,house edm dance techno,123.04687500000001,123.04687500000001
+forro,forro indian electronic techno fast drums beat pop sitar,112.9610655737705,170.51673540609136
+k-pop,techno beat beats k-pop electronic drums,77.83085466867469,151.99908088235296
+disney,disney pop male vocal guitar drums vocals vocal,93.96306818181819,92.83776197604791
+reggae,brazil vocal,113.99931066176474,194.49344758064515
+brazil,brazil vocal,113.99931066176474,178.20581896551727
+disney,strings pop disney classical fast,103.359375,115.20949442675158
+indian,indian piano electronic synth classical flute quiet slow soft strings,104.19291834677419,75.55509868421052
+dub,dub synth techno dubstep piano loud electronic,149.3632586705202,164.58499203821654
+dubstep,dub synth techno dubstep piano loud electronic,149.3632586705202,97.50884433962266
+club,club rock,95.703125,107.666015625
+pagode,pagode guitar country drums vocal beat pop fast slow,169.18945312499997,171.22788027108436
+blues,blues hard-rock guitar pop,120.88815789473684,121.75842604712041
+hard-rock,blues hard-rock guitar pop,120.88815789473684,126.39054008152175
+dance,pop dance drums slow rock,150.03780241935485,141.20133196721312
+pop,pop dance drums slow rock,150.03780241935485,148.26139856557378
+punk,techno punk beat electronic drums synth weird,157.56002286585365,107.666015625
+mpb,guitar mpb slow no vocal country no vocals man solo male strings,123.046875,122.39925986842107
+k-pop,k-pop synth fast beat,122.07800196850394,121.59926470588233
+ska,ska rock fast guitar electronic drums techno beat indian pop country,111.73986486486486,215.33203125
+house,house ambient techno synth electronic no vocals slow no vocal beat weird drums,124.74407327586208,123.046875
+pagode,pagode guitar vocal drums pop vocals slow beat singing female country,97.77238175675676,131.8359375
+show-tunes,slow rock drums show-tunes beat pop vocal singing,137.445977393617,131.8359375
+pagode,techno pagode drums fast electronic,119.26081730769229,118.125
+j-idol,rock loud j-idol guitar metal fast drums male male vocal,103.359375,167.19898897058823
+opera,electronic,87.890625,113.16719890510949
+breakbeat,breakbeat techno electronic synth beat fast,129.19921875,106.92349137931036
+dancehall,dancehall drums guitar beat electronic synth slow female vocal,172.265625,174.05076101036266
+children,techno synth drums children beat electronic,116.13412921348313,117.45383522727272
+mpb,electronic slow mpb beat drums,110.74218749999999,109.49086334745765
+breakbeat,electronic breakbeat synth beat techno,91.19944852941177,130.1287095323741
+pagode,pagode vocal guitar singing violin,113.99931066176471,117.45383522727275
+pop-film,pop-film strings classical synth electronic,95.70312499999999,96.8994140625
+cantopop,guitar slow cantopop,152.89848372781063,150.23164970930233
+edm,techno,91.63065159574468,144.2833914974619
+electro,techno,91.63065159574468,98.12598892405065
+rock,rock piano,69.2138671875,96.59754672897196
+piano,rock piano,69.2138671875,119.26081730769229
+samba,samba slow guitar strings classical vocal,170.64047759433964,118.80387931034483
+country,country male vocal slow guitar strings male man country vocal male voice,121.59926470588235,120.88815789473684
+metalcore,metalcore rock drums guitar fast loud,145.57658450704224,100.34890776699031
+industrial,industrial female woman female vocal rock pop female voice vocal loud vocals,140.09553840361446,104.05306208053692
+punk-rock,punk punk-rock male vocal drums guitar,119.26081730769232,107.666015625
+punk,punk punk-rock male vocal drums guitar,119.26081730769232,75.99954044117648
+rockabilly,rockabilly rock-n-roll guitar slow strings classical country male vocal drums,96.8994140625,98.12598892405063
+rock-n-roll,rockabilly rock-n-roll guitar slow strings classical country male vocal drums,96.8994140625,98.75099522292994
+trip-hop,rock trip-hop guitar drums pop vocals,162.3445680628272,146.51457796391753
+disney,show-tunes disney pop vocal female,199.792606314433,100.02520161290323
+show-tunes,show-tunes disney pop vocal female,199.792606314433,106.39935661764707
+gospel,guitar gospel rock,70.47230113636363,70.79409246575344
+garage,garage loud rock techno fast drums beat electronic no vocals guitar synth,104.75612331081082,115.94801682692305
+malay,drums malay guitar flute indian beat electronic synth slow no vocals no vocal,127.7794471153846,129.19921875
+emo,techno synth emo electronic,98.12598892405062,96.2121841755319
+acoustic,acoustic guitar slow,90.13898982558139,81.38533464566929
+kids,kids beats techno beat electronic synth drums slow no vocal dance ambient,122.31878698224853,87.10059691011237
+swedish,slow swedish ambient classical violin strings synth no vocals,100.48828124999999,162.421875
+synth-pop,synth-pop pop drums rock guitar beat,119.78735513245033,120.5859375
+mandopop,guitar mandopop vocal slow,136.79917279411765,140.0188577586207
+salsa,drums salsa guitar slow country no vocals,99.38401442307693,93.39702560240964
+disco,rock fast disco guitar pop vocal drums singing,149.7961956521739,150.03780241935485
+punk-rock,punk-rock rock loud punk drums guitar indian fast metal,98.12598892405063,125.03150201612904
+punk,punk-rock rock loud punk drums guitar indian fast metal,98.12598892405063,141.58818493150685
+mpb,mpb gospel electronic,143.5546875,72.44816004672897
+gospel,mpb gospel electronic,143.5546875,96.8994140625
+goth,goth fast beat techno drums,159.28670804794518,155.6617093373494
+dancehall,dancehall techno electronic j-dance synth drums no vocals beat slow,132.02839872262774,135.99917763157896
+j-dance,dancehall techno electronic j-dance synth drums no vocals beat slow,132.02839872262774,117.45383522727272
+industrial,loud industrial,180.2779796511628,156.60511363636363
+indian,indian electronic fast beat techno drums indian,114.2092541436464,121.124267578125
+french,electronic french techno,156.60511363636363,113.16719890510949
+comedy,opera,171.22788027108436,136.8998344370861
+swedish,swedish beat electronic male techno guitar vocal,111.13911290322581,111.65364583333334
+opera,opera female classical,112.34714673913045,79.75260416666667
+tango,guitar tango slow strings ambient,118.35042938931298,91.46847345132743
+metal,metal drums fast rock hard-rock guitar techno,180.60105846774192,117.45383522727275
+groove,groove ambient slow electronic synth,106.19113869863013,107.666015625
+party,electronic fast techno party drums beat rock loud dance,128.48541091160223,171.31388121546962
+children,children ambient slow soft quiet guitar,82.46758643617022,77.1338619402985
+dubstep,techno electronic dub fast loud dubstep beat electronic,145.57658450704224,162.34456806282725
+electronic,techno electronic dub fast loud dubstep beat electronic,145.57658450704224,146.51457796391753
+dub,techno electronic dub fast loud dubstep beat electronic,145.57658450704224,145.76322115384613
+brazil,guitar slow brazil pop,123.046875,119.78735513245033
+chill,electronic techno chill ambient weird slow beats no vocal synth beat,141.97716346153848,117.45383522727272
+groove,guitar slow male vocal male vocal groove rock,60.79963235294118,61.03900098425197
+turkish,beat electronic techno beats synth slow,82.82001201923077,121.59926470588235
+goth,drums goth beats electronic beat techno slow vocal female synth no vocals,91.7390902366864,161.4990234375
+comedy,electronic comedy techno fast drums synth beat ambient weird no vocals,114.48032041139243,126.66590073529412
+malay,malay beat drums techno,182.56411345108694,97.50884433962263
+samba,indian samba drums,97.77238175675676,109.95678191489363
+mpb,indian samba drums,97.77238175675676,105.46875
+pagode,indian samba drums,97.77238175675676,104.55428106936415
+drum-and-bass,drum-and-bass rock pop guitar vocal drums singing,78.30255681818181,78.78001143292683
+j-dance,techno beat electronic dance j-dance synth beats,72.78829225352112,132.1355646306818
+pop-film,pop-film male vocal drums male,139.67483108108107,138.92389112903226
+emo,guitar rock drums emo loud indian,138.18098262032086,105.04001524390245
+soul,soul electronic slow techno ambient synth weird beat drums,123.04687499999999,101.3327205882353
+latin,latin drums,115.3564453125,116.79025423728814
+pop-film,techno pop synth pop-film electronic beat male drums voice male vocal vocals,89.61795520231213,167.6097972972973
+pop,techno pop synth pop-film electronic beat male drums voice male vocal vocals,89.61795520231213,107.02893860946746
+opera,opera slow ambient quiet classical soft violin opera new age strings,196.60750679347834,135.99917763157896
+german,electronic german techno,69.83741554054055,139.67483108108107
+swedish,guitar,96.59754672897196,133.65436422413794
+power-pop,rock guitar male vocal power-pop pop,79.26332438650307,159.50520833333331
+soul,soul techno drums dance beat electronic fast pop,80.74951171875001,120.18531976744187
+folk,folk,100.67471590909092,203.66379310344826
+psych-rock,female psych-rock guitar vocal woman singing female vocal vocals slow strings female voice,172.265625,144.55856643356645
+k-pop,techno k-pop synth slow,145.76322115384613,123.88966181506851
+progressive-house,techno,135.99917763157896,135.99917763157896
+k-pop,k-pop pop-film slow drums,124.36288435828877,125.03150201612901
+pop-film,k-pop pop-film slow drums,124.36288435828877,91.19944852941177
+drum-and-bass,drum-and-bass beat vocal guitar beats drums slow singing female pop vocals,114.84374999999999,120.49668069948189
+progressive-house,progressive-house techno electronic fast synth beat dance female pop,108.22971204188481,107.66601562499999
+guitar,guitar guitar drums pop,158.52664877300614,111.1391129032258
+salsa,salsa electronic techno synth no vocals drums guitar,172.265625,105.16215479651163
+dancehall,dancehall electronic slow synth beat techno no vocals drums guitar ambient,142.2376720183486,127.7794471153846
+rock,rock guitar british,118.80387931034483,81.25737028301886
+british,rock guitar british,118.80387931034483,80.12354651162792
+pagode,pagode slow guitar drums,156.17487980769232,157.56002286585365
+blues,guitar,117.45383522727272,117.45383522727272
+happy,happy electronic techno synth ambient beat,99.38401442307692,146.8172940340909
+black-metal,black-metal drums beat guitar pop rock female woman,79.50721153846153,112.34714673913045
+indie-pop,indie-pop electronic indie beat piano drums pop,131.0716711956522,130.1287095323741
+indie,indie-pop electronic indie beat piano drums pop,131.0716711956522,131.0716711956522
+kids,techno slow kids electronic synth ambient,135.28714005235602,72.27928321678323
+j-dance,j-dance female drums beat electronic techno synth vocal woman slow beats,152.9990748355263,154.01231374172184
+country,country,90.66611842105263,96.8994140625
+honky-tonk,honky-tonk slow singing guitar pop vocal,202.66544117647058,156.60511363636363
+chill,slow chill strings cello,117.45383522727266,145.57658450704224
+british,british rock guitar,107.66601562499999,85.18629807692308
+punk,country punk guitar strings no vocal fast slow solo no voice no vocals indian,104.05306208053692,111.13911290322581
+songwriter,songwriter singer-songwriter slow drums beat no vocals ambient strings quiet no vocal,84.4439338235294,173.15359213917526
+singer-songwriter,songwriter singer-songwriter slow drums beat no vocals ambient strings quiet no vocal,84.4439338235294,151.99908088235293
+progressive-house,guitar progressive-house pop drums,128.48541091160223,128.48541091160223
+hardcore,electronic hardcore techno beat slow dance synth no vocals beats,86.85661764705881,120.88815789473682
+progressive-house,techno synth progressive-house electronic fast loud dance beat drums no vocal no vocals,134.58251953125,122.39925986842107
+soul,guitar soul slow drums strings ambient no vocals quiet violin,116.57072368421053,88.49261558219177
+club,club classical flute slow electronic,133.984375,123.8896618150685
+comedy,vocal opera choir classical,161.4990234375,180.60105846774195
+psych-rock,guitar british psych-rock male vocal drums rock,102.67487582781457,105.77713815789475
+british,guitar british psych-rock male vocal drums rock,102.67487582781457,134.42693280346822
+kids,kids guitar slow male male vocal pop man,106.39935661764706,108.31072230538922
+german,german techno rock electronic synth drums guitar loud ambient,100.48828125000001,167.6097972972973
+emo,electronic chill emo techno,104.7561233108108,101.33272058823529
+chill,electronic chill emo techno,104.7561233108108,104.4034090909091
+synth-pop,pop guitar female synth-pop vocal drums female vocal,110.9686541411043,75.99954044117648
+malay,beat malay drums strings synth electronic techno slow classical no vocals violin,130.6508953651685,145.1676615168539
+show-tunes,show-tunes classical strings opera,75.99954044117648,87.29676942567568
+groove,groove,90.13898982558139,161.4990234375
+happy,electronic techno happy ambient weird beat slow rock synth,115.2094944267516,156.60511363636363
+kids,beat electronic techno synth kids slow drums,88.59375,129.19921875
+disco,disco guitar,97.50884433962263,98.12598892405063
+spanish,spanish country guitar piano,59.630408653846146,187.92613636363637
+forro,electronic forro drums synth techno pop rock no vocals,94.70099803664921,96.59754672897196
+goth,goth,151.99908088235296,156.60511363636365
+hip-hop,drums hip-hop,97.50884433962266,95.703125
+pop,drums hip-hop,97.50884433962266,77.83085466867469
+pagode,pagode strings country fast guitar,119.87556378865979,177.734375
+sertanejo,vocal guitar female sertanejo singing strings,101.33272058823529,131.66799363057325
+bluegrass,bluegrass,149.3632586705202,134.23295454545453
+mandopop,mandopop guitar slow classical strings quiet soft,108.96319653614457,108.79934210526318
+trance,trance techno fast dance beat loud,124.74407327586206,95.70312499999999
+metalcore,fast metalcore techno loud synth rock drums weird,84.99948601973682,97.14226973684212
+happy,happy techno fast drums beat electronic synth beats,150.23164970930233,151.1905751329787
+cantopop,cantopop violin strings classical slow no vocals piano,117.45383522727272,62.64204545454545
+blues,slow beat blues beats drums techno guitar,97.1422697368421,124.3628843582888
+blues,blues drums guitar,129.92100209497207,120.5859375
+cantopop,cantopop,109.95678191489363,138.92389112903226
+disco,disco fast techno loud beat dance electronic synth drums,128.48541091160217,129.19921875
+reggae,pop,115.48533519553072,174.85608552631578
+reggaeton,reggae reggaeton drums techno latino beat,129.19921875,182.39889705882354
+reggae,reggae reggaeton drums techno latino beat,129.19921875,189.49218750000003
+latino,reggae reggaeton drums techno latino beat,129.19921875,127.60416666666666
+romance,strings classical romance violin,119.87556378865979,133.19507087628867
+dub,dubstep dub techno indian electronic synth female,120.49668069948186,120.18531976744185
+dubstep,dubstep dub techno indian electronic synth female,120.49668069948186,126.48874562937063
+sad,sad emo slow drums male,61.89184131736527,124.36288435828877
+emo,sad emo slow drums male,61.89184131736527,123.70137965425532
+dubstep,dubstep techno fast dub beat electronic loud,128.48541091160223,110.74218749999999
+dub,dubstep techno fast dub beat electronic loud,128.48541091160223,129.8484610552764
+tango,slow tango rock violin,84.72079918032786,130.83465189873417
+swedish,electronic techno swedish,79.1015625,116.69606854838712
+deep-house,deep-house groove techno electronic dance beat,123.78368263473054,123.7013796542553
+groove,deep-house groove techno electronic dance beat,123.78368263473054,127.60416666666667
+pop,pop techno electronic,126.8213190184049,95.703125
+j-dance,electronic j-dance beat techno slow,170.20256362275447,168.1883321005917
+dub,dub techno dubstep fast dance electronic beat,79.75260416666667,119.26081730769232
+dubstep,dub techno dubstep fast dance electronic beat,79.75260416666667,120.49668069948186
+sertanejo,pop,89.7216796875,103.95339439655172
+samba,drums samba strings guitar vocal,130.0117924528302,169.44159836065575
+world-music,world-music guitar male vocal slow male male voice man vocal ambient,56.173573369565226,146.6090425531915
+punk,drums punk beat fast indian guitar electronic,123.78368263473052,121.59926470588236
+groove,groove house techno electronic synth beat,125.2840909090909,126.82131901840489
+deep-house,groove house techno electronic synth beat,125.2840909090909,83.8955965909091
+house,groove house techno electronic synth beat,125.2840909090909,127.37951144366195
+samba,pagode samba beat,101.73166830708662,188.71795997191015
+j-pop,j-pop drums guitar,113.76031839622641,129.19921875
+j-rock,j-pop drums guitar,113.76031839622641,177.734375
+chill,guitar chill ambient slow flute,161.49902343750006,80.74951171875
+sertanejo,guitar country sertanejo no vocals slow strings no vocal drums,76.75201113861387,77.51953125
+hip-hop,electronic techno hip-hop drums slow beat beats synth male vocal,130.1287095323741,129.19921875
+acoustic,acoustic techno fast loud guitar rock pop electronic synth,158.7923358938547,131.16671954314722
+sertanejo,sertanejo,95.70312500000003,68.90625
+dancehall,electronic techno dancehall beat drums,100.02520161290325,100.67471590909092
+mpb,vocal mpb guitar drums pop beat female vocals woman singing female vocal,144.55856643356645,168.8029993718593
+british,drums british electronic slow,94.99942555147057,188.71795997191015
+gospel,gospel techno synth beat electronic drums weird ambient fast rock,140.43393342391306,99.38401442307693
+happy,happy loud fast,92.28515625,188.41552734374997
+alt-rock,alt-rock rock country vocal pop drums guitar female singing vocals woman,113.58173076923076,121.124267578125
+afrobeat,techno electronic synth afrobeat,131.07167119565216,134.58251953125
+rockabilly,rockabilly rock techno electronic drums synth fast loud,88.34134615384615,89.10290948275862
+anime,anime electronic,86.13281249999999,163.54331487341773
+reggaeton,reggaeton techno latino electronic drums slow beat no vocals beats synth weird,128.39673913043478,130.01179245283018
+latino,reggaeton techno latino electronic drums slow beat no vocals beats synth weird,128.39673913043478,120.49668069948189
+show-tunes,violin show-tunes,155.32146516393442,82.03124999999999
+heavy-metal,heavy-metal loud male rock drums guitar fast,151.19057513297872,109.375
+tango,tango country guitar pop male,102.67487582781456,103.359375
+spanish,spanish guitar drums pop rock vocal slow,185.67552395209583,116.69606854838709
+swedish,ambient guitar,124.52936746987952,120.88815789473682
+j-rock,rock j-pop j-rock loud fast guitar,170.6404775943396,172.26562499999997
+j-pop,rock j-pop j-rock loud fast guitar,170.6404775943396,115.20949442675158
+electronic,electronic beat drums beats,125.70734797297297,96.29755434782608
+dancehall,dancehall guitar slow drums ambient synth,119.26081730769232,93.11655405405405
+ska,guitar ska drums rock,145.9878177966102,95.70312499999999
+spanish,beat spanish electronic slow techno beats,135.99917763157896,198.76802884615384
+spanish,electronic spanish synth ambient slow vocals vocal guitar techno pop female,172.265625,170.51673540609139
+electronic,electronic guitar country rock no vocal no vocals fast drums beat pop,99.93309737569061,100.48828124999999
+party,rock party drums pop,173.31602515243904,170.37259615384613
+j-rock,j-rock guitar drums rock anime fast,128.48541091160223,127.08119877049181
+anime,j-rock guitar drums rock anime fast,128.48541091160223,126.48874562937063
+world-music,guitar pop slow vocal world-music,145.9878177966102,149.59909539473682
+spanish,beat spanish electronic drums slow synth,142.23767201834863,133.19507087628867
+hardcore,beat drums hardcore techno,86.1328125,87.10059691011234
+heavy-metal,heavy-metal rock,150.39062500000003,94.82511467889908
+dancehall,dancehall techno beat electronic slow synth drums ambient pop beats,101.99938322368422,102.19147245762713
+alternative,alternative alt-rock hard-rock metal grunge rock guitar pop drums,107.66601562499999,78.30255681818181
+alt-rock,alternative alt-rock hard-rock metal grunge rock guitar pop drums,107.66601562499999,90.9853653169014
+grunge,alternative alt-rock hard-rock metal grunge rock guitar pop drums,107.66601562499999,97.77238175675676
+metal,alternative alt-rock hard-rock metal grunge rock guitar pop drums,107.66601562499999,71.77734375
+hard-rock,alternative alt-rock hard-rock metal grunge rock guitar pop drums,107.66601562499999,167.48046875
+dance,dance,133.65436422413794,140.43393342391306
+edm,dance,133.65436422413794,113.33264802631578
+pop,dance,133.65436422413794,100.02520161290323
+singer-songwriter,male guitar singer-songwriter slow songwriter vocal,63.02400914634146,101.33272058823529
+songwriter,male guitar singer-songwriter slow songwriter vocal,63.02400914634146,103.359375
+punk-rock,guitar punk-rock loud,99.38401442307693,102.67487582781456
+rock-n-roll,rock-n-roll electronic synth beat techno slow strings classical violin weird no vocals,143.55468749999997,69.2138671875
+hip-hop,hip-hop synth electronic techno beat no vocals ambient slow,105.16215479651163,157.40006345177667
+deep-house,beat deep-house fast,125.03150201612904,128.28291223404256
+j-dance,j-dance guitar beat pop synth drums vocal,172.26562499999997,141.20133196721312
+indian,beat guitar drums indian rock fast indian loud pop no vocals electronic,126.04801829268294,126.04801829268293
+rockabilly,vocal guitar male vocal male voice rockabilly male slow singing man voice vocals,73.30452127659575,125.03150201612904
+cantopop,guitar pop cantopop drums synth slow electronic beat vocal vocals,143.5546875,143.5546875
+mandopop,mandopop guitar pop country piano rock drums,97.1422697368421,86.61400139664804
+indian,slow indian ambient synth vocals,86.85661764705883,104.4034090909091
+cantopop,rock cantopop mandopop vocal,135.99917763157896,67.40828804347825
+mandopop,rock cantopop mandopop vocal,135.99917763157896,98.84093237704917
+world-music,world-music ambient strings slow violin electronic,160.5865995762712,86.1328125
+emo,emo sad drums vocal slow beat,74.89809782608695,74.89809782608695
+sad,emo sad drums vocal slow beat,74.89809782608695,74.35926258992806
+swedish,swedish electronic techno beat slow synth drums,124.23001802884615,126.8213190184049
+sertanejo,sertanejo pop electronic guitar synth,89.10290948275863,135.28714005235602
+children,children guitar country slow vocal pop vocals woman female male singing,167.958984375,179.63527740641712
+j-dance,j-dance techno synth beat electronic beats slow,163.19901315789474,156.60511363636363
+disco,electro house edm disco fast electronic loud,131.1667195431472,156.60511363636365
+electro,electro house edm disco fast electronic loud,131.1667195431472,77.1338619402985
+house,electro house edm disco fast electronic loud,131.1667195431472,128.39673913043478
+edm,electro house edm disco fast electronic loud,131.1667195431472,125.6103515625
+rockabilly,guitar drums rockabilly beat rock slow strings no vocal no vocals male,71.2823275862069,72.58383075842696
+brazil,brazil electronic techno synth,140.43393342391306,140.625
+world-music,guitar loud world-music rock fast ambient drums electronic,134.58251953124997,149.3632586705202
+ambient,guitar loud world-music rock fast ambient drums electronic,134.58251953124997,168.0640243902439
+country,electronic techno country guitar synth pop beat rock drums no vocals fast,96.72668783422459,97.50884433962266
+hip-hop,pop-film indian hip-hop indie rock,92.28515625,148.040771484375
+indie,pop-film indian hip-hop indie rock,92.28515625,107.666015625
+rock,pop-film indian hip-hop indie rock,92.28515625,181.5772804054054
+indian,pop-film indian hip-hop indie rock,92.28515625,165.25481468023256
+indie-pop,pop-film indian hip-hop indie rock,92.28515625,104.05306208053692
+j-rock,guitar j-rock,119.87556378865979,119.26081730769229
+techno,techno guitar j-idol drums rock vocal pop,119.4906069364162,119.49060693641617
+electro,dance beat,118.125,118.35042938931298
+latin,latin,103.35937500000001,113.04931640625
+world-music,electronic synth techno fast loud world-music no vocals piano pop,130.83465189873417,129.92100209497207
+dub,techno french dub electronic beat,160.38523706896552,165.81717914438502
+french,techno french dub electronic beat,160.38523706896552,164.93517287234044
+brazil,brazil mpb reggae guitar slow country pop,173.15359213917526,89.10290948275863
+mpb,brazil mpb reggae guitar slow country pop,173.15359213917526,85.42097107438018
+reggae,brazil mpb reggae guitar slow country pop,173.15359213917526,170.51673540609139
+cantopop,guitar cantopop male strings male vocal man slow indian,62.26468373493976,57.85039645522388
+hip-hop,hip-hop techno beat synth drums electronic no vocals,102.77210582386364,121.124267578125
+j-pop,electronic synth techno j-pop loud ambient,68.90625,75.99954044117646
+psych-rock,psych-rock metal rock beat loud guitar drums male fast,105.16215479651163,108.41892482517481
+chill,chill male drums beat slow,96.59754672897195,93.96306818181817
+mpb,mpb guitar country slow male male vocal pop man singing vocal,121.59926470588233,79.9170425257732
+sertanejo,sertanejo drums rock guitar country pop slow,98.12598892405065,98.75099522292992
+salsa,guitar salsa pop country,145.01953125,96.41732742537314
+k-pop,k-pop slow,125.70734797297297,130.83465189873417
+hardcore,hardcore beat techno,101.99938322368422,193.798828125
+acoustic,guitar acoustic slow man male vocal male vocal vocals,86.13281249999999,104.4034090909091
+indian,indian techno electronic beat fast dance no vocals synth beats drums no vocal,135.99917763157896,122.31878698224851
+turkish,guitar drums pop turkish,108.79934210526316,107.666015625
+turkish,turkish classical strings slow opera,57.42187500000001,189.40199607329842
+rock,punk punk-rock rock drums,108.41892482517481,95.11598926380368
+punk-rock,punk punk-rock rock drums,108.41892482517481,155.6617093373494
+punk,punk punk-rock rock drums,108.41892482517481,154.59735576923077
+latin,latino latin reggaeton man reggae guitar vocal country slow male male vocal,90.34910402097903,92.28515625
+latino,latino latin reggaeton man reggae guitar vocal country slow male male vocal,90.34910402097903,90.9853653169014
+reggae,latino latin reggaeton man reggae guitar vocal country slow male male vocal,90.34910402097903,92.28515625
+reggaeton,latino latin reggaeton man reggae guitar vocal country slow male male vocal,90.34910402097903,118.99928042763159
+indian,techno indian beat electronic synth slow,121.59926470588236,156.60511363636363
+gospel,gospel slow guitar,63.5405993852459,71.77734375
+party,party pop guitar rock slow drums vocal,124.36288435828877,132.89062499999997
+party,party beat dance techno disco electronic beats,135.99917763157896,135.20848473837208
+disco,party beat dance techno disco electronic beats,135.99917763157896,135.99917763157896
+forro,forro techno fast electronic pop synth beat,101.3327205882353,131.8359375
+metalcore,rock metalcore fast guitar drums beat techno loud no vocals metal electronic,131.07167119565216,105.90099897540985
+synth-pop,synth-pop,127.60416666666667,127.60416666666667
+j-rock,loud rock female,103.35937500000001,145.16766151685397
+party,party fast techno electronic,140.0188577586207,140.09553840361448
+metalcore,rock fast metalcore,134.4269328034682,101.99938322368422
+punk-rock,punk-rock drums punk guitar,89.10290948275862,130.28492647058823
+punk,punk-rock drums punk guitar,89.10290948275862,83.8955965909091
+reggae,pop reggae latin reggaeton country guitar latino,169.44159836065575,119.49060693641617
+latin,pop reggae latin reggaeton country guitar latino,169.44159836065575,85.5623965231788
+reggaeton,pop reggae latin reggaeton country guitar latino,169.44159836065575,174.957275390625
+latino,pop reggae latin reggaeton country guitar latino,169.44159836065575,168.52072010869568
+children,children,138.427734375,197.59880514705884
+world-music,world-music electronic drums techno dance beat beats,100.02520161290323,174.05076101036266
+malay,malay drums,180.60105846774195,180.27797965116278
+spanish,spanish electronic ambient techno synth no vocal beat slow,119.78735513245033,125.03150201612901
+gospel,gospel guitar country male pop slow rock vocal male vocal,127.77944711538463,132.51201923076923
+swedish,piano rock guitar loud swedish drums,125.70734797297297,126.39054008152172
+goth,goth guitar soft strings slow ambient,96.2975543478261,126.04801829268291
+groove,groove ambient vocal slow strings vocals singing,117.45383522727266,131.38903601694915
+french,beat french techno slow,69.83741554054053,126.39054008152175
+piano,piano piano drums slow electronic ambient,73.828125,129.92100209497207
+salsa,drums salsa electronic beat techno synth no vocals,92.28515625,125.03150201612901
+mandopop,mandopop guitar slow pop vocal drums voice vocals female singing,82.6875,90.34910402097903
+malay,synth malay drums pop guitar,149.36325867052025,143.5546875
+children,beat children slow electronic british male techno,103.95339439655172,123.78368263473052
+british,beat children slow electronic british male techno,103.95339439655172,121.124267578125
+salsa,salsa no vocals drums country guitar electronic fast no vocal strings slow beat,121.124267578125,121.124267578125
+swedish,guitar slow pop,118.22150735294119,122.21547719594595
+children,children techno electronic synth beat vocal pop drums rock weird guitar,85.56239652317879,172.265625
+honky-tonk,slow honky-tonk beat male,91.19944852941175,98.12598892405065
+metalcore,rock metalcore drums loud electronic guitar beat fast techno male,99.38401442307689,99.38401442307693
+mpb,mpb guitar vocal pop vocals female rock singing country woman,146.8172940340909,75.99954044117648
+alt-rock,mpb alt-rock brazil vocal pop drums male vocal guitar,145.1676615168539,143.5546875
+mpb,mpb alt-rock brazil vocal pop drums male vocal guitar,145.1676615168539,145.57658450704227
+brazil,mpb alt-rock brazil vocal pop drums male vocal guitar,145.1676615168539,67.11647727272727
+punk-rock,rock,103.359375,99.38401442307692
+samba,electronic samba beat ambient female techno indian drums,91.73909023668638,123.70137965425532
+j-pop,guitar j-pop drums electronic beat synth techno,74.35926258992806,148.81585405759162
+forro,slow piano,89.10290948275862,106.19113869863013
+j-pop,j-pop techno,155.32146516393442,155.42763157894737
+swedish,piano slow swedish strings classical,258.3984374999999,105.16215479651163
+rockabilly,rockabilly pop guitar vocal rock singing loud vocals female,121.39523909395972,61.5234375
+metalcore,metalcore guitar vocal slow strings male male vocal man violin pop piano,67.99958881578948,72.27928321678323
+k-pop,k-pop electronic techno drums,116.13412921348313,90.34910402097903
+grunge,drums metal grunge rock guitar slow,120.5859375,59.630408653846146
+metal,drums metal grunge rock guitar slow,120.5859375,142.67398389570553
+rockabilly,rockabilly guitar,145.01953125,153.6423141891892
+comedy,slow,157.1341849662162,140.21620639534885
+iranian,iranian rock drums fast guitar loud metal techno no vocals,119.26081730769229,127.7794471153846
+k-pop,k-pop techno electronic drums synth fast beat beats slow ambient,139.13762019230768,141.8040205792683
+gospel,gospel guitar slow strings country soft piano no vocals no vocal solo,143.5546875,142.42433562992127
+sertanejo,indian fast sertanejo drums beat techno electronic sitar guitar synth,132.1355646306818,132.51201923076925
+progressive-house,dance edm progressive-house,96.29755434782608,128.28291223404253
+dance,dance edm progressive-house,96.29755434782608,135.20848473837208
+edm,dance edm progressive-house,96.29755434782608,126.8213190184049
+house,dance edm progressive-house,96.29755434782608,126.04801829268293
+electro,dance edm progressive-house,96.29755434782608,127.77944711538463
+anime,guitar slow vocal anime strings,90.9853653169014,154.267723880597
+reggaeton,electronic reggae reggaeton beat techno beats drums synth slow,147.65625,106.92349137931033
+reggae,electronic reggae reggaeton beat techno beats drums synth slow,147.65625,126.39054008152175
+metal,grunge loud metal alternative drums guitar metal,78.78001143292683,87.29676942567568
+grunge,grunge loud metal alternative drums guitar metal,78.78001143292683,92.28515625
+alternative,grunge loud metal alternative drums guitar metal,78.78001143292683,179.97901119402982
+house,ambient house slow quiet electronic,103.359375,109.9567819148936
+goth,guitar death-metal goth rock drums loud metal fast,83.35433467741936,104.75612331081082
+death-metal,guitar death-metal goth rock drums loud metal fast,83.35433467741936,83.8955965909091
+acoustic,electronic synth,58.28536184210525,118.12499999999999
+indian,synth slow indian electronic,108.96319653614457,105.04001524390245
+cantopop,cantopop fast classical piano electronic techno synth strings harpsichord no vocal,144.2833914974619,64.19836956521739
+grunge,rock grunge loud guitar pop vocal,186.79405120481928,142.42433562992127
+acoustic,acoustic vocal slow guitar soft,80.74951171874999,80.74951171875
+garage,garage rock loud guitar,128.39673913043478,151.1905751329787
+sertanejo,sertanejo brazil vocal pop slow guitar vocals singing,68.90625,91.19944852941177
+brazil,sertanejo brazil vocal pop slow guitar vocals singing,68.90625,145.01953125
+death-metal,rock death-metal guitar,102.19147245762713,92.28515625
+french,french electronic techno slow synth beat ambient piano,119.78735513245033,120.5859375
+french,guitar drums slow,118.99928042763159,121.39523909395972
+opera,opera drums rock guitar male vocal,112.34714673913045,178.2058189655172
+indie-pop,electronic techno fast,116.69606854838709,96.2121841755319
+house,edm funk house synth beat,124.23001802884616,124.5293674698795
+edm,edm funk house synth beat,124.23001802884616,125.28409090909089
+funk,edm funk house synth beat,124.23001802884616,125.03150201612904
+dancehall,dancehall guitar techno synth electronic beat drums male,122.31878698224853,114.84375000000001
+funk,funk beat drums techno electronic slow,93.96306818181819,90.9853653169014
+opera,opera slow synth guitar electronic pop drums ambient new age,83.89559659090908,167.958984375
+gospel,pop brazil gospel,140.43393342391306,109.18243838028168
+brazil,pop brazil gospel,140.43393342391306,93.96306818181819
+salsa,techno salsa beat fast,105.16215479651163,140.43393342391303
+dub,techno dubstep dub drums fast beat,133.8852007772021,133.65436422413794
+dubstep,techno dubstep dub drums fast beat,133.8852007772021,132.51201923076925
+country,slow country guitar vocal vocals singing man,74.89809782608695,78.30255681818181
+dance,drums beat,180.60105846774192,113.99931066176471
+synth-pop,techno electronic synth-pop beat pop fast drums,120.18531976744184,120.88815789473684
+hip-hop,vocal hip-hop pop slow indian techno electronic synth,121.124267578125,102.67487582781457
+j-pop,pop guitar j-pop vocal female singing rock drums violin,95.70312499999999,179.443359375
+funk,synth funk,174.2011938202247,175.1853813559322
+acoustic,guitar acoustic slow vocal,108.41892482517481,100.02520161290323
+hard-rock,slow ambient hard-rock synth new age flute quiet electronic,159.0144230769231,122.31878698224854
+afrobeat,techno synth afrobeat electronic beat,95.703125,193.45337566844918
+mandopop,guitar mandopop cantopop slow singing vocal man pop male male vocal,78.30255681818183,77.71381578947368
+cantopop,guitar mandopop cantopop slow singing vocal man pop male male vocal,78.30255681818183,155.81815326633165
+disco,techno disco,129.19921875,174.2011938202247
+mandopop,mandopop slow guitar vocal male vocal singing pop vocals male rock drums,65.69451800847457,67.55514705882352
+funk,loud funk rock electronic techno fast synth,109.375,102.77210582386364
+rock,loud funk rock electronic techno fast synth,109.375,109.375
+progressive-house,trance progressive-house piano guitar pop rock vocals vocal slow ambient,136.8998344370861,67.99958881578948
+trance,trance progressive-house piano guitar pop rock vocals vocal slow ambient,136.8998344370861,67.99958881578948
+hardstyle,techno fast hardstyle beat loud drums dance rock no vocals electronic,74.89809782608695,145.9878177966102
+progressive-house,progressive-house electronic techno,145.34912109375,160.66224093264248
+electro,electro slow beat female electronic synth techno drums woman vocal,100.02520161290323,200.97656250000003
+latino,latino beat drums,92.28515625,91.19944852941177
+reggaeton,latino beat drums,92.28515625,181.33223684210526
+r-n-b,r-n-b brazil electronic techno beat synth slow beats drums,82.29249601910827,107.666015625
+brazil,r-n-b brazil electronic techno beat synth slow beats drums,82.29249601910827,125.03150201612901
+indie-pop,indie-pop electronic ambient slow synth new age techno weird,164.93517287234044,125.6103515625
+funk,guitar soul funk slow piano vocal pop drums singing strings,132.890625,132.89062499999997
+soul,guitar soul funk slow piano vocal pop drums singing strings,132.890625,132.890625
+dancehall,hip-hop dancehall electronic techno beat drums synth,88.09037642045455,176.18075284090912
+hip-hop,hip-hop dancehall electronic techno beat drums synth,88.09037642045455,168.8029993718593
+country,electronic country techno beat,119.4906069364162,120.18531976744185
+dance,pop guitar dance dance vocal pop rock country singing,141.20133196721312,95.703125
+dance,pop guitar dance dance vocal pop rock country singing,141.20133196721312,141.20133196721312
+funk,funk techno electronic brazil weird,130.65089536516857,63.410659509202446
+brazil,funk techno electronic brazil weird,130.65089536516857,129.19921875
+trip-hop,trip-hop rock drums guitar pop beat fast vocal male vocal male,151.99908088235293,152.74784482758622
+dance,techno dance electronic beat synth drums guitar,124.52936746987952,158.20312499999997
+opera,slow classical,130.6508953651685,121.39523909395972
+spanish,drums spanish rock fast beat metal loud,218.9817266949153,90.66611842105263
+anime,anime rock loud,162.51474056603774,93.96306818181819
+r-n-b,alternative,170.51673540609136,117.45383522727272
+alt-rock,alternative,170.51673540609136,86.85661764705883
+alternative,alternative,170.51673540609136,86.13281249999999
+swedish,guitar fast,133.19507087628867,135.20848473837208
+swedish,swedish electronic techno,138.73741610738253,139.25664296407183
+synth-pop,swedish electronic techno,138.73741610738253,143.5546875
+party,loud party fast rock no vocals electronic synth,151.99908088235296,153.80859375
+kids,beats kids beat techno drums slow,114.84375000000001,148.04077148437497
+groove,groove techno electronic synth,178.2058189655172,151.11019736842107
+j-rock,guitar j-rock country male,149.36325867052025,150.23164970930233
+country,piano slow vocal female,149.36325867052025,50.66636029411765
+afrobeat,electronic afrobeat synth techno beat female slow ambient,73.30452127659575,111.53889388489209
+afrobeat,electronic techno beat synth,174.2011938202247,116.13412921348313
+ska,ska rock guitar pop country drums singing vocals,154.72960329341316,80.74951171875
+swedish,pop fast rock swedish techno electronic loud guitar drums,135.28714005235602,131.8359375
+bluegrass,vocal bluegrass violin guitar strings singing classical female vocals pop,132.02839872262774,77.13386194029852
+guitar,slow guitar electronic no vocals guitar strings techno country,123.04687500000001,186.62109375
+children,guitar children male country male vocal man drums,118.12499999999999,118.80387931034483
+jazz,opera jazz classical female strings violin,129.92100209497207,109.95678191489363
+hardcore,ambient hardcore electronic synth techno weird,131.38903601694915,156.17487980769232
+metal,hard-rock metal slow guitar pop vocal male male vocal,151.19057513297872,153.125
+hard-rock,hard-rock metal slow guitar pop vocal male male vocal,151.19057513297872,150.39062500000003
+latino,latino reggae reggaeton indian,123.046875,97.77238175675676
+electronic,electronic beat electronic techno loud synth female,150.03780241935485,99.38401442307693
+indie-pop,indie-pop,73.828125,73.40864701704545
+dancehall,techno,203.99876644736838,127.77944711538463
+alternative,alternative electronic beat techno synth drums ambient slow weird beats,62.26468373493976,122.39925986842104
+folk,indian folk,112.34714673913045,112.34714673913045
+indian,indian folk,112.34714673913045,110.74218749999999
+forro,guitar forro fast,111.65364583333333,145.9878177966102
+dancehall,dancehall beat,126.82131901840494,101.33272058823529
+j-dance,dancehall beat,126.82131901840494,105.46875
+j-rock,j-rock slow beat guitar electronic drums vocal synth vocals pop female,96.2975543478261,189.7841631355932
+party,party techno fast electronic dance synth,140.09553840361448,93.39702560240964
+blues,drums blues electronic slow beat techno synth vocal,77.71381578947368,77.71381578947368
+power-pop,power-pop drums rock fast techno guitar electronic beat loud synth indian,100.15443313953489,149.3632586705202
+rock-n-roll,rock-n-roll quiet slow drums soft beat ambient electronic,141.20133196721312,141.8040205792683
+dub,fast dubstep dub beat loud techno synth rock,160.58659957627117,140.43393342391303
+dubstep,fast dubstep dub beat loud techno synth rock,160.58659957627117,140.43393342391306
+acoustic,acoustic slow guitar strings,82.03124999999999,179.088025990099
+emo,emo electronic techno drums beats ambient female synth slow,143.5546875,94.9994255514706
+party,techno party dance fast electronic,140.09553840361446,144.28339149746193
+industrial,loud rock fast industrial metal male vocal no vocals drums guitar male no vocal,133.19507087628867,179.8976463607595
+dance,dance edm pop new age electronic ambient slow weird synth no vocals,198.76802884615387,106.19113869863014
+edm,dance edm pop new age electronic ambient slow weird synth no vocals,198.76802884615387,132.99919577205884
+rock,rock electronic guitar,113.16719890510949,107.666015625
+sertanejo,electronic synth sertanejo techno,117.45383522727272,117.45383522727272
+j-pop,j-pop loud,78.30255681818181,92.28515625
+acoustic,guitar,53.83300781249999,101.33272058823529
+j-pop,guitar slow no vocals pop country j-pop rock drums vocal beat,150.03780241935485,140.21620639534885
+trance,electronic trance slow synth piano ambient new age,141.58818493150687,89.87771739130434
+k-pop,k-pop drums vocals guitar vocal male,102.1914724576271,185.51682692307693
+rock,fast techno rock beat dance,121.59926470588233,128.39673913043478
+dubstep,dub dubstep,148.50484913793102,99.38401442307692
+dub,dub dubstep,148.50484913793102,94.9994255514706
+hard-rock,hard-rock rock guitar electronic,160.5865995762712,163.19901315789474
+grunge,metal techno rock grunge electronic loud,121.12426757812499,120.49668069948186
+metal,metal techno rock grunge electronic loud,121.12426757812499,119.26081730769229
+kids,kids drums beat guitar electronic techno,101.33272058823529,105.77713815789475
+grunge,grunge,93.39702560240964,95.70312499999999
+folk,folk drums piano guitar slow,152.8162802419355,154.72960329341316
+tango,classical strings,100.9368896484375,106.39935661764706
+opera,opera drums singing guitar,69.83741554054053,169.99897203947364
+emo,sad emo electronic,160.49592391304347,104.05306208053692
+sad,sad emo electronic,160.49592391304347,110.74218749999999
+disco,disco electronic,96.41732742537314,103.35937499999997
+acoustic,acoustic strings flute classical,147.18898338607596,131.38903601694912
+salsa,salsa techno drums pop electronic fast beat synth rock guitar vocals,129.92100209497207,119.62890625
+indian,indian edm,107.02893860946746,107.666015625
+edm,indian edm,107.02893860946746,106.92349137931033
+indie-pop,indian edm,107.02893860946746,106.92349137931033
+indie,indian edm,107.02893860946746,106.92349137931033
+breakbeat,electronic breakbeat fast techno beat drums synth dance loud no vocals,87.5926906779661,88.49261558219177
+punk,punk rock fast metal drums,137.44597739361703,143.5546875
+cantopop,guitar,140.625,95.11598926380368
+industrial,industrial rock loud drums guitar fast techno metal,162.3445680628272,82.03124999999999
+french,french beat,100.48828124999999,125.03150201612901
+hardstyle,drums hardstyle strings beat techno synth electronic indian violin fast flute,149.59909539473685,155.81815326633165
+folk,slow strings classical mpb folk,258.39843749999994,148.040771484375
+mpb,slow strings classical mpb folk,258.39843749999994,107.666015625
+electronic,electronic drums rock,166.22121710526315,63.41065950920245
+indie-pop,indie-pop ambient slow strings,104.19291834677419,185.67552395209583
+j-pop,techno anime j-pop j-rock beat slow synth electronic,99.38401442307692,78.30255681818181
+anime,techno anime j-pop j-rock beat slow synth electronic,99.38401442307692,101.33272058823529
+j-rock,techno anime j-pop j-rock beat slow synth electronic,99.38401442307692,200.97656249999997
+anime,rock anime guitar drums pop fast woman loud female,107.666015625,146.8172940340909
+blues,slow ambient blues strings,103.359375,105.46875000000001
+show-tunes,drums,114.48032041139243,126.04801829268293
+country,country rock pop guitar female loud vocal woman singing vocals,101.04966829608938,90.9853653169014
+j-rock,j-rock slow quiet soft,117.45383522727272,142.6739838957055
+hardcore,techno fast hardcore electronic beat loud synth dance drums no vocals,179.97901119402982,168.18833210059174
+house,edm,117.45383522727275,157.91015625000003
+edm,edm,117.45383522727275,119.26081730769229
+gospel,synth gospel electronic techno fast piano pop loud drums beat female,135.2084847383721,135.11029411764707
+drum-and-bass,drum-and-bass techno beat drums fast electronic rock beats,175.1853813559322,118.65234375
+afrobeat,afrobeat synth techno drums electronic rock,103.359375,106.77621384297521
+death-metal,death-metal drums,145.57658450704224,155.32146516393442
+turkish,slow ambient turkish synth electronic soft no vocal quiet techno new age,112.34714673913042,112.9610655737705
+metalcore,metalcore drums electronic ambient beat techno slow no vocal,84.26036005434781,84.4439338235294
+sad,electronic slow beat sad synth techno vocal vocals guitar voice,136.79917279411765,92.83776197604791
+show-tunes,strings show-tunes slow violin drums guitar vocal electronic pop ambient,107.66601562499999,169.44159836065575
+turkish,turkish guitar classical violin strings singing male vocal harpsichord slow,65.41732594936708,107.666015625
+alternative,alternative electronic beat techno slow synth drums,139.67483108108107,140.94460227272725
+cantopop,cantopop guitar country rock slow pop vocal male,110.9686541411043,95.70312499999999
+singer-songwriter,guitar singer-songwriter,119.62890624999999,118.125
+songwriter,guitar singer-songwriter,119.62890624999999,141.80402057926833
+latin,reggaeton,93.96306818181817,95.703125
+latino,reggaeton,93.96306818181817,96.72668783422459
+grunge,rock drums grunge beat fast vocals guitar pop female vocal,107.666015625,83.35433467741936
+r-n-b,folk r-n-b guitar slow,113.76031839622641,112.34714673913045
+folk,folk r-n-b guitar slow,113.76031839622641,111.73986486486486
+j-dance,beat drums electronic j-dance beats synth techno,120.88815789473684,122.21547719594595
+metalcore,electronic metalcore ambient indian drums,115.3564453125,186.99886924342107
+gospel,gospel brazil guitar drums,127.60416666666666,129.19921875
+brazil,gospel brazil guitar drums,127.60416666666666,127.08119877049181
+industrial,rock industrial drums,131.8359375,69.83741554054055
+spanish,spanish beat drums latin electronic pop techno male,151.01207386363637,120.5859375
+latin,spanish beat drums latin electronic pop techno male,151.01207386363637,134.4269328034682
+samba,samba classical slow strings quiet ambient violin,164.0625,80.74951171875001
+bluegrass,drums bluegrass ambient slow classical electronic flute quiet synth,73.82812500000001,75.99954044117646
+punk,punk-rock punk rock metal drums fast guitar loud no vocal no vocals beat,129.19921875,133.19507087628867
+punk-rock,punk-rock punk rock metal drums fast guitar loud no vocal no vocals beat,129.19921875,65.69451800847459
+metal,techno guitar metal electronic synth slow fast ambient,84.4439338235294,82.29249601910827
+acoustic,slow guitar acoustic vocals pop vocal country,128.28291223404256,162.51474056603774
+progressive-house,techno progressive-house fast drums,122.39925986842107,160.58659957627117
+groove,groove,122.39925986842104,122.39925986842104
+deep-house,groove,122.39925986842104,125.03150201612904
+world-music,classical guitar strings world-music piano violin slow,131.38903601694912,61.5234375
+power-pop,drums power-pop indian beat guitar,157.91015625000003,163.54331487341773
+alt-rock,rock alt-rock metal male vocal drums guitar male vocal,108.22971204188481,106.39935661764707
+romance,female romance,110.29201600609757,109.95678191489363
+forro,piano guitar forro vocal slow strings man male classical,117.45383522727275,130.65089536516857
+dubstep,dub dubstep electronic guitar beat techno synth,98.43750000000001,99.38401442307692
+dub,dub dubstep electronic guitar beat techno synth,98.43750000000001,138.427734375
+hardcore,hardcore drums rock guitar loud no vocals,111.53889388489209,166.7086693548387
+hardstyle,hardstyle piano slow synth strings electronic ambient guitar classical violin,104.55428106936415,145.76322115384613
+hip-hop,dance hip-hop beat soul drums techno electronic,83.35433467741935,154.72960329341316
+dance,dance hip-hop beat soul drums techno electronic,83.35433467741935,90.13898982558139
+soul,dance hip-hop beat soul drums techno electronic,83.35433467741935,142.56465517241378
+anime,j-rock rock guitar anime loud pop,163.35533405172413,170.99896599264707
+j-rock,j-rock rock guitar anime loud pop,163.35533405172413,88.09037642045455
+rockabilly,rock rockabilly fast loud drums no vocals guitar metal techno,98.75099522292994,98.84093237704917
+acoustic,electronic acoustic drums rock techno synth,108.41892482517484,117.45383522727275
+alt-rock,beat alt-rock drums techno alternative beats slow electronic synth,113.04931640625,109.62357954545456
+alternative,beat alt-rock drums techno alternative beats slow electronic synth,113.04931640625,112.34714673913045
+kids,fast drums,144.89632009345794,142.83330716080403
+house,house edm,120.49668069948186,123.8896618150685
+electro,house edm,120.49668069948186,81.77165743670886
+chill,chill slow guitar drums male male vocal man,99.38401442307692,113.99931066176471
+alt-rock,alternative alt-rock funk metal drums guitar slow,94.82511467889908,167.19898897058826
+alternative,alternative alt-rock funk metal drums guitar slow,94.82511467889908,95.703125
+metal,alternative alt-rock funk metal drums guitar slow,94.82511467889908,96.59754672897196
+funk,alternative alt-rock funk metal drums guitar slow,94.82511467889908,179.088025990099
+metalcore,rock metalcore,80.74951171875001,157.40006345177662
+gospel,brazil gospel drums beat techno electronic quiet slow beats no vocals,86.1328125,111.37863685344828
+afrobeat,brazil drums guitar afrobeat strings,116.79025423728811,120.18531976744185
+forro,guitar forro country slow no vocals drums strings,131.38903601694912,129.19921874999997
+j-rock,anime j-rock piano slow soft guitar quiet solo ambient,89.7216796875,94.9994255514706
+anime,anime j-rock piano slow soft guitar quiet solo ambient,89.7216796875,93.96306818181817
+world-music,guitar world-music slow ambient new age flute piano strings synth soft electronic,111.65364583333334,104.19291834677419
+world-music,ambient world-music slow flute guitar classical quiet,160.24709302325581,127.60416666666666
+emo,emo metal guitar drums rock loud fast,156.17487980769232,149.3632586705202
+funk,drums funk beat techno no vocals synth beats electronic slow no vocal,137.8125,107.02893860946745
+death-metal,death-metal goth electronic fast rock techno,150.23164970930233,130.0117924528302
+goth,death-metal goth electronic fast rock techno,150.23164970930233,159.8340850515464
+songwriter,singer-songwriter rock songwriter pop guitar vocal male vocal,70.79409246575342,74.6816293352601
+singer-songwriter,singer-songwriter rock songwriter pop guitar vocal male vocal,70.79409246575342,142.76156767955797
+tango,strings violin classical tango slow no vocals drums flute country,117.45383522727272,118.35042938931298
+turkish,guitar turkish slow rock drums male country,57.85039645522388,111.65364583333333
+spanish,spanish drums rock pop,89.7216796875,89.61795520231213
+children,guitar children indian drums beat sitar electronic synth techno slow pop,160.38523706896552,167.1233675373134
+blues,strings blues jazz classical,163.35533405172413,113.99931066176471
+jazz,strings blues jazz classical,163.35533405172413,191.40624999999997
+disney,flute slow strings disney ambient soft electronic,70.79409246575344,80.24796195652175
+j-dance,j-dance techno,132.890625,160.5865995762712
+rock,rock singing,75.11582485465117,147.65624999999997
+hip-hop,hip-hop electronic synth,72.58383075842696,199.792606314433
+soul,soul,114.84374999999999,114.4803204113924
+disco,soul,114.84374999999999,113.58173076923079
+funk,soul,114.84374999999999,115.48533519553072
+samba,samba guitar drums pop beat vocal electronic singing slow vocals country,124.74407327586206,108.22971204188481
+electro,electro indie indie-pop electronic slow synth techno beat,60.09265988372093,119.4906069364162
+indie-pop,electro indie indie-pop electronic slow synth techno beat,60.09265988372093,119.78735513245033
+indie,electro indie indie-pop electronic slow synth techno beat,60.09265988372093,117.45383522727275
+acoustic,acoustic,117.45383522727275,96.29755434782608
+turkish,turkish drums guitar flute violin indian strings classical,95.703125,93.96306818181819
+alternative,alternative slow male singing guitar vocal male vocal man,134.58251953125,94.70099803664921
+r-n-b,mpb drums,111.65364583333334,89.87771739130434
+mpb,mpb drums,111.65364583333334,96.8994140625
+singer-songwriter,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,111.37863685344828
+folk,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,98.12598892405065
+songwriter,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,112.34714673913045
+indie,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,119.26081730769232
+indian,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,136.79917279411765
+indie-pop,singer-songwriter indian songwriter folk indie-pop indie male vocal guitar male slow man,143.5546875,127.60416666666667
+synth-pop,synth-pop,127.7794471153846,126.82131901840489
+jazz,slow guitar jazz j-pop vocal drums pop,141.97716346153845,143.5546875
+dance,pop dance edm vocal guitar male vocal male voice male,90.66611842105263,103.359375
+kids,kids beat,112.34714673913042,110.29201600609757
+turkish,techno electronic beat,116.39569256756758,96.72668783422459
+techno,techno slow ambient synth electronic techno beat,145.01953125,64.599609375
+turkish,turkish edm techno beat electronic beats drums no vocals synth,125.61035156249997,126.04801829268293
+bluegrass,bluegrass guitar country male drums pop man vocal male vocal rock,121.124267578125,123.046875
+romance,romance quiet slow soft guitar,160.66224093264248,104.7561233108108
+hardcore,hardcore drums beats beat electronic techno synth guitar slow,132.890625,149.36325867052025
+iranian,iranian rock fast guitar loud techno metal drums electronic beat synth,144.44633152173915,92.83776197604791
+garage,beat garage techno electronic drums synth pop rock weird,112.34714673913045,109.375
+latin,latin reggaeton reggae latino electronic beat techno,95.70312499999999,189.78416313559322
+latino,latin reggaeton reggae latino electronic beat techno,95.70312499999999,121.75842604712044
+hardcore,hardcore techno electronic synth beat ambient slow,185.59003798342542,180.87890625
+hardcore,slow vocal guitar hardcore,141.20133196721312,168.1883321005917
+techno,j-idol techno guitar beat drums rock slow pop synth,131.0716711956522,139.6748310810811
+samba,woman female guitar samba fast pop,121.75842604712044,104.75612331081082
+turkish,turkish,182.7059659090909,109.375
+disco,disco synth-pop beat synth beats electronic slow drums,92.28515625,160.24709302325581
+synth-pop,disco synth-pop beat synth beats electronic slow drums,92.28515625,93.11655405405405
+progressive-house,progressive-house techno fast drums,123.7013796542553,98.12598892405065
+chicago-house,chicago-house synth electronic beat techno ambient,120.5859375,121.39523909395973
+children,violin strings children classical synth classic electronic fast,93.11655405405405,95.11598926380368
+electronic,electronic electronic guitar indian techno sitar fast slow synth,97.77238175675676,133.65436422413794
+metal,indian metal drums vocal woman,83.35433467741936,165.64002403846155
+gospel,gospel,164.06250000000003,111.53889388489209
+detroit-techno,detroit-techno slow drums ambient synth vocal,215.33203125,102.77210582386364
+forro,electronic techno synth forro no vocal beat drums no vocals fast,116.13412921348316,174.59353885135135
+romance,romance opera singing quiet slow ambient male voice vocal,124.03125,107.66601562499999
+country,slow guitar country,160.66224093264248,160.5865995762712
+punk-rock,punk-rock,139.67483108108107,111.37863685344828
+punk,punk-rock,139.67483108108107,195.75639204545456
+electro,electro piano ambient classical slow soft violin cello quiet strings guitar,124.52936746987953,95.70312499999999
+turkish,turkish indian guitar slow sitar electronic drums beat strings techno,135.99917763157893,97.50884433962266
+j-dance,electronic beat j-dance,97.14226973684212,144.55856643356645
+opera,classical guitar opera drums,122.31878698224851,161.4990234375
+death-metal,death-metal fast,179.97901119402982,161.4990234375
+club,guitar drums club slow vocal piano beat,80.12354651162791,79.50721153846155
+jazz,jazz classical strings slow piano vocals,64.19836956521739,105.46875
+drum-and-bass,drums fast beat,164.93517287234044,86.7108850671141
+cantopop,cantopop slow guitar pop female electronic,152.8162802419355,75.11582485465117
+j-dance,guitar j-dance country male vocal pop male vocal slow drums man rock,92.94907823741006,92.28515625
+forro,forro indian male male vocal guitar country,96.21218417553192,132.02839872262774
+anime,anime techno fast j-rock rock electronic drums loud beat synth no vocals,99.9330973756906,102.33601485148515
+opera,opera opera male vocal slow classical quiet choral choir singing,56.173573369565226,121.39523909395973
+guitar,guitar guitar male vocal vocal,102.77210582386364,104.75612331081082
+happy,happy drums fast techno loud electronic,97.24672379032258,158.203125
+groove,groove deep-house synth electronic techno drums fast pop beat slow no vocals,120.49668069948189,121.75842604712041
+deep-house,groove deep-house synth electronic techno drums fast pop beat slow no vocals,120.49668069948189,119.78735513245033
+j-dance,j-dance female woman female voice electronic vocal female vocal techno beat vocals,100.9368896484375,120.88815789473684
+alternative,alternative beats guitar drums beat pop slow rock vocal female,117.45383522727272,122.39925986842107
+indie-pop,indie-pop,153.80859375000003,148.50484913793105
+indie,indie-pop,153.80859375000003,151.99908088235296
+electro,indie-pop,153.80859375000003,123.04687500000001
+chicago-house,techno chicago-house electronic,129.92100209497207,103.359375
+electro,techno electronic synth electro flute drums slow ambient,117.45383522727275,135.99917763157896
+salsa,loud strings salsa indian sitar fast drums guitar no vocals,101.61736306179775,106.39935661764707
+hardcore,hardcore techno electronic synth drums no vocals,129.19921875,146.51457796391753
+hard-rock,slow vocal drums hard-rock ambient female singing,164.93517287234044,148.81585405759165
+happy,techno happy fast electronic,170.51673540609136,168.1883321005917
+emo,slow opera classical choir,137.81250000000003,134.9842583955224
+rockabilly,rockabilly beat indian rock-n-roll slow drums strings guitar,119.78735513245033,119.49060693641617
+rock-n-roll,rockabilly beat indian rock-n-roll slow drums strings guitar,119.78735513245033,119.49060693641617
+soul,alternative soul electronic beat drums slow synth techno,115.20949442675158,117.45383522727275
+alternative,alternative soul electronic beat drums slow synth techno,115.20949442675158,118.125
+alt-rock,alt-rock pop synth alternative guitar vocal drums rock electronic vocals female,124.36288435828877,120.49668069948186
+alternative,alt-rock pop synth alternative guitar vocal drums rock electronic vocals female,124.36288435828877,121.75842604712041
+salsa,classical salsa guitar slow piano no vocals no vocal strings country drums,116.69606854838709,134.4269328034682
+trance,electronic sitar weird trance ambient indian,127.0811987704918,99.38401442307692
+tango,guitar male tango slow,97.50884433962266,146.8172940340909
+anime,j-rock anime rock drums guitar vocal pop,91.63065159574468,88.09037642045455
+drum-and-bass,drum-and-bass fast techno,174.20119382022474,174.20119382022474
+mpb,slow mpb piano soft classical guitar quiet sitar no vocals strings,116.13412921348316,101.99938322368422
+salsa,guitar salsa no vocals no vocal country drums fast pop,121.59926470588235,132.1355646306818
+hard-rock,pop guitar,163.35533405172413,164.29958453757223
+electro,electro techno electronic beat pop fast drums synth rock dance,132.1355646306818,130.6508953651685
+anime,guitar slow anime synth electronic techno pop vocal,134.42693280346822,135.99917763157896
+turkish,turkish ambient,123.04687499999997,209.51224662162164
+french,french synth techno slow drums electronic,94.53601371951218,140.21620639534885
+salsa,electronic synth techno salsa beat beats fast dance drums no vocals weird,120.49668069948186,121.75842604712041
+breakbeat,pop breakbeat guitar male vocal male country vocals vocal man male voice rock,108.96319653614457,108.41892482517481
+show-tunes,show-tunes slow,80.74951171875,184.57031249999997
+progressive-house,synth fast progressive-house techno electronic dance,120.88815789473684,167.1233675373134
+disco,disco beat techno fast,144.35666899441338,145.7632211538462
+garage,garage slow vocal drums beat electronic female synth vocals voice,175.18538135593215,107.10816062176166
+songwriter,songwriter singer-songwriter electronic beat techno synth slow beats drums,150.03780241935485,150.03780241935485
+singer-songwriter,songwriter singer-songwriter electronic beat techno synth slow beats drums,150.03780241935485,157.03772444751382
+goth,guitar goth slow male male vocal vocal,114.84374999999999,112.34714673913045
+rockabilly,rockabilly strings violin indian drums vocal guitar classical vocals singing pop,71.28232758620689,138.427734375
+kids,kids beat techno drums synth,72.27928321678321,144.3566689944134
+disney,piano classical slow disney soft quiet strings cello synth,67.99958881578948,106.92349137931033
+country,country country guitar male vocal slow male man,123.70137965425532,125.43613470873785
+progressive-house,progressive-house techno,128.13145661157026,121.124267578125
+soul,drums soul beat beats indian electronic techno slow,97.87819602272728,102.53906249999999
+idm,idm synth techno beat electronic slow ambient,96.8994140625,168.18833210059174
+anime,j-rock loud,151.19057513297872,87.29676942567568
+rockabilly,drums guitar rock-n-roll rockabilly beat pop vocal,84.4439338235294,83.35433467741936
+rock-n-roll,drums guitar rock-n-roll rockabilly beat pop vocal,84.4439338235294,81.59950657894737
+german,german beat beats electronic techno synth ambient slow drums,131.1667195431472,187.66366969273744
+club,techno fast club drums,118.22150735294119,160.5865995762712
+psych-rock,psych-rock electronic techno guitar synth pop beat fast no vocals rock,127.37951144366197,132.51201923076925
+anime,anime synth loud electronic fast rock techno drums,157.91015625000003,73.82812500000001
+hard-rock,hard-rock rock drums techno guitar beat,110.42668269230771,112.34714673913045
+rockabilly,rockabilly pop vocal,126.39054008152175,63.410659509202446
+groove,groove techno loud rock fast electronic metal drums beat weird,150.23164970930233,151.01207386363637
+disney,disney ambient slow,128.13145661157026,118.35042938931298
+ska,beat,183.56173155737704,185.59003798342542
+bluegrass,vocal guitar bluegrass electronic vocals synth slow piano pop ambient,122.39925986842107,104.55428106936415
+house,house guitar edm rock,118.35042938931298,114.4803204113924
+dancehall,dancehall beat techno electronic drums beats synth female vocal slow ambient,123.04687500000001,134.58251953125
+detroit-techno,techno detroit-techno drums beat fast electronic,120.18531976744185,119.4906069364162
+trip-hop,trip-hop guitar pop rock drums piano slow vocal male male vocal man,137.60863535502958,69.83741554054055
+dancehall,electronic dancehall beat techno drums synth beats pop weird slow no vocals,116.79025423728814,123.78368263473054
+breakbeat,breakbeat fast techno,140.09553840361446,139.25664296407186
+romance,slow violin indian romance classical sitar strings,124.52936746987953,93.96306818181819
+groove,guitar pop groove vocal drums male,212.79871323529412,105.16215479651163
+trance,fast techno dance loud beat trance electronic synth pop beats,126.04801829268291,125.28409090909089
+indie-pop,indie-pop indie techno indian,145.1676615168539,145.1676615168539
+indie,indie-pop indie techno indian,145.1676615168539,145.1676615168539
+kids,techno kids beat electronic synth ambient beats,119.4906069364162,120.5859375
+anime,drums beat anime guitar electronic ambient techno slow rock weird,115.20949442675158,91.19944852941177
+hardstyle,techno,150.390625,150.03780241935485
+rock,beat techno drums rock weird electronic beats synth male vocal male dance,110.9686541411043,120.18531976744185
+soul,soul guitar slow drums vocal singing beat pop piano,83.35433467741936,102.53906249999999
+piano,ambient drums piano beat techno slow electronic synth new age beats,73.82812499999999,144.55856643356643
+honky-tonk,honky-tonk slow guitar drums vocal pop vocals singing female piano,124.5293674698795,123.70137965425532
+indie-pop,indie-pop,94.30599908759123,69.83741554054053
+piano,piano rock guitar fast drums pop,175.45572916666666,90.13898982558139
+trance,trance electronic techno ambient synth drums slow,63.80208333333333,125.2840909090909
+funk,funk beat,99.38401442307692,218.54594216417914
+latin,beat drums latin,91.19944852941177,126.39054008152175
+ambient,ambient piano ambient slow classical guitar new age strings,101.04966829608938,89.10290948275862
+progressive-house,progressive-house synth electronic,125.03150201612904,90.66611842105263
+progressive-house,electronic progressive-house techno beat woman female drums pop female vocal synth,125.03150201612904,122.31878698224854
+dub,beat dub drums techno beats vocal pop,113.76031839622641,106.39935661764706
+afrobeat,afrobeat drums guitar rock pop loud beat,149.0760216346154,135.99917763157893
+french,french opera slow electronic quiet,144.44633152173915,143.5546875
+grunge,rock grunge guitar,103.95339439655172,157.1341849662162
+heavy-metal,heavy-metal drums electronic,130.50426136363637,157.03772444751382
+breakbeat,breakbeat,79.26332438650306,107.66601562499999
+french,french,109.18243838028168,93.6226222826087
+power-pop,guitar pop,131.66799363057325,133.36693548387098
+r-n-b,loud fast rock r-n-b techno no vocals metal,108.22971204188481,107.66601562499999
+industrial,electronic industrial techno synth beat drums no vocals,183.37953629032256,164.06250000000003
+death-metal,metalcore electronic,110.9686541411043,151.01207386363637
+psych-rock,psych-rock vocal guitar british piano slow female soft singing,75.99954044117646,153.6423141891892
+british,psych-rock vocal guitar british piano slow female soft singing,75.99954044117646,101.99938322368422
+heavy-metal,rock heavy-metal beat electronic drums techno ambient slow,126.8213190184049,159.6844276685393
+salsa,salsa guitar slow pop man male vocal,97.1422697368421,95.11598926380368
+french,french synth ambient electronic techno new age slow weird no vocals,159.28670804794518,138.427734375
+rock-n-roll,guitar rock-n-roll slow singing vocal rock pop drums vocals strings ambient,146.8172940340909,144.3566689944134
+happy,happy ambient synth techno electronic no vocals slow new age weird,150.390625,150.23164970930233
+r-n-b,slow ambient r-n-b synth,130.83465189873417,99.38401442307692
+salsa,techno electronic salsa beats beat synth no vocals drums guitar slow no vocal,119.87556378865979,119.87556378865979
+salsa,electronic salsa drums guitar synth techno beat fast indian,128.28291223404256,133.65436422413794
+country,country classical,59.630408653846146,101.33272058823529
+anime,anime electronic,159.50520833333331,135.28714005235602
+ska,ska guitar slow piano rock pop male country loud male vocal,182.20402644230768,90.66611842105263
+guitar,guitar guitar strings country pop,92.28515625,87.29676942567568
+indie-pop,indian guitar,66.25600961538461,134.58251953124997
+folk,indian guitar,66.25600961538461,85.18629807692308
+indie,indian guitar,66.25600961538461,125.6103515625
+dubstep,fast dubstep techno synth,101.99938322368423,125.03150201612904
+rock,rock rock guitar,118.22150735294119,120.88815789473682
+happy,techno happy,174.957275390625,155.0390625
+hardcore,techno happy,174.957275390625,162.62838723776224
+soul,soul slow electronic synth techno guitar vocal ambient,81.38533464566929,84.03201219512195
+ska,ska drums pop synth no vocals electronic rock guitar beat,78.78001143292683,157.40006345177662
+idm,idm rock loud electronic,120.88815789473684,140.09553840361446
+mpb,pagode mpb drums slow samba,101.33272058823529,90.1389898255814
+techno,techno fast loud electronic rock dance techno,88.59375,172.265625
+folk,folk,110.74218749999999,164.29958453757226
+disney,beat disney drums techno fast electronic beats synth rock,101.61736306179775,197.75390625
+mpb,mpb guitar female woman vocal female vocal singing pop,105.90099897540983,130.1287095323741
+folk,folk techno drums beat synth electronic fast beats slow ambient,114.84374999999999,116.13412921348316
+anime,anime guitar j-pop,100.48828124999999,133.36693548387098
+afrobeat,guitar afrobeat electronic slow synth beat techno quiet,47.8515625,143.5546875
+drum-and-bass,ambient synth drum-and-bass techno no vocals electronic new age slow weird no vocal,172.265625,86.13281249999999
+r-n-b,drums mpb r-n-b pop brazil guitar vocal female slow violin,110.29201600609754,113.58173076923076
+mpb,drums mpb r-n-b pop brazil guitar vocal female slow violin,110.29201600609754,111.73986486486486
+industrial,rock industrial,107.10816062176166,108.41892482517481
+dubstep,dubstep slow electronic techno synth ambient guitar no vocals no vocal weird,186.2331081081081,153.6423141891892
+dub,dub techno beat slow electronic synth vocals ambient vocal,58.72691761363636,118.53139334862385
+british,soul synth,148.040771484375,147.18898338607596
+soul,soul synth,148.040771484375,148.12649283439492
+techno,techno electronic techno trance synth no vocals dance fast beat ambient no vocal,123.70137965425532,139.13762019230768
+trance,techno electronic techno trance synth no vocals dance fast beat ambient no vocal,123.70137965425532,133.36693548387098
+electronic,electronic beat techno drums electronic vocal female,140.94460227272725,161.4990234375
+alternative,alternative punk-rock punk alt-rock emo power-pop guitar pop rock,119.26081730769229,119.26081730769229
+alt-rock,alternative punk-rock punk alt-rock emo power-pop guitar pop rock,119.26081730769229,119.87556378865979
+power-pop,alternative punk-rock punk alt-rock emo power-pop guitar pop rock,119.26081730769229,125.6103515625
+heavy-metal,heavy-metal rock loud fast guitar drums techno metal beat no vocals electronic,145.16766151685397,146.8172940340909
+synth-pop,techno synth-pop electronic fast,127.77944711538463,129.19921875
+progressive-house,pop progressive-house guitar,85.56239652317882,122.39925986842104
+dubstep,dubstep dub slow ambient electronic strings synth classical,107.10816062176166,154.26772388059698
+dub,dubstep dub slow ambient electronic strings synth classical,107.10816062176166,161.4990234375
+electronic,slow,94.70099803664921,94.30599908759123
+disco,party disco techno,132.1355646306818,132.1355646306818
+indie-pop,indie-pop electro indie chill,51.16800742574258,190.23197852760737
+chill,indie-pop electro indie chill,51.16800742574258,100.67471590909092
+indie,indie-pop electro indie chill,51.16800742574258,103.359375
+indie,indie-pop electro indie chill,51.16800742574258,53.27802835051546
+honky-tonk,honky-tonk slow guitar country pop vocal vocals rock,112.34714673913042,138.427734375
+techno,techno electronic techno beat fast dance synth,189.0720274390244,119.49060693641617
+dubstep,dubstep dub,132.890625,155.0390625
+dub,dubstep dub,132.890625,133.19507087628867
+bluegrass,guitar bluegrass pop slow piano male vocal classical,73.828125,143.5546875
+sad,electronic ambient synth sad,159.8340850515464,81.25737028301887
+hard-rock,hard-rock,164.29958453757223,96.41732742537314
+metal,hard-rock,164.29958453757223,119.26081730769229
+piano,indian piano drums,122.39925986842107,89.10290948275862
+power-pop,rock power-pop electronic synth guitar,135.99917763157896,138.73741610738256
+honky-tonk,honky-tonk guitar singing female drums slow vocal,149.0760216346154,152.81628024193546
+industrial,industrial groove drums,89.10290948275862,93.11655405405408
+power-pop,power-pop rock drums guitar vocal,125.03150201612901,125.03150201612904
+german,party electronic,135.99917763157896,134.81657608695656
+garage,guitar garage rock male voice man male vocal country male drums slow no vocals,91.63065159574468,92.94907823741008
+iranian,electronic ambient iranian,140.625,102.77210582386364
+opera,opera strings classical violin slow cello ambient classic soft quiet no vocals,190.93480603448273,112.34714673913045
+french,french drums beat,181.78784547738692,148.1264928343949
+blues,blues guitar male male vocal,110.74218749999999,109.18243838028168
+industrial,drums rock industrial fast techno electronic loud beat synth,84.99948601973682,170.51673540609139
+rock-n-roll,slow rock-n-roll drums,97.24672379032258,90.66611842105263
+heavy-metal,heavy-metal rock guitar loud metal drums no vocals,74.89809782608695,108.22971204188481
+hard-rock,hard-rock male,88.09037642045456,84.4439338235294
+hardstyle,hardstyle fast techno electronic,103.35937499999997,155.32146516393442
+drum-and-bass,drum-and-bass techno,86.85661764705883,84.99948601973684
+heavy-metal,rock guitar fast loud heavy-metal indian drums synth no vocals piano,131.38903601694912,59.17521469465649
+piano,rock piano pop,104.19291834677419,140.94460227272728
+rock,rock piano pop,104.19291834677419,202.93071007853402
+drum-and-bass,j-dance drum-and-bass electronic,129.19921875000003,125.707347972973
+psych-rock,psych-rock indian british drums guitar sitar slow strings vocal singing,100.48828124999999,103.359375
+british,psych-rock indian british drums guitar sitar slow strings vocal singing,100.48828124999999,108.96319653614457
+death-metal,black-metal death-metal rock loud male drums metal fast guitar vocal male vocal,107.666015625,150.73242187500003
+black-metal,black-metal death-metal rock loud male drums metal fast guitar vocal male vocal,107.666015625,116.79025423728814
+chicago-house,techno beat chicago-house electronic,123.78368263473054,124.52936746987952
+songwriter,slow singer-songwriter songwriter,76.75201113861387,82.46758643617022
+singer-songwriter,slow singer-songwriter songwriter,76.75201113861387,76.90429687500001
+club,electronic techno club fast,122.31878698224854,121.75842604712041
+ambient,guitar ambient slow,103.35937499999997,167.6097972972973
+show-tunes,slow show-tunes ambient violin,130.50426136363637,151.99908088235296
+drum-and-bass,electronic drum-and-bass techno beats fast,145.34912109375,121.12426757812501
+guitar,guitar guitar pop slow country,158.79233589385476,156.60511363636365
+disco,synth beat electronic disco techno fast dance,121.75842604712041,122.39925986842104
+afrobeat,techno,166.29602413366337,130.6508953651685
+progressive-house,techno electronic progressive-house beat fast,141.97716346153848,119.49060693641617
+iranian,loud rock metal techno iranian fast,142.5646551724138,145.98781779661013
+progressive-house,progressive-house fast electronic techno dance beat drums synth,127.37951144366197,165.81717914438502
+alt-rock,techno alternative beat alt-rock ambient drums electronic,116.79025423728814,161.4990234375
+alternative,techno alternative beat alt-rock ambient drums electronic,116.79025423728814,163.19901315789474
+garage,guitar garage no vocals,95.70312499999999,102.67487582781457
+songwriter,songwriter,141.97716346153848,71.77734375
+singer-songwriter,songwriter,141.97716346153848,95.11598926380368
+tango,tango classical violin vocals strings piano male guitar,82.29249601910827,105.46875000000001
+chill,chill guitar soul country slow rock drums strings solo,81.25737028301887,161.4990234375
+soul,chill guitar soul country slow rock drums strings solo,81.25737028301887,101.61736306179776
+garage,garage slow guitar male male vocal vocal,93.6226222826087,113.33264802631578
+piano,drums piano techno beat synth fast slow electronic weird beats no vocals,89.10290948275863,90.34910402097903
+dub,dub,73.828125,129.19921875
+dubstep,dub,73.828125,93.96306818181819
+disco,techno progressive-house disco house electronic drums beat pop,125.70734797297297,127.08119877049181
+blues,blues british,89.10290948275863,177.734375
+british,blues british,89.10290948275863,80.74951171875001
+psych-rock,blues british,89.10290948275863,181.78784547738692
+piano,drums piano,144.44633152173915,115.70079291044776
+blues,jazz blues slow,114.84375000000001,132.51201923076923
+jazz,jazz blues slow,114.84375000000001,136.79917279411765
+german,german electronic beat synth techno ambient drums weird slow beats vocal,130.28492647058823,123.046875
+goth,opera goth guitar rock loud metal drums techno electronic male,71.11883600917433,148.1264928343949
+opera,opera goth guitar rock loud metal drums techno electronic male,71.11883600917433,76.904296875
+chill,chill beat electronic beats techno drums slow indian guitar synth no vocals,69.83741554054053,140.94460227272728
+power-pop,power-pop,134.8165760869565,134.58251953124997
+metal,slow ambient metal flute classical soft quiet strings new age synth,60.09265988372093,129.19921875
+piano,piano,113.76031839622641,94.70099803664921
+alt-rock,alternative alt-rock drums techno rock fast rock guitar,123.70137965425532,109.375
+rock,alternative alt-rock drums techno rock fast rock guitar,123.70137965425532,154.47732676630432
+alternative,alternative alt-rock drums techno rock fast rock guitar,123.70137965425532,145.9878177966102
+children,children,119.87556378865979,100.93688964843751
+synth-pop,rock drums,127.08119877049181,126.82131901840489
+blues,female blues,115.48533519553072,161.4990234375
+breakbeat,breakbeat beats electronic techno drums beat weird slow no vocal synth no vocals,101.04966829608938,81.38533464566929
+disco,techno dance disco beats,135.99917763157896,136.79917279411765
+heavy-metal,loud techno heavy-metal fast rock electronic,114.84374999999999,125.6103515625
+heavy-metal,heavy-metal drums guitar male fast,170.37259615384613,84.99948601973684
+indie,indie-pop techno indie beat electronic synth slow ambient beats drums,80.74951171875,78.90028625954199
+happy,happy electronic hardstyle fast techno beat synth dance no vocal weird beats,92.28515625,167.6097972972973
+hardstyle,happy electronic hardstyle fast techno beat synth dance no vocal weird beats,92.28515625,132.89062499999997
+club,club guitar drums male vocal pop male rock slow electronic vocal vocals,121.75842604712041,123.7013796542553
+soul,guitar soul slow,118.05004758883247,60.092659883720934
+dubstep,edm dub dubstep slow ambient piano soft house new age quiet,150.03780241935485,152.99907483552636
+dub,edm dub dubstep slow ambient piano soft house new age quiet,150.03780241935485,112.34714673913045
+bluegrass,guitar bluegrass strings country slow drums vocal male male vocal indian,129.19921875,129.19921875
+opera,slow opera violin quiet classical soft strings ambient,117.45383522727272,112.9610655737705
+folk,electronic,120.5859375,144.55856643356645
+chill,chill guitar slow,54.9783909574468,101.33272058823529
+ska,techno latino electronic loud pop synth,131.8359375,138.18098262032086
+disco,electronic disco guitar,184.57031250000003,187.2452445652174
+hardstyle,hardstyle beat fast,151.99908088235293,152.9990748355263
+psych-rock,psych-rock slow electronic synth ambient beat no vocals,90.34910402097903,89.10290948275862
+romance,vocals romance,95.703125,70.79409246575344
+r-n-b,r-n-b beat,174.0507610103627,142.119140625
+sad,emo sad beat synth electronic techno drums ambient slow no vocals,117.45383522727272,109.62357954545456
+folk,slow drums folk guitar ambient vocal electronic beat synth vocals singing,106.39935661764706,214.142351519337
+idm,slow guitar idm ambient piano drums synth rock weird,138.427734375,144.5585664335664
+heavy-metal,rock heavy-metal metal fast drums loud guitar beat techno electronic no vocals,123.88966181506851,123.78368263473054
+disco,disco guitar drums piano slow loud rock,65.69451800847457,65.69451800847457
+romance,romance flute classical violin guitar strings classic,46.142578125,129.19921874999997
+deep-house,groove techno deep-house electronic,124.36288435828877,123.7013796542553
+disco,groove techno deep-house electronic,124.36288435828877,124.36288435828877
+breakbeat,beat breakbeat techno electronic fast beats no vocals synth dance,124.74407327586206,118.65234375
+industrial,industrial loud drums rock guitar techno fast,98.84093237704917,95.11598926380368
+songwriter,songwriter singer-songwriter rock drums piano guitar male vocal male pop,158.203125,163.35533405172416
+singer-songwriter,songwriter singer-songwriter rock drums piano guitar male vocal male pop,158.203125,160.66224093264248
+tango,slow strings guitar tango,133.65436422413794,99.38401442307693
+power-pop,fast rock loud drums electronic metal power-pop guitar techno no vocals beat,88.09037642045455,81.77165743670886
+folk,folk guitar indian rock k-pop pop vocal drums rock female woman,170.37259615384613,114.84375000000001
+rock,folk guitar indian rock k-pop pop vocal drums rock female woman,170.37259615384613,145.01953125
+electronic,synth ambient electronic electronic new age slow techno no vocals,112.34714673913045,113.04931640625
+deep-house,vocal deep-house disco female slow,62.64204545454545,125.03150201612904
+disco,vocal deep-house disco female slow,62.64204545454545,125.2840909090909
+songwriter,folk songwriter slow,119.78735513245033,120.18531976744185
+folk,folk songwriter slow,119.78735513245033,119.26081730769229
+singer-songwriter,folk songwriter slow,119.78735513245033,119.49060693641617
+dub,dubstep dub techno,129.92100209497207,131.38903601694915
+dubstep,dubstep dub techno,129.92100209497207,95.19942434210527
+alternative,alt-rock alternative j-rock fast techno electronic beat synth drums indian,145.1676615168539,147.65625
+alt-rock,alt-rock alternative j-rock fast techno electronic beat synth drums indian,145.1676615168539,154.72960329341316
+country,guitar male vocal,99.38401442307693,96.41732742537313
+techno,techno,114.84374999999999,116.13412921348313
+indie,indie violin classical soul funk female vocal strings woman,92.83776197604791,105.46875
+show-tunes,show-tunes classic strings classical slow violin ambient flute no vocals no vocal soft,108.79934210526314,118.65234375
+r-n-b,samba r-n-b mpb afrobeat,97.77238175675676,97.77238175675676
+afrobeat,samba r-n-b mpb afrobeat,97.77238175675676,199.792606314433
+mpb,samba r-n-b mpb afrobeat,97.77238175675676,99.38401442307692
+dub,samba r-n-b mpb afrobeat,97.77238175675676,97.77238175675676
+techno,techno j-idol drums guitar rock vocal beat vocals,133.65436422413794,133.65436422413794
+club,club male slow male vocal male voice man quiet,117.45383522727278,75.99954044117648
+techno,techno country guitar j-idol drums slow vocal,172.265625,175.45572916666666
+sad,electronic techno sad synth beat drums slow,149.59909539473685,96.8994140625
+country,country guitar slow piano singing vocals vocal male vocal male drums,95.703125,93.6226222826087
+deep-house,groove beat deep-house techno electronic drums beats dance no vocal synth,122.07800196850394,121.124267578125
+deep-house,deep-house guitar country rock drums strings pop,125.2840909090909,123.04687500000001
+death-metal,techno death-metal rock fast drums,135.99917763157893,89.10290948275862
+singer-songwriter,songwriter electronic singer-songwriter techno,117.45383522727272,130.50426136363637
+songwriter,songwriter electronic singer-songwriter techno,117.45383522727272,135.28714005235602
+french,french techno beat synth,163.77365757042253,155.0390625
+indie,indie electro,109.62357954545456,97.24672379032258
+death-metal,no vocals loud fast death-metal drums techno rock electronic metal,128.48541091160223,98.75099522292994
+garage,pop synth electronic garage guitar slow vocal female rock vocals drums,120.49668069948189,123.046875
+dubstep,dubstep synth dub slow techno ambient,81.77165743670886,156.60511363636363
+hardstyle,loud hardstyle fast electronic no vocals techno rock no vocal,150.23164970930233,149.3632586705202
+piano,piano drums guitar country rock female pop singing vocal vocals slow,112.34714673913045,110.9686541411043
+synth-pop,synth-pop guitar,126.48874562937064,127.08119877049181
+deep-house,techno deep-house fast electronic beat synth woman vocals,127.37951144366197,162.3445680628272
+afrobeat,techno electronic beat afrobeat,125.03150201612901,93.39702560240964
+dubstep,dub,87.29676942567568,170.99896599264707
+r-n-b,mpb r-n-b,178.20581896551724,129.92100209497207
+chicago-house,beat chicago-house techno synth,110.42668269230771,154.26772388059703
+country,country drums slow,109.62357954545456,150.39062500000003
+ska,swedish classical violin vocal ska female guitar strings,115.70079291044776,111.73986486486486
+german,techno beat electronic german ambient synth beats new age,239.2578125,121.124267578125
+british,british techno,124.36288435828877,121.59926470588235
+hardstyle,hardstyle techno loud,155.0390625,105.46875
+show-tunes,pop rock show-tunes drums loud guitar fast vocals singing,113.99931066176471,162.51474056603774
+chill,techno electronic chill,173.15359213917526,109.375
+electronic,electronic ambient slow electronic techno beat,75.11582485465117,106.39935661764707
+breakbeat,synth slow breakbeat electronic pop ambient,169.44159836065575,63.540599385245905
+trip-hop,trip-hop rock guitar drums vocal pop male vocal country male vocals,130.12870953237407,130.01179245283018
+jazz,electronic guitar j-rock jazz slow drums,114.84375000000001,107.02893860946746
+comedy,guitar comedy techno electronic beat drums synth slow no vocal,170.51673540609139,173.15359213917526
+chill,chill slow classical quiet flute strings soft violin synth ambient electronic,112.34714673913042,151.99908088235296
+kids,beat kids electronic drums techno slow no vocals synth beats,96.29755434782608,94.5360137195122
+electronic,electronic techno synth beat electronic piano fast no vocals,164.93517287234044,121.124267578125
+chill,chill sad guitar slow drums flute synth,129.19921875,86.13281249999994
+sad,chill sad guitar slow drums flute synth,129.19921875,105.46875
+songwriter,songwriter slow soft singer-songwriter guitar beat drums vocal electronic ambient quiet,172.26562499999997,105.46875
+singer-songwriter,songwriter slow soft singer-songwriter guitar beat drums vocal electronic ambient quiet,172.26562499999997,102.1914724576271
+sad,sad,116.13412921348313,87.5926906779661
+synth-pop,synth,84.4439338235294,87.10059691011234
+songwriter,songwriter singer-songwriter,155.0390625,151.99908088235296
+singer-songwriter,songwriter singer-songwriter,155.0390625,152.99907483552633
+death-metal,loud death-metal rock techno metal drums,135.20848473837208,119.87556378865979
+kids,electronic kids beat techno synth drums beats slow female weird,143.5546875,142.119140625
+sad,electronic,102.19147245762713,86.1328125
+opera,opera ambient slow,144.44633152173913,142.76156767955803
+electronic,beat electronic drums synth techno electronic slow female,93.96306818181819,108.57077205882354
+r-n-b,r-n-b strings,153.125,152.8162802419355
+afrobeat,afrobeat techno drums slow synth ambient beat beats electronic voice,64.19836956521739,117.45383522727272
+romance,romance synth slow ambient electronic vocal new age vocals,141.97716346153845,143.5546875
+happy,ambient synth happy electronic beat techno no vocal fast,175.78125,89.10290948275862
+club,club guitar slow drums,131.38903601694915,110.54478609625669
+power-pop,power-pop rock,126.39054008152172,108.22971204188481
+club,techno club electronic,164.0625,137.60863535502958
+synth-pop,synth-pop electronic synth pop,101.04966829608938,145.87008568548387
+happy,techno loud rock happy fast synth electronic,83.35433467741936,158.79233589385476
+synth-pop,electronic synth-pop slow drums techno synth beat ambient no vocals weird new age,200.05040322580646,200.97656249999997
+french,french female slow drums,114.84375000000001,112.34714673913045
+indie,indie-pop beat indie,116.13412921348313,116.13412921348313
+death-metal,alternative groove metal death-metal french loud rock drums,98.12598892405063,80.12354651162791
+deep-house,deep-house synth slow ambient soft new age,57.42187499999999,120.49668069948186
+grindcore,beat grindcore electronic slow techno,180.60105846774195,177.73437500000003
+afrobeat,dub afrobeat guitar rock vocal male pop vocals man male vocal,146.26326650943395,145.57658450704227
+blues,blues slow drums synth beat electronic,138.92389112903226,106.55605670103093
+r-n-b,r-n-b piano british soul classical slow strings solo classic no vocals soft,67.99958881578948,119.26081730769229
+tango,classical tango,183.56173155737704,59.40193965517241
+power-pop,beat power-pop guitar indian drums fast pop,107.02893860946746,107.666015625
+synth-pop,guitar drums synth-pop slow beat vocal pop rock,111.65364583333334,111.65364583333333
+show-tunes,show-tunes disney slow soft piano quiet flute classical female ambient guitar,68.60135508849558,115.94801682692308
+disney,show-tunes disney slow soft piano quiet flute classical female ambient guitar,68.60135508849558,83.35433467741936
+comedy,comedy classical opera quiet slow vocal soft guitar female strings,172.26562500000003,134.8165760869565
+power-pop,guitar power-pop rock,153.80859375000003,154.47732676630432
+psych-rock,psych-rock techno synth,103.95339439655172,170.2025636227545
+rock,punk rock punk-rock loud drums rock,103.359375,92.94907823741008
+power-pop,power-pop rock indian guitar drums loud fast beat vocal pop,100.67471590909089,105.46875
+singer-songwriter,songwriter,119.49060693641617,118.80387931034483
+songwriter,songwriter,119.49060693641617,119.49060693641617
+honky-tonk,honky-tonk country guitar pop rock male slow drums male vocal man,117.45383522727272,116.79025423728814
+show-tunes,pop guitar slow show-tunes,159.50520833333334,79.50721153846152
+opera,opera classical violin strings slow quiet ambient soft choir,156.60511363636363,150.88959854014598
+heavy-metal,heavy-metal guitar drums rock loud metal beat,77.83085466867469,108.22971204188481
+bluegrass,guitar slow bluegrass man male vocal vocal male strings,149.59909539473685,148.71852517985613
+hardstyle,loud hardstyle fast electronic rock techno synth beat drums,149.59909539473685,148.81585405759162
+industrial,techno fast industrial loud,133.36693548387095,146.8172940340909
+rock-n-roll,rock-n-roll r-n-b guitar slow strings rock piano,135.11029411764707,132.51201923076923
+r-n-b,rock-n-roll r-n-b guitar slow strings rock piano,135.11029411764707,123.70137965425532
+deep-house,electro edm deep-house house techno electronic fast beat pop guitar,121.75842604712041,123.046875
+german,german,90.9853653169014,140.94460227272728
+alt-rock,alt-rock techno electronic synth,160.6622409326425,157.91015625000003
+indie,indie-pop beat drums indie techno electronic synth slow ambient beats no vocal,118.12499999999999,111.53889388489209
+club,club,127.08119877049181,129.19921875
+show-tunes,strings fast classical show-tunes drums country no vocals no vocal guitar,155.93009159482762,107.02893860946746
+happy,techno male vocal happy electronic male voice male beat slow,117.45383522727269,167.7911931818182
+heavy-metal,drums rock fast,78.90028625954199,123.046875
+breakbeat,breakbeat,104.55428106936415,105.77713815789474
+rock,drums pop rock female rock loud beat synth electronic woman techno,93.39702560240964,93.96306818181817
+sad,guitar,55.769446942446045,84.03201219512195
+iranian,iranian fast guitar indian strings pop no vocals,129.19921875,105.77713815789474
+opera,slow vocal,107.66601562500003,70.3125
+romance,classical strings romance guitar,203.99876644736844,97.50884433962263
+chill,beat,94.30599908759123,141.58818493150687
+honky-tonk,honky-tonk classical guitar strings harpsichord opera piano violin classic quiet,113.58173076923079,116.13412921348313
+deep-house,techno deep-house,113.58173076923079,123.04687499999999
+ska,guitar country synth ska slow,153.6423141891892,184.5703125
+drum-and-bass,drum-and-bass slow quiet flute electronic classical synth no vocals soft ambient,110.9686541411043,111.13911290322581
+synth-pop,synth,118.80387931034483,121.12426757812499
+chill,soul guitar chill electronic slow beat country techno no vocal synth drums,112.34714673913042,110.74218749999999
+german,techno party german electronic beat,120.88815789473682,132.51201923076925
+singer-songwriter,singer-songwriter songwriter techno indian drums synth fast beat electronic beats,135.28714005235602,136.71875
+songwriter,singer-songwriter songwriter techno indian drums synth fast beat electronic beats,135.28714005235602,141.20133196721312
+chill,chill beat techno,151.99908088235293,151.99908088235296
+romance,opera classic,145.1676615168539,59.630408653846146
+guitar,pop piano slow guitar drums guitar synth electronic,73.82812500000001,85.5623965231788
+comedy,indian comedy,111.53889388489206,123.04687500000001
+drum-and-bass,synth drum-and-bass electronic,109.95678191489363,110.96865414110431
+grunge,metal loud,158.203125,158.203125
+new-age,new-age drums slow beat techno electronic beats synth female,160.6622409326425,145.76322115384613
+synth-pop,guitar male vocal synth-pop slow pop male man rock,104.19291834677422,102.33601485148515
+jazz,jazz indian drums beat female woman vocal vocals beats pop slow,58.06706460674157,120.88815789473685
+ambient,world-music ambient piano electronic guitar pop synth drums,74.35926258992806,123.046875
+bluegrass,bluegrass drums guitar indian techno electronic synth sitar slow no vocals beat,105.90099897540983,136.71875
+indie,electronic indie indie-pop techno synth ambient beat slow weird drums no vocals,81.38533464566929,108.79934210526314
+ska,rock ska fast electronic guitar drums,119.4906069364162,172.265625
+tango,classical tango violin classic strings flute no vocals harpsichord slow opera,117.45383522727275,88.49261558219179
+chicago-house,chicago-house,124.74407327586204,124.5293674698795
+detroit-techno,dance techno detroit-techno electronic,135.11029411764707,176.79893092105266
+breakbeat,breakbeat techno synth electronic beat weird drums no vocals,87.5926906779661,88.09037642045456
+happy,hardcore techno,172.265625,172.26562499999997
+romance,romance violin choir,143.5546875,114.2092541436464
+trance,trance techno,180.60105846774195,130.1287095323741
+death-metal,fast metalcore,108.22971204188481,145.9878177966102
+chill,sad slow chill quiet classical soft piano ambient guitar,119.62890625,128.13145661157026
+death-metal,death-metal loud guitar rock,140.43393342391303,96.8994140625
+drum-and-bass,techno drum-and-bass,174.05076101036266,167.6097972972973
+ska,ska rock guitar fast loud drums pop techno electronic,106.19113869863014,162.3445680628272
+piano,piano electronic techno,129.19921875,129.19921875
+hardstyle,hardstyle fast techno loud electronic synth,150.390625,150.390625
+happy,happy hardstyle beat techno hardcore,149.36325867052025,150.03780241935485
+hardstyle,happy hardstyle beat techno hardcore,149.36325867052025,151.19057513297872
+kids,techno kids synth,190.6217981557377,84.72079918032787
+comedy,techno male vocal comedy electronic male vocal male voice voice weird man vocals,123.046875,101.61736306179776
+romance,romance guitar vocal male male vocal pop man,133.65436422413794,135.99917763157893
+kids,kids beat drums beats,72.1783344972067,72.17833449720669
+hardstyle,hardstyle fast techno dance drums electronic loud,142.6739838957055,143.5546875
+garage,garage electronic pop electronic beat,111.37863685344828,162.9539695945946
+electronic,garage electronic pop electronic beat,111.37863685344828,158.7923358938547
+tango,pop,127.60416666666667,96.8994140625
+deep-house,techno beat drums deep-house,118.80387931034483,119.49060693641617
+club,beat techno club electronic synth,127.7794471153846,127.77944711538463
+piano,rock,104.05306208053692,133.36693548387098
+psych-rock,psych-rock,125.2840909090909,135.2084847383721
+comedy,comedy electronic beat techno slow no vocal,66.25600961538461,86.7108850671141
+club,club fast electronic loud techno dance beat vocals,122.07800196850394,126.82131901840494
+piano,rock piano country pop guitar rock male vocal vocals slow,104.55428106936417,106.00961538461537
+grunge,alt-rock,72.27928321678321,90.34910402097903
+psych-rock,psych-rock beat electronic synth techno slow ambient beats drums weird,144.3566689944134,143.5546875
+ska,ska drums fast indian guitar,107.666015625,101.3327205882353
+r-n-b,folk r-n-b guitar,100.67471590909092,101.61736306179775
+breakbeat,techno breakbeat,173.31602515243904,174.37931365030676
+breakbeat,techno breakbeat synth fast electronic,128.48541091160223,132.51201923076923
+rock-n-roll,rock-n-roll pop drums guitar vocal piano vocals country,118.12499999999999,123.046875
+guitar,guitar guitar male rock,146.26326650943395,146.81729403409093
+german,german techno beat ambient electronic slow synth beats drums,83.35433467741937,129.84846105527637
+romance,romance slow synth electronic new age no vocals techno guitar ambient no vocal beat,147.18898338607593,100.02520161290323
+ambient,metal,144.35666899441338,144.2833914974619
+afrobeat,vocal guitar afrobeat pop,86.13281250000001,133.19507087628867
+tango,tango classical guitar strings slow cello violin no vocals classic solo,118.80387931034483,120.18531976744187
+iranian,iranian guitar metal beat loud fast rock drums techno no vocal,112.34714673913042,123.046875
+ska,techno ska beats electronic beat synth drums no vocals,179.97901119402982,90.66611842105263
+tango,tango fast strings classical violin electronic,115.70079291044776,121.75842604712041
+piano,rock piano rock piano loud vocal vocals pop guitar fast female,171.38671875,86.61400139664804
+romance,quiet slow flute romance classical strings violin soft classic opera,105.46875,92.28515625
+black-metal,rock black-metal techno drums fast electronic guitar,138.18098262032086,87.5926906779661
+tango,tango violin classical flute opera strings slow female classic cello,76.5625,109.375
+trance,beat progressive-house techno trance drums synth electronic beats dance vocals,123.046875,124.52936746987952
+hardstyle,ambient hardstyle electronic slow synth techno new age no vocals weird,150.889598540146,146.81729403409093
+garage,techno electronic beat garage drums synth no vocals beats no vocal slow,129.19921875,129.92100209497207
+bluegrass,bluegrass slow,150.390625,113.76031839622641
+honky-tonk,honky-tonk vocal slow,123.7013796542553,120.49668069948186
+comedy,indian comedy electronic pop techno fast beat drums female loud synth,192.5951086956522,100.67471590909092
+electronic,electronic techno beat fast beats electronic drums synth dance,123.046875,85.5623965231788
+deep-house,deep-house groove beats electronic techno beat synth,123.046875,124.36288435828877
+honky-tonk,guitar honky-tonk slow male male vocal drums male voice vocal man singing,132.1355646306818,129.92100209497207
+kids,beat,156.60511363636363,78.30255681818181
+piano,rock guitar piano female rock pop vocal,103.95339439655172,82.46758643617021
+children,children techno beat drums electronic fast pop indian,123.04687500000001,120.49668069948186
+industrial,industrial fast techno electronic dance beats synth no vocal loud beat,128.48541091160223,130.01179245283018
+rock-n-roll,classical opera rock-n-roll violin classic slow strings singing harpsichord female,70.47230113636364,92.28515625
+grunge,grunge guitar,123.70137965425532,146.8172940340909
+grunge,metal guitar grunge drums rock male vocal fast metal loud,89.10290948275862,143.5546875
+afrobeat,afrobeat drums fast guitar indian loud rock techno,106.39935661764706,179.63527740641712
+comedy,ambient comedy electronic no vocals synth slow weird new age quiet techno no vocal,109.62357954545456,99.38401442307692
+grunge,rock guitar drums male vocal metal,158.6657072368421,95.11598926380368
+rock-n-roll,country pop rock-n-roll guitar drums,140.21620639534885,141.58818493150687
+club,beat,114.4803204113924,130.8346518987342
+piano,slow piano piano no vocals ambient soft synth,106.77621384297521,105.46875
+minimal-techno,techno beat minimal-techno electronic synth,122.31878698224851,123.04687499999999
+power-pop,power-pop rock drums fast loud techno metal electronic guitar beat no vocals,101.04966829608938,120.18531976744185
+chicago-house,dance techno chicago-house electronic synth fast,124.36288435828877,125.70734797297297
+kids,slow male vocal kids male male voice vocal man vocals,157.56002286585365,171.38671875
+deep-house,techno deep-house electronic,121.8860554245283,122.31878698224853
+comedy,comedy male classical opera,121.124267578125,109.95678191489363
+grunge,rock grunge guitar loud fast,92.28515624999999,148.12649283439487
+children,children,82.29249601910827,146.60904255319147
+trip-hop,trip-hop synth electronic slow guitar ambient,80.24796195652175,158.203125
+bluegrass,bluegrass drums pop vocal beat guitar woman female,206.71875,109.375
+afrobeat,drums male male voice,101.33272058823529,156.60511363636365
+bluegrass,techno bluegrass synth electronic guitar fast drums beat,96.72668783422459,116.69606854838709
+black-metal,goth death-metal black-metal rock drums metal no vocals,140.43393342391306,86.61400139664804
+death-metal,goth death-metal black-metal rock drums metal no vocals,140.43393342391306,101.73166830708662
+ambient,ambient slow guitar piano classical quiet ambient harp solo,117.45383522727272,105.16215479651163
+industrial,techno fast,177.18749999999997,137.0294744318182
+deep-house,drums groove synth electronic techno deep-house beat beats fast pop,82.82001201923076,125.03150201612904
+black-metal,black-metal loud fast rock metal,118.99928042763159,117.45383522727272
+afrobeat,afrobeat slow vocal guitar pop vocals singing male vocal,160.24709302325584,112.9610655737705
+breakbeat,breakbeat techno beat electronic fast beats synth drums,98.84093237704917,112.34714673913042
+electronic,electronic techno loud electronic synth fast weird,93.39702560240966,114.48032041139243
+trance,techno progressive-house electronic synth trance fast no vocal dance,127.7794471153846,129.19921875
+disney,slow quiet ambient disney new age soft vocal electronic,150.03780241935485,59.17521469465649
+breakbeat,drums breakbeat guitar electronic,175.8732820680628,88.34134615384616
+deep-house,deep-house groove,119.87556378865979,81.77165743670886
+techno,techno,128.13145661157026,117.45383522727272
+german,techno,128.13145661157026,160.38523706896552
+afrobeat,drums afrobeat,95.70312499999999,97.24672379032259
+garage,garage rock guitar male beat,155.6617093373494,156.60511363636365
+psych-rock,guitar blues british psych-rock rock drums pop vocals,186.62109375,188.41552734374997
+german,house electro edm techno german electronic female fast,125.03150201612904,125.70734797297297
+chicago-house,fast chicago-house techno dance,123.78368263473054,99.38401442307692
+afrobeat,drums afrobeat beat beats indian electronic techno fast no vocals,87.890625,118.125
+breakbeat,breakbeat techno beat fast electronic synth drums pop beats dance,135.99917763157896,132.51201923076923
+idm,fast idm guitar drums rock beat pop techno beats no vocals,199.792606314433,223.80967027559055
+black-metal,black-metal fast drums metal rock loud guitar no vocals,153.64231418918922,120.5859375
+breakbeat,breakbeat beat electronic techno fast beats synth drums dance loud,133.98437499999997,135.99917763157896
+death-metal,goth death-metal rock guitar fast synth techno electronic,138.18098262032086,134.8165760869565
+honky-tonk,guitar male vocal honky-tonk country drums slow man rock pop,100.67471590909089,106.19113869863014
+grunge,guitar grunge rock slow country no vocals drums fast vocal male vocal no vocal,73.40864701704545,131.38903601694912
+drum-and-bass,drum-and-bass synth electronic techno dance fast no vocal drums,93.6226222826087,141.20133196721312
+grunge,rock metal guitar grunge,196.44325657894737,198.76802884615387
+industrial,guitar industrial,136.71875,148.71852517985613
+garage,garage rock loud,97.24672379032258,141.20133196721312
+jazz,female jazz slow guitar woman female vocal pop vocal female voice singing vocals,114.84374999999999,110.29201600609757
+electronic,electronic electronic ambient synth,97.50884433962266,96.2975543478261
+bluegrass,bluegrass guitar country slow,118.80387931034483,121.124267578125
+psych-rock,psych-rock drums folk guitar indian slow vocal beat female strings,89.10290948275862,93.39702560240964
+industrial,industrial guitar rock indian drums beat,91.63065159574468,108.31072230538922
+bluegrass,bluegrass indian guitar sitar strings country male vocal man male voice,110.29201600609754,119.78735513245033
+disney,piano slow ambient disney classical violin guitar,70.79409246575344,90.66611842105263
+garage,rock guitar garage pop drums loud,155.32146516393442,90.9853653169014
+drum-and-bass,drum-and-bass electronic ambient slow synth weird no vocals techno new age soft no vocal,127.08119877049181,84.4439338235294
+comedy,comedy drums strings sitar guitar indian slow beat male vocal no vocals country,135.99917763157893,142.76156767955803
+jazz,jazz guitar,118.65234375,121.39523909395972
+guitar,guitar ambient vocals synth electronic,128.48541091160223,108.22971204188481
+trip-hop,electronic,125.03150201612901,125.2840909090909
+techno,techno techno electronic weird fast drums loud synth dance beat no vocals,189.65022935779817,116.13412921348313
+electronic,electro electronic techno edm beat drums electronic synth,100.67471590909092,140.43393342391303
+disney,disney beat slow,84.72079918032787,168.52072010869568
+german,german female slow vocal violin woman strings singing ambient vocals female vocal,56.999655330882355,88.59375
+garage,garage drums guitar beat slow indian vocal,119.26081730769232,119.49060693641617
+club,club pop,94.9994255514706,125.03150201612904
+children,children pop male country guitar man male vocal vocal vocals rock,115.94801682692308,123.78368263473054
+idm,idm female pop vocal female vocal woman,132.890625,135.20848473837208
+trance,dubstep,151.01207386363637,148.1264928343949
+drum-and-bass,j-dance electronic techno,127.08119877049181,86.61400139664804
+trance,techno trance beat drums electronic,123.04687499999999,122.39925986842104
+club,ambient club slow classical piano electronic new age synth quiet,94.99942555147057,82.46758643617021
+electronic,electronic beat techno synth fast electronic,99.38401442307693,99.38401442307693
+death-metal,metal death-metal drums fast rock guitar electronic,96.2975543478261,94.99942555147057
+trip-hop,trip-hop,113.04931640625,114.84375000000001
+trip-hop,trip-hop techno beat electronic synth drums beats woman,83.89559659090908,80.24796195652175
+new-age,male new-age guitar,177.734375,123.046875
+trip-hop,techno trip-hop beat,93.39702560240964,157.03772444751382
+black-metal,black-metal drums rock fast guitar metal,132.51201923076923,155.6617093373494
+drum-and-bass,techno synth electronic,87.10059691011234,117.45383522727272
+jazz,jazz j-pop guitar slow male drums man male vocal vocals vocal,121.75842604712041,123.04687500000001
+german,drums german beat guitar beats synth slow,90.34910402097903,92.28515625
+german,guitar german slow male vocal strings rock classical piano vocal male,113.33264802631581,71.11883600917432
+detroit-techno,electronic detroit-techno techno fast pop beat,124.36288435828877,118.125
+children,rock guitar children,109.62357954545456,159.50520833333334
+chicago-house,chicago-house pop techno electronic drums beat synth beats fast dance,125.03150201612904,125.28409090909089
+iranian,iranian techno,134.8165760869565,139.25664296407186
+ambient,world-music slow violin ambient strings ambient synth classical electronic,119.26081730769229,181.3322368421053
+death-metal,groove death-metal loud fast rock techno drums metal no vocals electronic,151.99908088235293,144.2833914974619
+comedy,comedy techno electronic,90.13898982558139,135.99917763157896
+german,male vocal german guitar man vocal male voice,107.666015625,129.19921875
+children,guitar children slow male male vocal country pop,71.77734375,141.97716346153848
+comedy,comedy techno drums electronic beat weird voice slow ambient,93.39702560240964,94.30599908759123
+jazz,blues jazz flute strings,120.18531976744187,116.69606854838709
+techno,fast techno techno electronic,150.390625,148.81585405759165
+techno,beat techno drums,144.44633152173913,145.34912109375
+disney,guitar disney pop,114.48032041139243,119.26081730769229
+iranian,drums beat,181.5772804054054,151.1905751329787
+chicago-house,fast dance electronic chicago-house techno synth loud pop,127.7794471153846,128.48541091160223
+bluegrass,guitar bluegrass classical slow piano strings sitar no vocal soft indian no vocals,143.5546875,145.34912109375
+honky-tonk,honky-tonk violin vocal strings singing pop vocals drums male,200.97656249999997,149.59909539473685
+jazz,soul blues jazz strings classical fast violin harpsichord opera singing vocal,117.45383522727272,139.6748310810811
+iranian,iranian rock loud guitar drums fast vocals metal beat,169.99897203947367,101.99938322368422
+jazz,jazz j-pop pop female guitar rock beat drums singing vocal woman,97.24672379032259,63.024009146341456
+black-metal,rock fast black-metal drums,140.94460227272728,98.30375339673911
+techno,dance loud techno techno fast beat electronic beats drums synth pop,135.28714005235602,138.73741610738256
+chicago-house,electronic techno beat chicago-house drums,128.48541091160223,127.7794471153846
+jazz,drums classical jazz violin strings flute fast classic vocals,144.44633152173913,92.94907823741006
+disney,disney ambient strings slow violin synth classical electronic new age no vocals no vocal,89.7216796875,100.67471590909092
+idm,idm electronic,104.75612331081082,146.26326650943398
+honky-tonk,honky-tonk pop drums guitar vocal rock,92.28515625,164.93517287234044
+death-metal,rock goth,147.27372085492226,109.49086334745765
+black-metal,rock goth,147.27372085492226,120.18531976744185
+ambient,world-music ambient,140.09553840361448,101.33272058823529
+trip-hop,techno,168.8029993718593,160.5865995762712
+jazz,jazz strings slow violin classical opera flute quiet cello,102.67487582781456,135.99917763157893
+trip-hop,violin strings trip-hop cello classical vocals,131.1667195431472,155.0390625
+children,children drums violin guitar rock classical slow strings vocal female,88.09037642045455,88.09037642045455
+chicago-house,chicago-house,122.07800196850394,119.4906069364162
+trance,techno electronic trance ambient synth slow beat,129.19921875000006,127.08119877049181
+bluegrass,guitar male vocal slow,136.8998344370861,91.63065159574467
+bluegrass,bluegrass guitar rock,116.69606854838709,116.69606854838709
+children,drums children beat electronic beats techno slow synth quiet,56.173573369565226,88.59375
+honky-tonk,classical opera slow honky-tonk strings violin vocal singing female,91.19944852941177,89.1029094827586
+new-age,new-age beat drums hardcore techno fast electronic,141.4120802238806,81.77165743670885
+chicago-house,chicago-house techno electronic beats synth beat ambient drums slow weird,125.03150201612901,122.21547719594595
+trip-hop,trip-hop guitar drums pop vocal beat slow vocals woman,94.207763671875,180.87890625
+techno,techno slow electronic guitar beat drums synth techno,108.31072230538922,105.16215479651163
+bluegrass,strings country bluegrass guitar vocal,91.73909023668638,88.09037642045455
+honky-tonk,guitar honky-tonk slow pop vocal singing,102.77210582386364,103.95339439655172
+trip-hop,country guitar trip-hop slow pop drums rock vocal male,125.6103515625,132.51201923076925
+guitar,guitar vocal guitar,110.74218749999999,86.13281249999999
+black-metal,rock,89.61795520231215,79.9170425257732
+jazz,j-pop jazz guitar strings classical slow quiet,246.09374999999997,176.98523116438355
+guitar,guitar slow guitar male male vocal country man male voice pop electronic,135.99917763157896,96.72668783422459
+ambient,synth world-music electronic fast ambient,132.51201923076923,84.26036005434781
+jazz,jazz turkish j-rock guitar,96.2975543478261,96.8994140625
+new-age,new-age guitar slow ambient pop synth electronic,67.11647727272728,134.58251953124997
+idm,idm piano,110.9686541411043,83.35433467741936
+grindcore,drums techno grindcore guitar beat rock,169.99897203947367,190.86248224431816
+new-age,electronic new-age techno synth,176.1807528409091,180.87890625
+new-age,new-age techno drums,98.84093237704917,116.79025423728814
+honky-tonk,honky-tonk drums pop guitar rock female vocal,80.24796195652175,80.74951171875
+jazz,jazz drums guitar slow classical piano,120.18531976744185,60.79963235294118
+trance,techno loud electronic trance,121.39523909395973,144.3566689944134
+minimal-techno,minimal-techno drums techno,129.92100209497207,129.92100209497207
+new-age,new-age guitar strings classical electronic indian,92.28515625000001,92.83776197604791
+chicago-house,beat electronic techno chicago-house drums dance,121.75842604712041,122.07800196850394
+guitar,vocal,53.83300781249999,143.5546875
+chicago-house,chicago-house beat,124.36288435828877,159.8340850515464
+trance,electronic progressive-house synth trance loud fast piano techno,109.62357954545456,176.6826923076923
+iranian,ambient iranian electronic synth weird,112.34714673913045,90.13898982558139
+trance,progressive-house electronic synth trance techno slow strings,78.90028625954199,118.12499999999999
+chicago-house,electronic,119.26081730769229,119.26081730769229
+trip-hop,trip-hop drums electronic techno,90.1389898255814,142.83330716080403
+grindcore,rock grindcore piano techno,100.34890776699028,133.65436422413794
+idm,idm classical piano slow solo,159.8340850515464,77.13386194029852
+trip-hop,slow trip-hop electronic drums beat techno synth beats no vocals no vocal,90.34910402097903,89.7216796875
+guitar,guitar guitar country indian sitar strings drums fast classical,102.1914724576271,99.38401442307693
+disney,violin classical disney strings indian classic cello,120.88815789473685,122.21547719594594
+idm,fast idm techno guitar,145.16766151685397,71.77734375
+trance,trance loud techno,131.38903601694915,135.20848473837208
+trance,trance house,118.22150735294116,123.70137965425532
+black-metal,country,129.92100209497204,132.51201923076923
+trip-hop,drum-and-bass slow drums guitar vocals trip-hop vocal violin beat,96.8994140625,173.42177013422818
+trip-hop,trip-hop ambient slow,89.10290948275862,87.5926906779661
+iranian,iranian rock drums loud fast guitar,89.61795520231215,91.73909023668638
+black-metal,loud black-metal rock metal drums fast techno guitar no vocals electronic,121.75842604712041,133.88520077720207
+grindcore,grindcore metal,100.15443313953489,148.50484913793102
+chicago-house,chicago-house beat techno electronic drums beats slow synth,109.62357954545456,110.29201600609754
+black-metal,metal black-metal rock guitar drums fast loud electronic no vocals,140.09553840361446,114.4803204113924
+guitar,guitar guitar beat drums slow indian no vocals,123.046875,95.70312499999999
+disney,disney electronic slow drums beat,92.28515625,92.83776197604791
+ambient,ambient,101.04966829608938,101.04966829608938
+guitar,guitar guitar country male slow man vocal male voice male vocal vocals singing,102.77210582386365,109.95678191489363
+new-age,new-age classical,84.26036005434784,157.56002286585365
+guitar,guitar male male voice,107.10816062176166,180.69820804195805
+chicago-house,techno chicago-house synth fast electronic beat dance loud,118.12499999999999,118.80387931034483
+idm,techno electronic idm slow synth beats,190.23197852760737,189.07202743902437
+iranian,iranian rock,105.90099897540985,130.6508953651685
+black-metal,loud black-metal fast techno rock electronic drums metal,108.96319653614457,129.19921875
+chicago-house,chicago-house,123.78368263473055,123.046875
+ambient,guitar ambient vocal pop female woman female vocal singing vocals rock,120.5859375,56.999655330882355
+grindcore,grindcore rock,118.12499999999999,118.22150735294119
+black-metal,black-metal guitar drums rock loud electronic techno fast,105.16215479651163,98.30375339673911
+new-age,slow new-age drums guitar male ambient man singing male vocal vocal,92.28515625,138.92389112903226
+black-metal,black-metal rock,137.60863535502958,136.71875
+new-age,opera new-age slow drums ambient synth electronic techno no vocals strings,125.03150201612904,124.52936746987952
+ambient,world-music,99.38401442307692,87.29676942567568
+idm,idm fast techno loud electronic,130.0117924528302,123.78368263473052
+iranian,iranian loud metal rock guitar fast no vocals drums techno weird no vocal,118.65234375,101.61736306179775
+new-age,female techno new-age pop fast female vocal beat woman electronic rock,175.8732820680628,149.59909539473685
+idm,fast idm techno dance,118.80387931034483,157.91015625000003
+detroit-techno,techno detroit-techno loud fast,126.82131901840489,119.87556378865979
+guitar,guitar guitar electronic indian techno drums strings,118.99928042763159,110.74218749999999
+guitar,guitar slow male opera male vocal man singing vocal,99.38401442307693,100.67471590909092
+ambient,female ambient slow,110.9686541411043,121.39523909395972
+guitar,guitar slow classical soft strings guitar quiet harp solo no vocal piano,84.26036005434781,82.03125
+black-metal,rock guitar black-metal fast loud drums techno,123.046875,124.74407327586208
+minimal-techno,fast techno synth minimal-techno electronic no vocal dance beat,95.11598926380368,92.8377619760479
+black-metal,loud rock metal black-metal guitar,119.49060693641617,116.79025423728814
+ambient,world-music ambient slow synth no vocals ambient new age electronic techno soft,52.20170454545455,97.50884433962266
+ambient,chill electronic ambient synth piano ambient,76.90429687499999,100.15443313953489
+iranian,rock drums iranian,106.39935661764707,106.39935661764706
+ambient,ambient slow,65.83399681528662,113.04931640625
+iranian,drums,136.79917279411765,135.99917763157893
+detroit-techno,chicago-house slow soft detroit-techno beat techno quiet drums female electronic guitar,248.72576871657753,124.36288435828877
+ambient,ambient world-music slow piano soft,78.30255681818183,79.50721153846155
+ambient,strings ambient slow ambient classical new age electronic violin synth female,92.28515625,115.48533519553071
+idm,idm techno electronic no vocal,109.9567819148936,110.74218749999999
+iranian,fast loud iranian drums rock techno,142.5646551724138,145.16766151685397
+grindcore,rock grindcore metal loud fast drums guitar electronic techno no vocal no vocals,121.124267578125,96.2975543478261
+idm,techno idm fast electronic,180.27797965116278,170.51673540609139
+idm,techno idm,176.1807528409091,127.08119877049181
+grindcore,loud grindcore,113.76031839622641,156.17487980769232
+minimal-techno,minimal-techno drums electronic rock guitar beat fast techno no vocals,142.76156767955803,141.97716346153845
+iranian,iranian synth piano slow ambient new age,144.2833914974619,141.3116455078125
+detroit-techno,detroit-techno fast rock techno electronic dance beat loud,125.03150201612901,97.50884433962266
+new-age,new-age electronic fast techno synth drums rock,176.1807528409091,118.125
+iranian,rock iranian guitar,110.4266826923077,95.703125
+idm,guitar idm,95.11598926380368,98.75099522292994
+iranian,iranian guitar,89.61795520231215,89.7216796875
+new-age,opera slow new-age synth ambient drums electronic beat techno new age soft,125.03150201612904,62.64204545454545
+iranian,ambient iranian electronic soft synth slow techno piano,90.13898982558139,181.5772804054054
+new-age,classical new-age,112.34714673913042,112.9610655737705
+idm,idm,91.19944852941177,148.81585405759162
+grindcore,metal loud rock grindcore,101.61736306179775,208.38583669354836
+new-age,opera new-age ambient synth slow new age no vocals soft,86.1328125,130.6508953651685
+idm,idm slow classical no vocals quiet piano solo soft female flute opera,190.86248224431816,187.92613636363635
+detroit-techno,fast techno detroit-techno dance electronic beat drums beats loud no vocals synth,121.124267578125,122.39925986842107
+minimal-techno,electronic techno beat minimal-techno fast female woman beats dance synth drums,124.74407327586204,125.6103515625
+minimal-techno,minimal-techno techno dance techno beat electronic fast beats drums no vocals,126.39054008152175,89.61795520231215
+detroit-techno,ambient techno quiet,130.1287095323741,128.39673913043478
+minimal-techno,minimal-techno techno,125.03150201612904,125.70734797297297
+detroit-techno,detroit-techno beats beat techno electronic drums synth,124.74407327586208,80.74951171875
+idm,idm techno electronic synth fast dance beat,70.3125,98.84093237704917
+idm,loud idm guitar electronic,95.19942434210526,88.59375
+new-age,drums new-age beat pop electronic vocal vocals techno synth guitar,88.49261558219179,175.45572916666666
+detroit-techno,detroit-techno fast,91.63065159574468,123.7013796542553
+minimal-techno,techno beats minimal-techno beat electronic slow drums synth dance female ambient,126.39054008152172,130.8346518987342
+minimal-techno,minimal-techno electronic techno beat fast drums,122.31878698224853,123.046875
+detroit-techno,detroit-techno fast electronic dance techno synth female,125.2840909090909,125.70734797297297
+detroit-techno,fast techno detroit-techno electronic beat drums indian loud rock,127.37951144366197,102.19147245762713
+grindcore,metal rock fast male grindcore loud drums guitar techno,136.71875,114.84374999999999
+detroit-techno,beat detroit-techno fast techno synth electronic drums dance,126.48874562937063,120.88815789473684
+detroit-techno,detroit-techno beat electronic techno beats no vocal,66.82718211206897,62.51575100806452
+grindcore,fast rock drums grindcore guitar,146.6090425531915,117.45383522727275
+minimal-techno,techno,121.75842604712041,123.7013796542553
+grindcore,grindcore rock loud fast guitar techno no vocals,133.19507087628867,134.23295454545453
+grindcore,grindcore,127.60416666666667,152.8162802419355
+detroit-techno,techno detroit-techno beat,119.62890625,121.75842604712041
+minimal-techno,minimal-techno classical quiet flute slow opera drums vocal violin piano soft,112.9610655737705,98.43749999999999
+minimal-techno,techno,123.046875,159.8340850515464
+minimal-techno,techno,123.046875,121.75842604712044
+grindcore,grindcore metal fast rock loud guitar drums no vocals techno electronic,172.26562499999997,110.54478609625669
+grindcore,grindcore fast rock metal loud guitar drums,129.92100209497207,107.66601562499999
+minimal-techno,drums minimal-techno fast techno beat,130.65089536516857,85.18629807692307
+grindcore,grindcore metal rock fast no vocal drums loud guitar no voice beat,96.72668783422459,139.67483108108107
+grindcore,fast grindcore loud rock techno metal guitar drums no vocals,83.35433467741936,167.1233675373134
+grindcore,rock drums,123.046875,63.024009146341456
+grindcore,grindcore rock metal guitar loud drums,84.99948601973684,166.70866935483872
+detroit-techno,electronic detroit-techno beat techno drums synth dance slow beats,120.18531976744185,121.124267578125
+minimal-techno,minimal-techno electronic techno dance fast beat synth no vocal beats drums,139.25664296407186,139.6748310810811
+minimal-techno,minimal-techno techno strings ambient,108.79934210526316,123.04687499999999
+detroit-techno,techno detroit-techno,134.23295454545453,133.36693548387098
+detroit-techno,electronic techno fast detroit-techno dance pop beat synth,65.4173259493671,133.8852007772021
+minimal-techno,beat minimal-techno techno electronic drums beats dance,121.75842604712041,123.046875
+minimal-techno,minimal-techno techno techno electronic dance beat synth fast loud,116.13412921348313,120.88815789473684
+minimal-techno,minimal-techno techno beat pop drums electronic beats dance fast,124.5293674698795,124.03125
+minimal-techno,electronic techno electronic minimal-techno fast beat,121.75842604712044,122.39925986842107

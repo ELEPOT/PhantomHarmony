@@ -11,3 +11,13 @@ if len(beats) > 1:
 else:
     # 無法由資料得知BPM，回傳 0
     return 0
+
+
+smaller_bpm = min((output_bpm, ground_truth_bpm))
+larger_bpm = max((output_bpm, ground_truth_bpm))
+
+# abs 是絕對值的意思
+if abs(smaller_bpm - larger_bpm) > abs(smaller_bpm - larger_bpm / 2):
+    larger_bpm /= 2
+
+bpm_similarity = abs(larger_bpm - smaller_bpm)

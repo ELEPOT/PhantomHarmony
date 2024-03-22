@@ -1,6 +1,6 @@
 import csv
-import os
-from pprint import pprint
+import pandas as pd
+from paths import TEST_OUTPUT_DIR
 
 from paths import DATASET_DIR
 
@@ -21,4 +21,4 @@ genre_count = list(genre_count.items())
 
 genre_count.sort(key=lambda x: x[1], reverse=True)
 
-pprint(genre_count)
+pd.DataFrame(genre_count).to_csv(TEST_OUTPUT_DIR / "count_genre.csv")

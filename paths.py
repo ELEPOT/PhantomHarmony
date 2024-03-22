@@ -12,8 +12,9 @@ with open(CONFIG_YAML_PATH, "r") as f:
 
 DATASET_DIR = Path(config["dataset_dir"])
 CACHE_DIR = Path(config["cache_dir"])
-VALIDATION_DIR = Path(config["validation_dir"])
+TEST_DIR = Path(config["test_dir"])
 OUTPUT_DIR = Path(config["output_dir"])
+VALIDATION_DIR = Path(config["validation_dir"])
 
 NEXTCLOUD_MODEL_DIR = Path(config["nextcloud_model_dir"])
 NEXTCLOUD_RIFFUSION_DIR = NEXTCLOUD_MODEL_DIR.parent / "riffusion"
@@ -27,3 +28,4 @@ SRC_DIR = PROJECT_DIR / "src"
 
 sys.path.append(str(PROJECT_DIR))
 sys.path.append(str(SRC_DIR))
+sys.path.append(str(DEPENDENCIES_DIR / "musicnn"))

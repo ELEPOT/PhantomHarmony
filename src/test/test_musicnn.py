@@ -1,6 +1,7 @@
 import pandas as pd
 from paths import DATASET_DIR, TEST_OUTPUT_DIR, DEPENDENCIES_DIR
 import sys
+from src.process.generate_prompts import generate_prompt
 
 sys.path.append(str(DEPENDENCIES_DIR / "musicnn"))
 
@@ -26,19 +27,20 @@ valid_tags = [
     "metal",
 ]
 
-occur_sum = np.zeros((len(valid_tags), len(valid_tags)))
+
+occur_sum = np.zeros((len(valid_tags), 50))
 occur_len = np.zeros_like(occur_sum)
 
 for i, sample in samples.iterrows():
+    if occur_len.all() >= 100:
+        break
+
     sample = sample["music_name"]
 
     try:
-        genres = spotify_114k.loc[spotify_114k["track_id"] == sample.split("_")[0]].iloc[0]["track_genre"].split(",")
+        genres = generate_prompt(sample, include_tags=False).split()
     except:
         print(sample)
-
-    if occur_len.all() >= 100:
-        break
 
     for genre_i, genre in enumerate(valid_tags):
         if genre == "new age":
@@ -50,10 +52,10 @@ for i, sample in samples.iterrows():
                 )
                 tags_likelihood_mean = np.mean(taggram, axis=0)
 
-                tags_likelihood_mean = dict(zip(tags, tags_likelihood_mean))
+                tags_likelihood_mean = zip(tags, tags_likelihood_mean)
 
-                for tag_i, tag in enumerate(valid_tags):
-                    occur_sum[genre_i, tag_i] += tags_likelihood_mean[tag]
+                for tag_i, (tag, value) in enumerate(tags_likelihood_mean):
+                    occur_sum[genre_i, tag_i] += value
 
                 occur_len[genre_i] += 1
 

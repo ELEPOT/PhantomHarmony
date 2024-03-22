@@ -27,29 +27,29 @@ def detect_blank_music(path, threshold=0.008):
         return -1
 
 
-start_time = time.time()
+if __name__ == "__main__":
+    start_time = time.time()
 
-data = {"music_name": [], "vocals_blank": [], "accompaniment_blank": []}
+    data = {"music_name": [], "vocals_blank": [], "accompaniment_blank": []}
 
-for filename in v_files:
-    v_path = os.path.join(v_input_dir, filename)
-    a_path = os.path.join(a_input_dir, filename)
+    for filename in v_files:
+        v_path = os.path.join(v_input_dir, filename)
+        a_path = os.path.join(a_input_dir, filename)
 
-    v_blank = detect_blank_music(v_path)
-    a_blank = detect_blank_music(a_path)
+        v_blank = detect_blank_music(v_path)
+        a_blank = detect_blank_music(a_path)
 
-    if v_blank != -1 and a_blank != -1:
-        data["music_name"].append(filename.split(".")[0])
+        if v_blank != -1 and a_blank != -1:
+            data["music_name"].append(filename.split(".")[0])
 
-        data["vocals_blank"].append(v_blank)
-        data["accompaniment_blank"].append(a_blank)
+            data["vocals_blank"].append(v_blank)
+            data["accompaniment_blank"].append(a_blank)
 
-    if len(data["music_name"]) % 10 == 0:
-        print(len(data["music_name"]), filename.split(".")[0])
+        if len(data["music_name"]) % 10 == 0:
+            print(len(data["music_name"]), filename.split(".")[0])
 
+    end_time = time.time()
+    print("It costs " + str(end_time - start_time) + " s")
 
-end_time = time.time()
-print("It costs " + str(end_time - start_time) + " s")
-
-df = pd.DataFrame(data)
-df.to_csv(csv_output_dir)
+    df = pd.DataFrame(data)
+    df.to_csv(csv_output_dir)

@@ -5,26 +5,13 @@ from PIL import Image
 import numpy as np
 import os
 
-split_by_time_sample = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
 
-os.makedirs(DATASET_DIR / "spectrogram" / "vocals_beat_mark", exist_ok=True)
+def mark_beat(output_spectrogram_path, input_audio_path, input_spectrogram_path):
+    if os.path.isfile(output_spectrogram_path) and output_spectrogram_path != input_spectrogram_path:
+        return
 
-split_by_time_sample = split_by_time_sample[20]
-
-for i, row in split_by_time_sample.iterrows():
-    music_name = row["music_name"]
-
-    output_path = DATASET_DIR / "spectrogram" / "vocals_beat_mark" / f"{music_name}.png"
-
-    if os.path.isfile(output_path):
-        if i % 100 == 0:
-            print(i)
-        continue
-
-    print(music_name)
-
-    y, sr = librosa.load(DATASET_DIR / "split_by_time" / "accompaniment" / f"{music_name}.mp3")
-    img = np.array(Image.open(DATASET_DIR / "spectrogram" / "vocals" / f"{music_name}.png"))
+    y, sr = librosa.load(input_audio_path)
+    img = np.array(Image.open(input_spectrogram_path))
     img[:, :, 0] = 0
 
     try:
@@ -37,6 +24,18 @@ for i, row in split_by_time_sample.iterrows():
             img[:, beat_col, 0] = 255
 
     except ValueError:
-        print(f"failed to find beat of {music_name}")
+        print(f"failed to find beat of {input_audio_path}")
 
-    Image.fromarray(img).save(output_path)
+    Image.fromarray(img).save(output_spectrogram_path)
+
+
+if __name__ == "__main__":
+    split_by_time_sample = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
+
+    os.makedirs(DATASET_DIR / "spectrogram" / "vocals_beat_mark", exist_ok=True)
+    for i, row in split_by_time_sample.iterrows():
+        mark_beat(
+            DATASET_DIR / "spectrogram" / "vocals_beat_mark" / f"{row['music_name']}.png",
+            DATASET_DIR / "split_by_time" / "accompaniment" / f"{row['music_name']}.mp3",
+            DATASET_DIR / "spectrogram" / "vocals" / f"{row['music_name']}.png",
+        )

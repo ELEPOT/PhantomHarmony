@@ -1,12 +1,15 @@
 import os
 import subprocess
 
-from paths import DATASET_DIR, VALIDATION_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENVS_DIR
+from paths import DATASET_DIR, TEST_DIR, CACHE_DIR, OUTPUT_DIR, DEPENDENCIES_DIR, VENVS_DIR
 
-validation_images = [VALIDATION_DIR / filename for filename in os.listdir(VALIDATION_DIR)]
+validation_dir = TEST_DIR / "no_beat_mark"
+
+validation_images = [validation_dir / filename for filename in os.listdir(validation_dir)]
 validation_prompts = [os.path.basename(img_path).split(".")[0] for img_path in validation_images]
 
-run_name = "lr2.56e-3_gas256"
+
+run_name = "1_train_base"
 
 command = []
 
@@ -22,18 +25,17 @@ command += [
     f"--cache_dir={CACHE_DIR}",
     f"--logging_dir={OUTPUT_DIR}/{run_name}",
     "--report_to=wandb",
-    "--checkpointing_steps=5",
-    "--validation_steps=1",
-    f"--resume_from_checkpoint=latest",
-    f"--resolution=512",
-    f"--learning_rate=1e-3",
-    "--train_batch_size=4",
-    "--gradient_accumulation_steps=100",
+    "--resume_from_checkpoint=latest",
+    "--resolution=512",
+    "--learning_rate=1e-5",
+    "--train_batch_size=2",  # My computer cannot handle such batch size with train_base :(
     "--num_validation_images=1",
+    "--gradient_accumulation_steps=2",  # To stay consistent
     "--mixed_precision=fp16",
     "--proportion_empty_prompts=0.5",
+    "--train_base",
 ]
 
-command += [f"--validation_image"] + validation_images + [f"--validation_prompt"] + validation_prompts
+command += ["--validation_image"] + validation_images + ["--validation_prompt"] + validation_prompts
 
 subprocess.call(command)

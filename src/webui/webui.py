@@ -21,10 +21,10 @@ def segment_to_sr_ndarray(segment: AudioSegment):
     return segment.frame_rate, np.array(segment.split_to_mono()[0].get_array_of_samples())
 
 
-def zip_files(mo, text, file, times, spl):
+def zip_files(mo, text, file, steps, spl):
     #    in_put = os.path.split(in_put)
     global same, pipe
-    if file == None or text == "" or str(type(times)) != "<class 'int'>":
+    if file == None or text == "" or str(type(steps)) != "<class 'int'>":
         with open("error.txt", "w") as f:
             f.write(
                 "please write command here. And upload music file to next block.Don't input float type in times block. \n"
@@ -53,7 +53,7 @@ def zip_files(mo, text, file, times, spl):
             print("spl finish")
             aio("m2s", root_dir / filename / "vocals.wav", root_dir / "unf1.png")
             print("aio")
-            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, times)
+            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, steps)
             print("pipe")
             aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
             sound1 = AudioSegment.from_wav(root_dir / filename / "vocals.wav")  # mp3 load wav
@@ -68,7 +68,7 @@ def zip_files(mo, text, file, times, spl):
 
         else:
             aio("m2s", in_put, root_dir / "unf1.png")
-            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, times)
+            run_pipeline(pipe, root_dir / "unf1.png", root_dir / "unf2.png", text, steps)
             aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
             sound1 = AudioSegment.from_file(in_put)
             sound2 = AudioSegment.from_file(root_dir / "finish.wav")

@@ -1,51 +1,54 @@
 from paths import DATASET_DIR
-import os
+from generate_prompts import generate_prompt
 
 import pandas as pd
 
 from sklearn.utils import shuffle
 
-number_of_samples_per_genre = 20
+max_number_of_samples_per_genre = 20
 
 blank_detect = pd.read_csv(DATASET_DIR / "split_by_time_blank_detect.csv")
-spotify_114k = pd.read_csv(DATASET_DIR / "spotify_114k.csv")
 blank_detect = shuffle(blank_detect)
+
+spotify_114k = pd.read_csv(DATASET_DIR / "spotify_114k.csv")
+
 exclude = pd.read_csv(DATASET_DIR / "split_by_time_sample.csv")
 
 sampled_music = []
 sampled_genres = []
+sampled_tags = []
 
 for index, row in blank_detect.iterrows():
-    # print(len(sampled_music))
-    if len(sampled_music) >= number_of_samples_per_genre * 111:
+    if len(sampled_music) >= max_number_of_samples_per_genre * 111:
         break
+
+    if row["vocals_blank"] > 0.3 or row["accompaniment_blank"] > 0.7:
+        continue
 
     music = row["music_name"]
 
     if music in exclude.loc[:, "music_name"].to_list():
         continue
 
-    # print(music)
-    genre = spotify_114k.loc[spotify_114k["track_id"] == music.split("_")[0]].iloc[0]["track_genre"]
+    genres = generate_prompt(music, include_tags=False).split()
 
-    # Just ignore if there are more than one genre to one track
-    # They're too complicated
-    if "," in genre:
-        continue
+    tags = ""
+    for genre in genres:
+        if sampled_genres.count(genre) >= max_number_of_samples_per_genre:
+            continue
 
-    if sampled_genres.count(genre) >= number_of_samples_per_genre:
-        # print("skip")
-        continue
+        if tags == "":
+            tags = generate_prompt(music)
 
-    else:
-        print(genre)
-
-    if row["vocals_blank"] < 0.3 and row["accompaniment_blank"] < 0.7:
         sampled_music.append(music)
         sampled_genres.append(genre)
+        sampled_tags.append(tags)
+
+        print(music, genre, tags, len(sampled_music))
 
 df = pd.DataFrame()
 df["music_name"] = sampled_music
 df["genre"] = sampled_genres
+df["tags"] = sampled_tags
 
-df.to_csv(DATASET_DIR / "validation_sample_2220.csv")
+df.to_csv(DATASET_DIR / "_validation_sample_2220.csv")

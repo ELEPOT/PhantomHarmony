@@ -71,16 +71,16 @@ def load_model(root_model_dir=None):
     return pipe
 
 
-def run_pipeline(pipe, input_path, output_path, text, times=20):
+def run_pipeline(pipe, input_path, output_path, text, steps=20):
     torch.manual_seed(random.randint(1, 100000))
     generator = torch.random.manual_seed(random.randint(1, 100000))
 
     if isinstance(pipe, StableDiffusionControlNetPipeline):
         img = Image.open(input_path)
 
-        out_image = pipe(text, num_inference_steps=times, generator=generator, image=img).images[0]
+        out_image = pipe(text, num_inference_steps=steps, generator=generator, image=img).images[0]
 
     else:
-        out_image = pipe(text, num_inference_steps=times, generator=generator).images[0]
+        out_image = pipe(text, num_inference_steps=steps, generator=generator).images[0]
 
     out_image.save(output_path)
