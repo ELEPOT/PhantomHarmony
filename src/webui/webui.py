@@ -86,7 +86,7 @@ demo = gr.Interface(
     zip_files,
     inputs=[
         gr.Dropdown(mods, label="模型", value="第三代 (無敘述比例 = 0.1)-61000", info="選模型，用於比較不同模型生成結果，建議第三代"),
-        gr.Textbox(lines=2, label="音樂類型", placeholder="輸入想要的音樂類型"),
+        gr.Textbox(lines=2, label="文字敘述", placeholder="輸入想要的文字敘述"),
         gr.Audio(type="filepath", label="上傳音檔或直接錄音", show_label=True),
         gr.Slider(2, 50, value=20, label="步數", step=1, info="選擇執行步數，一般來說，少可以加快速度，多可以增加生成結果品質，但超過一定數值就不會再有更明顯的改善了"),
         gr.Checkbox(label="使用spleeter", info="如果上傳的音檔有伴奏，勾選使用spleeter"),
