@@ -21,6 +21,7 @@ pip install --no-deps -r webui_require.txt
 #pip install torchaudio
 #pip install scipy
 #pip install spleeter
+#pip install librosa
 
 deactivate
 

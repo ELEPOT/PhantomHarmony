@@ -3,4 +3,4 @@ cache_dir: "/mnt/d/data/cache" # Where to save huggingface downloading caches
 test_dir: "/mnt/d/data/tests" # Where to save all spectrogram for validating the model
 output_dir: "/mnt/g/data/output" # Where to output model checkpoint and logs
 validation_dir: "/mnt/d/data/validation"
-nextcloud_model_dir: "/mnt/g/nextcloud_data/models"
+nextcloud_model_dir: "/mnt/e/nextcloud_data/models"

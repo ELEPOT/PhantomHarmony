@@ -76,14 +76,14 @@ checkpoint_name = "checkpoint-61000"
 #     beat_from_vocals=False,
 #     output_name="3_beat_mark-[from_accompaniment]",
 # )
-run_validation(
-    "3_beat_mark_train_base",
-    checkpoint_name,
-    include_tags=True,
-    include_beat_mark=True,
-    beat_from_vocals=True,
-    output_name="3_beat_mark_train_base",
-)
+# run_validation(
+#     "3_beat_mark_train_base",
+#     checkpoint_name,
+#     include_tags=True,
+#     include_beat_mark=True,
+#     beat_from_vocals=True,
+#     output_name="3_beat_mark_train_base",
+# )
 # run_validation(
 #     "3_beat_mark_train_base",
 #     checkpoint_name,
@@ -92,3 +92,11 @@ run_validation(
 #     beat_from_vocals=False,
 #     output_name="3_beat_mark_train_base-[from_accompaniment]",
 # )
+run_validation(
+    "3_beat_mark_width_5",
+    checkpoint_name,
+    include_tags=True,
+    include_beat_mark=True,
+    beat_from_vocals=True,
+    output_name="3_beat_mark_width_5",
+)

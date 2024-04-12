@@ -29,3 +29,4 @@ SRC_DIR = PROJECT_DIR / "src"
 sys.path.append(str(PROJECT_DIR))
 sys.path.append(str(SRC_DIR))
 sys.path.append(str(DEPENDENCIES_DIR / "musicnn"))
+sys.path.append(str(DEPENDENCIES_DIR / "diffusers" / "src"))

@@ -24,7 +24,9 @@ def load_model(root_model_dir=None):
 
     controlnet_model_path = root_model_dir / "controlnet"
 
+    print(main_model_path)
     main_model = UNet2DConditionModel.from_pretrained(main_model_path)
+    print("main model done")
     vae = AutoencoderKL.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "vae")
     text_encoder = CLIPTextModel.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "text_encoder")
     tokenizer = CLIPTokenizer.from_pretrained(NEXTCLOUD_RIFFUSION_DIR / "tokenizer")

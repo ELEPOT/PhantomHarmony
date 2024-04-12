@@ -31,6 +31,7 @@ if __name__ == "__main__":
 
     vocals_paths = []
     vocals_beat_mark_paths = []
+    vocals_beat_mark_width_5_paths = []
     accompaniment_paths = []
     prompts_with_tags = []
     prompts_with_genre = []
@@ -47,12 +48,13 @@ if __name__ == "__main__":
         prompts_with_tags.append(tags)
         prompts_with_genre.append(genre)
 
-    df = pd.DataFrame()
+        vocals_beat_mark_width_5_paths.append(os.path.join("vocals_beat_mark_width_5", sample + ".png"))
 
     df["prompt_with_tags"] = prompts_with_tags
     df["prompt_with_genre"] = prompts_with_genre
     df["image"] = accompaniment_paths
     df["conditioning_image"] = vocals_paths
     df["conditioning_image_with_beat_mark"] = vocals_beat_mark_paths
+    df["conditioning_image_with_beat_mark_width_5"] = vocals_beat_mark_width_5_paths
 
     df.to_json(DATASET_DIR / "spectrogram" / "_train.jsonl", orient="records", lines=True)

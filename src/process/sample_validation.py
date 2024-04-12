@@ -51,4 +51,4 @@ df["music_name"] = sampled_music
 df["genre"] = sampled_genres
 df["tags"] = sampled_tags
 
-df.to_csv(DATASET_DIR / "_validation_sample_2220.csv")
+df.to_csv(DATASET_DIR / "validation_sample_2220.csv")

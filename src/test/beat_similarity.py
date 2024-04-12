@@ -71,4 +71,5 @@ def test_beat_similarity(model_name, checkpoint_name="checkpoint-61000"):
 # test_beat_similarity("3_beat_mark", "checkpoint-61000")
 # test_beat_similarity("3_beat_mark-[from_accompaniment]", "checkpoint-61000")
 # test_beat_similarity("3_beat_mark_train_base-[from_accompaniment]", "checkpoint-61000")
-test_beat_similarity("3_beat_mark_train_base", "checkpoint-61000")
+# test_beat_similarity("3_beat_mark_train_base", "checkpoint-61000")
+test_beat_similarity("3_beat_mark_width_5", "checkpoint-61000")
