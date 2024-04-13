@@ -60,6 +60,12 @@ def zip_files(mo, text, file, steps, spl):
         aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
         sound1 = AudioSegment.from_wav(root_dir / filename / "vocals.wav")  # mp3 load wav
         sound2 = AudioSegment.from_file(root_dir / "finish.wav")
+
+        # average loundness of voice and accompaniment
+        avg_dbfs = (sound1.dBFS + sound2.dBFS) / 2
+        sound1 = sound1.apply_gain(avg_dbfs - sound1.dBFS)
+        sound2 = sound2.apply_gain(avg_dbfs - sound2.dBFS)
+
         output = sound1.overlay(sound2)
         return (
             segment_to_sr_ndarray(sound2),
@@ -79,6 +85,12 @@ def zip_files(mo, text, file, steps, spl):
         aio("s2m", root_dir / "unf2.png", root_dir / "finish.wav")
         sound1 = AudioSegment.from_file(in_put)
         sound2 = AudioSegment.from_file(root_dir / "finish.wav")
+
+        # average loundness of voice and accompaniment
+        avg_dbfs = (sound1.dBFS + sound2.dBFS) / 2
+        sound1 = sound1.apply_gain(avg_dbfs - sound1.dBFS)
+        sound2 = sound2.apply_gain(avg_dbfs - sound2.dBFS)
+
         output = sound1.overlay(sound2)
         print("finish")
         return (
